@@ -66,6 +66,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\DAO\AcademicoDAO.cs" />
+    <Compile Include="Model\DAO\ComentarioGeneralDAO.cs" />
+    <Compile Include="Model\DAO\EstudianteDAO.cs" />
+    <Compile Include="Model\DAO\ExperienciaEducativaDAO.cs" />
+    <Compile Include="Model\DAO\MateriaDAO.cs" />
+    <Compile Include="Model\DAO\PeriodoEscolarDAO.cs" />
+    <Compile Include="Model\DAO\ProblematicaDAO.cs" />
+    <Compile Include="Model\DAO\ProblematicaPersonalDAO.cs" />
+    <Compile Include="Model\DAO\ProgramaEducativoDAO.cs" />
+    <Compile Include="Model\DAO\ReporteTutoriaDAO.cs" />
+    <Compile Include="Model\DAO\SolucionDAO.cs" />
+    <Compile Include="Model\DAO\TipoProblematicaDAO.cs" />
+    <Compile Include="Model\DAO\TutoriaDAO.cs" />
     <Compile Include="Model\DataClassTutoria.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
