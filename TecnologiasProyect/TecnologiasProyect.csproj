@@ -79,10 +79,10 @@
     <Compile Include="Model\DAO\SolucionDAO.cs" />
     <Compile Include="Model\DAO\TipoProblematicaDAO.cs" />
     <Compile Include="Model\DAO\TutoriaDAO.cs" />
-    <Compile Include="Model\DataClassTutoria.designer.cs">
+    <Compile Include="Model\DataClassesTutoria.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataClassTutoria.dbml</DependentUpon>
+      <DependentUpon>DataClassesTutoria.dbml</DependentUpon>
     </Compile>
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
@@ -94,13 +94,13 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\DataClassTutoria.dbml">
+    <Content Include="Model\DataClassesTutoria.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataClassTutoria.designer.cs</LastGenOutput>
+      <LastGenOutput>DataClassesTutoria.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Model\DataClassTutoria.dbml.layout">
-      <DependentUpon>DataClassTutoria.dbml</DependentUpon>
+    <None Include="Model\DataClassesTutoria.dbml.layout">
+      <DependentUpon>DataClassesTutoria.dbml</DependentUpon>
     </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Tecnologias" Class="DataClassTutoriaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Tecnologias" Class="DataClassesTutoriaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Table Name="dbo.Academico" Member="Academico">
     <Type Name="Academico">
       <Column Name="IdAcademico" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -10,9 +10,7 @@
       <Column Name="correoInstitucional" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
       <Column Name="pasword" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Association Name="Academico_Estudiante" Member="Estudiante" ThisKey="IdAcademico" OtherKey="IdTutor" Type="Estudiante" />
-      <Association Name="Academico_Estudiante1" Member="Estudiante1" ThisKey="IdAcademico" OtherKey="IdTutor" Type="Estudiante" />
       <Association Name="Academico_ExperienciaEducativa" Member="ExperienciaEducativa" ThisKey="IdAcademico" OtherKey="IdAcademico" Type="ExperienciaEducativa" />
-      <Association Name="Academico_ExperienciaEducativa1" Member="ExperienciaEducativa1" ThisKey="IdAcademico" OtherKey="IdAcademico" Type="ExperienciaEducativa" />
       <Association Name="Academico_ProgramaEducativo" Member="ProgramaEducativo" ThisKey="IdAcademico" OtherKey="IdAcademicoJefe" Type="ProgramaEducativo" />
       <Association Name="Academico_ProgramaEducativo1" Member="ProgramaEducativo1" ThisKey="IdAcademico" OtherKey="IdCoordinador" Type="ProgramaEducativo" />
       <Association Name="Academico_ReporteTutoria" Member="ReporteTutoria" ThisKey="IdAcademico" OtherKey="IdTutor" Type="ReporteTutoria" />
@@ -39,9 +37,7 @@
       <Column Name="IdProgramaEducativo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Estudiante_ProblematicaPersonal" Member="ProblematicaPersonal" ThisKey="IdEstudiante" OtherKey="IdEstudiante" Type="ProblematicaPersonal" />
       <Association Name="Academico_Estudiante" Member="Academico" ThisKey="IdTutor" OtherKey="IdAcademico" Type="Academico" IsForeignKey="true" />
-      <Association Name="Academico_Estudiante1" Member="Academico1" ThisKey="IdTutor" OtherKey="IdAcademico" Type="Academico" IsForeignKey="true" />
       <Association Name="ProgramaEducativo_Estudiante" Member="ProgramaEducativo" ThisKey="IdProgramaEducativo" OtherKey="IdPRogramaEducativo" Type="ProgramaEducativo" IsForeignKey="true" />
-      <Association Name="ProgramaEducativo_Estudiante1" Member="ProgramaEducativo1" ThisKey="IdProgramaEducativo" OtherKey="IdPRogramaEducativo" Type="ProgramaEducativo" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ExperienciaEducativa" Member="ExperienciaEducativa">
@@ -55,13 +51,9 @@
       <Column Name="IdProgramaEducativo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="ExperienciaEducativa_Problematica" Member="Problematica" ThisKey="IdExperienciaEducativa" OtherKey="IdExperienciaEducativa" Type="Problematica" />
       <Association Name="Academico_ExperienciaEducativa" Member="Academico" ThisKey="IdAcademico" OtherKey="IdAcademico" Type="Academico" IsForeignKey="true" />
-      <Association Name="Academico_ExperienciaEducativa1" Member="Academico1" ThisKey="IdAcademico" OtherKey="IdAcademico" Type="Academico" IsForeignKey="true" />
       <Association Name="Materia_ExperienciaEducativa" Member="Materia" ThisKey="IdMateria" OtherKey="IdMAteria" Type="Materia" IsForeignKey="true" />
-      <Association Name="Materia_ExperienciaEducativa1" Member="Materia1" ThisKey="IdMateria" OtherKey="IdMAteria" Type="Materia" IsForeignKey="true" />
       <Association Name="PeriodoEscolar_ExperienciaEducativa" Member="PeriodoEscolar" ThisKey="IdPeriodoEscolar" OtherKey="IdPEriodoEscolar" Type="PeriodoEscolar" IsForeignKey="true" />
-      <Association Name="PeriodoEscolar_ExperienciaEducativa1" Member="PeriodoEscolar1" ThisKey="IdPeriodoEscolar" OtherKey="IdPEriodoEscolar" Type="PeriodoEscolar" IsForeignKey="true" />
       <Association Name="ProgramaEducativo_ExperienciaEducativa" Member="ProgramaEducativo" ThisKey="IdProgramaEducativo" OtherKey="IdPRogramaEducativo" Type="ProgramaEducativo" IsForeignKey="true" />
-      <Association Name="ProgramaEducativo_ExperienciaEducativa1" Member="ProgramaEducativo1" ThisKey="IdProgramaEducativo" OtherKey="IdPRogramaEducativo" Type="ProgramaEducativo" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Materia" Member="Materia">
@@ -70,7 +62,6 @@
       <Column Name="nombre" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="creditos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Materia_ExperienciaEducativa" Member="ExperienciaEducativa" ThisKey="IdMAteria" OtherKey="IdMateria" Type="ExperienciaEducativa" />
-      <Association Name="Materia_ExperienciaEducativa1" Member="ExperienciaEducativa1" ThisKey="IdMAteria" OtherKey="IdMateria" Type="ExperienciaEducativa" />
     </Type>
   </Table>
   <Table Name="dbo.PeriodoEscolar" Member="PeriodoEscolar">
@@ -80,7 +71,6 @@
       <Column Name="fechaInicio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="fechaFin" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Association Name="PeriodoEscolar_ExperienciaEducativa" Member="ExperienciaEducativa" ThisKey="IdPEriodoEscolar" OtherKey="IdPeriodoEscolar" Type="ExperienciaEducativa" />
-      <Association Name="PeriodoEscolar_ExperienciaEducativa1" Member="ExperienciaEducativa1" ThisKey="IdPEriodoEscolar" OtherKey="IdPeriodoEscolar" Type="ExperienciaEducativa" />
     </Type>
   </Table>
   <Table Name="dbo.Problematica" Member="Problematica">
@@ -97,7 +87,6 @@
       <Association Name="ExperienciaEducativa_Problematica" Member="ExperienciaEducativa" ThisKey="IdExperienciaEducativa" OtherKey="IdExperienciaEducativa" Type="ExperienciaEducativa" IsForeignKey="true" />
       <Association Name="ReporteTutoria_Problematica" Member="ReporteTutoria" ThisKey="IdReporte" OtherKey="IdReporte" Type="ReporteTutoria" IsForeignKey="true" />
       <Association Name="TipoProblematica_Problematica" Member="TipoProblematica" ThisKey="IdTipo" OtherKey="IdTipo" Type="TipoProblematica" IsForeignKey="true" />
-      <Association Name="TipoProblematica_Problematica1" Member="TipoProblematica1" ThisKey="IdTipo" OtherKey="IdTipo" Type="TipoProblematica" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ProblematicaPersonal" Member="ProblematicaPersonal">
@@ -117,9 +106,7 @@
       <Column Name="IdAcademicoJefe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="IdCoordinador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="ProgramaEducativo_Estudiante" Member="Estudiante" ThisKey="IdPRogramaEducativo" OtherKey="IdProgramaEducativo" Type="Estudiante" />
-      <Association Name="ProgramaEducativo_Estudiante1" Member="Estudiante1" ThisKey="IdPRogramaEducativo" OtherKey="IdProgramaEducativo" Type="Estudiante" />
       <Association Name="ProgramaEducativo_ExperienciaEducativa" Member="ExperienciaEducativa" ThisKey="IdPRogramaEducativo" OtherKey="IdProgramaEducativo" Type="ExperienciaEducativa" />
-      <Association Name="ProgramaEducativo_ExperienciaEducativa1" Member="ExperienciaEducativa1" ThisKey="IdPRogramaEducativo" OtherKey="IdProgramaEducativo" Type="ExperienciaEducativa" />
       <Association Name="ProgramaEducativo_ReporteTutoria" Member="ReporteTutoria" ThisKey="IdPRogramaEducativo" OtherKey="IdProgramaEducativo" Type="ReporteTutoria" />
       <Association Name="ProgramaEducativo_Solucion" Member="Solucion" ThisKey="IdPRogramaEducativo" OtherKey="IdProgramaEducativo" Type="Solucion" />
       <Association Name="Academico_ProgramaEducativo" Member="Academico" ThisKey="IdAcademicoJefe" OtherKey="IdAcademico" Type="Academico" IsForeignKey="true" />
@@ -156,7 +143,6 @@
       <Column Name="IdTipo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="tipo" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Association Name="TipoProblematica_Problematica" Member="Problematica" ThisKey="IdTipo" OtherKey="IdTipo" Type="Problematica" />
-      <Association Name="TipoProblematica_Problematica1" Member="Problematica1" ThisKey="IdTipo" OtherKey="IdTipo" Type="Problematica" />
     </Type>
   </Table>
   <Table Name="dbo.Tutoria" Member="Tutoria">

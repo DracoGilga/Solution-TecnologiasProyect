@@ -11,7 +11,7 @@ namespace TecnologiasProyect.Model.DAO
         {
             try
             {
-                DataClassTutoriaDataContext conexionBD = GetConexion();
+                DataClassesTutoriaDataContext conexionBD = GetConexion();
                 var estudiante = new Estudiante()
                 {
                     matricula = estudianteNuevo.matricula,
@@ -27,15 +27,15 @@ namespace TecnologiasProyect.Model.DAO
                 conexionBD.SubmitChanges();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
         }
 
-        public static DataClassTutoriaDataContext GetConexion()
+        public static DataClassesTutoriaDataContext GetConexion()
         {
-            return new DataClassTutoriaDataContext(global::System.Configuration.
+            return new DataClassesTutoriaDataContext(global::System.Configuration.
                 ConfigurationManager.ConnectionStrings["TecnologiasConnectionString"].ConnectionString);
         }
     }

@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using TecnologiasProyect.Model;
+using TecnologiasProyect.Model.DAO;
 
 namespace TecnologiasProyect
 {
@@ -12,22 +14,10 @@ namespace TecnologiasProyect
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class Service1 : IService1
     {
-        public string GetData(int value)
+        public Boolean GuardarAlumno(Estudiante estudiante)
         {
-            return string.Format("You entered: {0}", value);
-        }
-
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            Boolean guardarEstudiante = EstudianteDAO.GuardarEstudiante(estudiante);
+            return guardarEstudiante;
         }
     }
 }
