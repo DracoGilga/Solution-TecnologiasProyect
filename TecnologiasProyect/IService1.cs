@@ -20,6 +20,8 @@ namespace TecnologiasProyect
         Boolean GuardarReporteTutoria(ReporteTutoria reporteTutoria);
         [OperationContract]
         Boolean GuardarProblematica(Problematica problematica);
-       
+        [OperationContract]
+        Boolean GuardarComentarioGeneral(ComentarioGeneral comentarioGeneral);
+  
     }
 }
