@@ -13,8 +13,11 @@ namespace TecnologiasProyect
     [ServiceContract]
     public interface IService1
     {
+        //Insertaciones
         [OperationContract]
         Boolean GuardarAlumno(Estudiante estudiante);
+        [OperationContract]
+        Boolean GuardarReporteTutoria(ReporteTutoria reporteTutoria);
        
     }
 }
