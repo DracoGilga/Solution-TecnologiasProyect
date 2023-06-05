@@ -19,7 +19,11 @@ namespace TecnologiasProyect
             Boolean guardarEstudiante = EstudianteDAO.GuardarEstudiante(estudiante);
             return guardarEstudiante;
         }
-
+        public Boolean GuardarProblematica(Problematica problematica)
+        {
+            Boolean guardarProblematica = ProblematicaDAO.GuardarProblematica(problematica);
+            return guardarProblematica;
+        }
         public Boolean GuardarReporteTutoria(ReporteTutoria reporteTutoria)
         {
             Boolean guardarReporteTutoria = ReporteTutoriaDAO.GuardarReporteTuroria(reporteTutoria);

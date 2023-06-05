@@ -18,6 +18,8 @@ namespace TecnologiasProyect
         Boolean GuardarAlumno(Estudiante estudiante);
         [OperationContract]
         Boolean GuardarReporteTutoria(ReporteTutoria reporteTutoria);
+        [OperationContract]
+        Boolean GuardarProblematica(Problematica problematica);
        
     }
 }
