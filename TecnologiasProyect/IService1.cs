@@ -22,6 +22,8 @@ namespace TecnologiasProyect
         Boolean GuardarProblematica(Problematica problematica);
         [OperationContract]
         Boolean GuardarComentarioGeneral(ComentarioGeneral comentarioGeneral);
+        [OperationContract]
+        Boolean RegistrarTutorAcademico(Academico academico);
   
     }
 }
