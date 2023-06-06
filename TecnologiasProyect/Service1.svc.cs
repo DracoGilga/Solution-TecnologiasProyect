@@ -35,6 +35,16 @@ namespace TecnologiasProyect
             return guardarReporteTutoria;
         }
 
+        public List<Academico> ObtenerAcademicos(int programaEducativo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Estudiante> ObtenerEstudiantes(int programaEducativo)
+        {
+            throw new NotImplementedException();
+        }
+
         public Boolean RegistrarTutorAcademico(Academico academico)
         {
             Boolean guardarTutorAcademico = AcademicoDAO.RegistrarTutorAcademico(academico);
