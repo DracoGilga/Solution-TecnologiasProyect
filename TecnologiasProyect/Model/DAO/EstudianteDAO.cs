@@ -32,6 +32,18 @@ namespace TecnologiasProyect.Model.DAO
             }
         }
 
+        public static List<Estudiante> ObtenerEstudiantes(int programaEducativo)
+        {
+            DataClassesTutoriaDataContext conexionBD = GetConexion();
+
+            IQueryable<Estudiante> estudiantesBD = from estudianteQuery in conexionBD.Estudiante
+                                                   join programaEducativoQuery in conexionBD.ProgramaEducativo
+                                                   on estudianteQuery.IdProgramaEducativo equals programaEducativoQuery.IdProgramaEducativo
+                                                   where programaEducativoQuery.IdProgramaEducativo == programaEducativo
+                                                   select estudianteQuery;
+            return estudiantesBD.ToList();
+        }
+
         public static DataClassesTutoriaDataContext GetConexion()
         {
             return new DataClassesTutoriaDataContext(global::System.Configuration.
