@@ -24,6 +24,9 @@ namespace TecnologiasProyect
         Boolean GuardarComentarioGeneral(ComentarioGeneral comentarioGeneral);
         [OperationContract]
         Boolean RegistrarTutorAcademico(Academico academico);
-  
+        [OperationContract]
+        List<Academico> ObtenerAcademicos(int programaEducativo);
+        [OperationContract]
+        List<Estudiante> ObtenerEstudiantes(int programaEducativo);
     }
 }
