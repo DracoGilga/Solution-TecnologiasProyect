@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace FrontTecnologiasProyect
 {
-
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Lógica de interacción para RegistrarFechasTutoria.xaml
+    /// </summary>
+    public partial class RegistrarFechasTutoria : Window
     {
-        public MainWindow()
+        public RegistrarFechasTutoria()
         {
             InitializeComponent();
         }
-
-        private void Btn_InicioSesion(object sender, RoutedEventArgs e)
-        {
-            MenuPrincipal ventanaMenu = new MenuPrincipal();
-            ventanaMenu.Show();
-            this.Close();
-        }
-
     }
 }
