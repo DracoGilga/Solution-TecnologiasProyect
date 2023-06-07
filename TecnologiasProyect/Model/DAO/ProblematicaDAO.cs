@@ -30,7 +30,7 @@ namespace TecnologiasProyect.Model.DAO
                 return false;
             }
         }
-        public static List<Problematica> ObtenerMaterias()
+        public static List<Problematica> ObtenerProblematicas()
         {
             List<Problematica> listas = new List<Problematica>();
             DataClassesTutoriaDataContext conexionBD = GetConexion();

@@ -35,5 +35,36 @@ namespace TecnologiasProyect
             Boolean guardarReporteTutoria = ReporteTutoriaDAO.GuardarReporteTuroria(reporteTutoria);
             return guardarReporteTutoria;
         }
+
+        //modificar
+        public Boolean ModificarProblematica(Problematica problematica)
+        {
+            Boolean modificarProblematica = ProblematicaDAO.ModificarProblematica(problematica);
+            return modificarProblematica;
+        }
+
+        //obtener
+        public List<Academico> ObtenerAcademicos(int programaEducativo)
+        {
+            List<Academico> listaAcademicos = AcademicoDAO.ObtenerAcademicos(programaEducativo);
+            return listaAcademicos;
+        }
+
+        public List<Estudiante> ObtenerEstudiantes(int programaEducativo)
+        {
+            List<Estudiante> listaEstudiantes = EstudianteDAO.ObtenerEstudiantes(programaEducativo);
+            return listaEstudiantes;
+        }
+
+        public List<Problematica> ObtenerProblematicas()
+        {
+            List<Problematica> listaProblematicas = ProblematicaDAO.ObtenerProblematicas();
+            return listaProblematicas;
+        }
+
+        public Boolean registrarAcademico(Academico academico)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

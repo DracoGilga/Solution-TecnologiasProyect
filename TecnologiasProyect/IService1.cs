@@ -22,6 +22,20 @@ namespace TecnologiasProyect
         Boolean GuardarProblematica(Problematica problematica);
         [OperationContract]
         Boolean GuardarComentarioGeneral(ComentarioGeneral comentarioGeneral);
+        [OperationContract]
+        Boolean registrarAcademico(Academico academico);
+
+        //Modificaciones
+        [OperationContract]
+        Boolean ModificarProblematica(Problematica problematica);
+
+        //consultas
+        [OperationContract]
+        List<Problematica> ObtenerProblematicas();
+        [OperationContract]
+        List<Estudiante> ObtenerEstudiantes(int programaEducativo);
+        [OperationContract]
+        List<Academico> ObtenerAcademicos(int programaEducativo);
   
     }
 }
