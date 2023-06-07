@@ -35,7 +35,7 @@ namespace TecnologiasProyect
         [OperationContract]
         List<Estudiante> ObtenerEstudiantes(int programaEducativo);
         [OperationContract]
-        List<Academico> ObtenerAcademicos(int programaEducativo);
-  
+        //List<Academico> ObtenerAcademicos(int programaEducativo);
+        List<Materia> ObtenerMateria();
     }
 }

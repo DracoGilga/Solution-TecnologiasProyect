@@ -21,7 +21,7 @@ namespace TecnologiasProyect.Model.DAO
                     correoPersonal = academicoNuevo.correoPersonal,
                     correoInstitucional = academicoNuevo.correoInstitucional,
                     password = academicoNuevo.password,
-                    rol = academicoNuevo.rol
+                    //rol = academicoNuevo.rol
                 };
                 conexionBD.Academico.InsertOnSubmit(tutor);
                 conexionBD.SubmitChanges();
@@ -33,7 +33,7 @@ namespace TecnologiasProyect.Model.DAO
             }
         }
 
-        public static List<Academico> ObtenerAcademicos(int programaEducativo)
+        /*public static List<Academico> ObtenerAcademicos(int programaEducativo)
         {
             DataClassesTutoriaDataContext conexionBD = GetConexion();
 
@@ -45,7 +45,7 @@ namespace TecnologiasProyect.Model.DAO
                                                  where programaEducativoQuery.IdProgramaEducativo == programaEducativo
                                                  select academicoQuery;
             return academicosBD.ToList();
-        }
+        }*/
 
         public static DataClassesTutoriaDataContext GetConexion()
         {

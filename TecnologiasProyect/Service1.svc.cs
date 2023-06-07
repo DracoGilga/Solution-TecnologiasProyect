@@ -44,10 +44,16 @@ namespace TecnologiasProyect
         }
 
         //obtener
-        public List<Academico> ObtenerAcademicos(int programaEducativo)
+        //public List<Academico> ObtenerAcademicos(int programaEducativo)
+        //{
+           // List<Academico> listaAcademicos = AcademicoDAO.ObtenerAcademicos(programaEducativo);
+            //return listaAcademicos;
+        //}
+        public List<Materia> ObtenerMateria()
         {
-            List<Academico> listaAcademicos = AcademicoDAO.ObtenerAcademicos(programaEducativo);
-            return listaAcademicos;
+            List<Materia> listaMaterias = MateriaDAO.ObtenerMaterias();
+            
+            return listaMaterias;
         }
 
         public List<Estudiante> ObtenerEstudiantes(int programaEducativo)
