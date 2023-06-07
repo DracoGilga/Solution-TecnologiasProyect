@@ -22,14 +22,6 @@ namespace TecnologiasProyect
         Boolean GuardarProblematica(Problematica problematica);
         [OperationContract]
         Boolean GuardarComentarioGeneral(ComentarioGeneral comentarioGeneral);
-
-         //Consultas
-        [OperationContract]
-        List<Problematica> ObtenerProblematics();
-
-        //modificaciones
-        [OperationContract]
-        Boolean ModificarProblematica(Problematica problematica);
   
     }
 }

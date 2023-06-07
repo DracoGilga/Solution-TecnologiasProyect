@@ -35,19 +35,5 @@ namespace TecnologiasProyect
             Boolean guardarReporteTutoria = ReporteTutoriaDAO.GuardarReporteTuroria(reporteTutoria);
             return guardarReporteTutoria;
         }
-
-        //consultar
-        public List<Problematica> ObtenerProblematics()
-        {
-            List<Problematica> problematicas = ProblematicaDAO.ObtenerMaterias();
-            return problematicas;
-        }
-
-        //modificar
-        public Boolean ModificarProblematica(Problematica problematica)
-        {
-            Boolean modificarProblematica = ProblematicaDAO.ModificarProblematica(problematica);
-            return modificarProblematica;
-        }
     }
 }
