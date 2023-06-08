@@ -30,8 +30,8 @@ namespace FrontTecnologiasProyect
             Problematica problematica = new Problematica();
             problematica.noIncidencias = Convert.ToInt32(Tb_incidencias.Text);
             problematica.descripcion = Tb_descripcion.Text;
-
-            ProblematicaAcademivaViewModel problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel(problematica);
+            int idreporte = 1;
+            ProblematicaAcademivaViewModel problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel(idreporte,problematica);
         }
 
 

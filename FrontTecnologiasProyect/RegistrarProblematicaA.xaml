@@ -13,7 +13,9 @@
         <TextBox x:Name="Tb_incidencias" HorizontalAlignment="Left" Height="23" Margin="24,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding Numero}"/>
         <Label Content="DESCRIPCION:" HorizontalAlignment="Left" Height="32" Margin="24,160,0,0" VerticalAlignment="Top" Width="132"/>
         <TextBox x:Name="Tb_descripcion" HorizontalAlignment="Left" Height="108" Margin="24,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="372"/>
-        <Button Content="GUARDAR" HorizontalAlignment="Left" Height="23" Margin="156,319,0,0" VerticalAlignment="Top" Width="111"/>
+        <Button Content="GUARDAR" HorizontalAlignment="Left" Height="23" Margin="156,319,0,0" VerticalAlignment="Top" Width="111" Click="Btn_guardar"/>
+        <Label Content="TIPO:" HorizontalAlignment="Left" Height="32" Margin="165,94,0,0" VerticalAlignment="Top" Width="132"/>
+        <ComboBox x:Name="Cb_tipoProblematica" HorizontalAlignment="Left" Height="23" Margin="172,131,0,0" VerticalAlignment="Top" Width="125"/>
 
     </Grid>
 </Window>
