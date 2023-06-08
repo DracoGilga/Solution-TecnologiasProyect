@@ -13,15 +13,22 @@ namespace TecnologiasProyect
     [ServiceContract]
     public interface IService1
     {
+        [OperationContract]
+        Mensaje IniciarSesison(string numPersonal, string password);
+
         //Insertaciones
         [OperationContract]
         Boolean GuardarAlumno(Estudiante estudiante);
+
         [OperationContract]
         Boolean GuardarReporteTutoria(ReporteTutoria reporteTutoria);
+
         [OperationContract]
         Boolean GuardarProblematica(Problematica problematica);
+
         [OperationContract]
         Boolean GuardarComentarioGeneral(ComentarioGeneral comentarioGeneral);
+
         [OperationContract]
         Boolean registrarAcademico(Academico academico);
 
@@ -32,8 +39,10 @@ namespace TecnologiasProyect
         //consultas
         [OperationContract]
         List<Problematica> ObtenerProblematicas();
+
         [OperationContract]
         List<Estudiante> ObtenerEstudiantes(int programaEducativo);
+
         [OperationContract]
         //List<Academico> ObtenerAcademicos(int programaEducativo);
         List<Materia> ObtenerMateria();

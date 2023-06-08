@@ -8,10 +8,10 @@
         Title="Inicio de Sesión SGTA" Height="500" Width="400" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Inicio de Sesión" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" FontSize="25" FontFamily="Gill Sans MT"/>
-        <Label Content="Usuario" HorizontalAlignment="Center" Margin="0,125,0,0" VerticalAlignment="Top" FontFamily="Gill Sans MT" FontSize="15"/>
+        <Label Content="Número de Personal" HorizontalAlignment="Center" Margin="0,125,0,0" VerticalAlignment="Top" FontFamily="Gill Sans MT" FontSize="15"/>
         <Label Content="Contraseña" HorizontalAlignment="Center" Margin="0,225,0,0" VerticalAlignment="Top" FontFamily="Gill Sans MT" FontSize="15"/>
         <Button Content="Iniciar Sesión" HorizontalAlignment="Center" Margin="0,375,0,0" VerticalAlignment="Top" FontFamily="Gill Sans MT" FontSize="15" Width="100" Height="25" Click="Btn_InicioSesion"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,175,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" FontFamily="Gill Sans MT" FontSize="15" Height="20"/>
-        <PasswordBox HorizontalAlignment="Center" Margin="0,275,0,0" VerticalAlignment="Top" Width="150" FontFamily="Gill Sans MT" FontSize="15" Height="20"/>
+        <TextBox x:Name="tbNumPersonal" HorizontalAlignment="Center" Margin="0,175,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" FontFamily="Gill Sans MT" FontSize="15" Height="20"/>
+        <PasswordBox x:Name="pbPassword" HorizontalAlignment="Center" Margin="0,275,0,0" VerticalAlignment="Top" Width="150" FontFamily="Gill Sans MT" FontSize="15" Height="20"/>
     </Grid>
 </Window>

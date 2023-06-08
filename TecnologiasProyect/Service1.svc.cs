@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Security;
 using System.ServiceModel.Web;
 using System.Text;
 using TecnologiasProyect.Model;
@@ -71,6 +72,11 @@ namespace TecnologiasProyect
         public Boolean registrarAcademico(Academico academico)
         {
             throw new NotImplementedException();
+        }
+
+        public Mensaje IniciarSesison(string numPersonal, string password)
+        {
+            return AcademicoDAO.iniciarSesion(numPersonal, password);
         }
     }
 }

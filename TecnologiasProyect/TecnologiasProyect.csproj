@@ -173,6 +173,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClassesTutoria.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Mensaje.cs" />
     <Compile Include="PdfPrueba.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
