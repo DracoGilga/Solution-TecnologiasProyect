@@ -17,11 +17,11 @@ using System.Windows.Shapes;
 namespace FrontTecnologiasProyect
 {
     /// <summary>
-    /// Lógica de interacción para Cu10.xaml
+    /// Lógica de interacción para RegistrarAlumno.xaml
     /// </summary>
-    public partial class Cu10 : Window
+    public partial class RegistrarAlumno : Window
     {
-        public Cu10()
+        public RegistrarAlumno()
         {
             InitializeComponent();
             ProgramaEducativoViewModel programaEducativoViewModel = new ProgramaEducativoViewModel();

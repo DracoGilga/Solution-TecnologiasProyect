@@ -50,5 +50,7 @@ namespace TecnologiasProyect
         List<Estudiante> ObtenerEstudiantesTutor(int idTutor);
         [OperationContract]
         List<ProgramaEducativo> ObtenerProgramas();
+        [OperationContract]
+        List<TipoProblematica> ObtenerTipoProblematicas();
     }
 }

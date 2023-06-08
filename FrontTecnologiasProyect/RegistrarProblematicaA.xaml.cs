@@ -24,14 +24,19 @@ namespace FrontTecnologiasProyect
         public RegistrarProblematicaA()
         {
             InitializeComponent();
+            TipoProblematicaViewModel tipoProblematicaViewModel = new TipoProblematicaViewModel();
+            Cb_tipoProblematica.DisplayMemberPath = "tipo";
+            Cb_tipoProblematica.ItemsSource = tipoProblematicaViewModel.tipoProblematicaBD;
         }        
 
-        private void Btn_guarfar(object sender, RoutedEventArgs e)
+        private void Btn_guardar(object sender, RoutedEventArgs e)
         {
             Problematica problematica = new Problematica();
             problematica.titulo = Tb_titulo.Text;
             problematica.noIncidencias = Convert.ToInt32(Tb_incidencias.Text);
             problematica.descripcion = Tb_descripcion.Text;
+            var problematicaLlave = (TipoProblematica)Cb_tipoProblematica.SelectedItem;
+            problematica.IdTipo = problematicaLlave.IdTipo;
 
             ProblematicaAcademivaViewModel problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel(problematica);
         }
@@ -49,5 +54,6 @@ namespace FrontTecnologiasProyect
                 }
             }
         }
+
     }
 }

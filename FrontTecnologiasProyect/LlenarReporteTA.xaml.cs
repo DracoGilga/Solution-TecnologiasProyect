@@ -16,28 +16,36 @@ using System.Windows.Shapes;
 namespace FrontTecnologiasProyect
 {
     /// <summary>
-    /// Lógica de interacción para Window1.xaml
+    /// Lógica de interacción para LlenarReporteTA.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class LlenarReporteTA : Window
     {
-        public Window1()
+        public LlenarReporteTA()
         {
             InitializeComponent();
             EstudianteViewModel modelo = new EstudianteViewModel(4);
             tablaAlumno.ItemsSource = modelo.estudiantesBD;
         }
 
-        private void Btn_problematicaA_Click(object sender, RoutedEventArgs e)
+        private void Btn_registrarProblematica(object sender, RoutedEventArgs e)
         {
-
+            RegistrarProblematicaA registrarProblematicaA = new RegistrarProblematicaA();
+            registrarProblematicaA.Show();
         }
 
-        private void Btn_comentariosG_Click(object sender, RoutedEventArgs e)
+        private void Btn_comentariosGenerales(object sender, RoutedEventArgs e)
         {
-
+            RegistrarComentariosG registrarComentariosG = new RegistrarComentariosG();
+            registrarComentariosG.Show();
         }
 
-        private void Btn_guardar_Click(object sender, RoutedEventArgs e)
+        private void Btn_modificarProblematica(object sender, RoutedEventArgs e)
+        {
+            ModificarProblematicaA  modificarProblematicaA = new ModificarProblematicaA();
+            modificarProblematicaA.Show();
+        }
+
+        private void Btn_guardar(object sender, RoutedEventArgs e)
         {
 
         }

@@ -62,6 +62,11 @@ namespace TecnologiasProyect
             List<Estudiante> listaEstudiantes = EstudianteDAO.ObtenerEstudiantes(programaEducativo);
             return listaEstudiantes;
         }
+        public List<TipoProblematica> ObtenerTipoProblematicas()
+        {
+            List<TipoProblematica> listaTipoProblematicas = TipoProblematicaDAO.ObtenerTipoProblematicas();
+            return listaTipoProblematicas;
+        }
 
         public List<Problematica> ObtenerProblematicas()
         {
