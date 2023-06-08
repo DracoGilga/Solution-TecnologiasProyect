@@ -36,17 +36,14 @@ namespace FrontTecnologiasProyect.Modelo
         public EstudianteViewModel(Estudiante estudiante)
         {
             estudiantesBD = new ObservableCollection<Estudiante>();
-            Console.WriteLine("EntryWrittenEventArgs en EstudianteViewModel");
             GuardarEstudiante(estudiante);
         }
         private async void GuardarEstudiante(Estudiante estudiante)
         {
             var conexionServicios = new Service1Client();
-            Console.WriteLine("EntryWrittenEventArgs en guardarEstudiante");
             if (conexionServicios != null)
             {
                 bool estudianteService = await conexionServicios.GuardarAlumnoAsync(estudiante);
-                Console.WriteLine(estudianteService);
             }
         }
     }

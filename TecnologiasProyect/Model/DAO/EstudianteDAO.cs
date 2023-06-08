@@ -20,7 +20,8 @@ namespace TecnologiasProyect.Model.DAO
                     apellidoMaterno = estudianteNuevo.apellidoMaterno,
                     correoPersonal = estudianteNuevo.correoPersonal,
                     correoInstitucional = estudianteNuevo.correoInstitucional,
-                    IdProgramaEducativo = estudianteNuevo.IdProgramaEducativo
+                    IdProgramaEducativo = estudianteNuevo.IdProgramaEducativo,
+                    ProgramaEducativo = estudianteNuevo.ProgramaEducativo,
                 };
                 conexionBD.Estudiante.InsertOnSubmit(estudiante);
                 conexionBD.SubmitChanges();

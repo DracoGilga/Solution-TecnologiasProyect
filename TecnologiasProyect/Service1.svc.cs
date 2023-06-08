@@ -73,7 +73,6 @@ namespace TecnologiasProyect
         {
             throw new NotImplementedException();
         }
-<<<<<<< HEAD
         public List<Estudiante> ObtenerEstudiantesTutor(int idTutor)
         {
             List<Estudiante> listaEstudiantes = EstudianteDAO.ObtenerEstudiantesTutor(idTutor);
@@ -84,12 +83,11 @@ namespace TecnologiasProyect
         {
             List<ProgramaEducativo> listaProgramas = ProgramaEducativoDAO.ObtenerProgramasEducativos();
             return listaProgramas;
-=======
+        }
 
         public Mensaje IniciarSesison(string numPersonal, string password)
         {
             return AcademicoDAO.iniciarSesion(numPersonal, password);
->>>>>>> 5026226a95679b615a5bbb9e64cebdd34f7381b9
         }
     }
 }

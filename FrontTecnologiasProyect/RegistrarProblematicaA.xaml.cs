@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace FrontTecnologiasProyect
+{
+    /// <summary>
+    /// Lógica de interacción para RegistrarProblematicaA.xaml
+    /// </summary>
+    public partial class RegistrarProblematicaA : Window
+    {
+        public RegistrarProblematicaA()
+        {
+            InitializeComponent();
+        }
+
+
+
+
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var character in e.Text)
+            {
+                if (!char.IsDigit(character))
+                {
+                    e.Handled = true;
+                    break;
+                }
+            }
+        }
+
+    }
+}

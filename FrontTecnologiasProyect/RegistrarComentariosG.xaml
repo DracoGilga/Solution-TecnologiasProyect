@@ -1,0 +1,15 @@
+﻿<Window x:Class="FrontTecnologiasProyect.RegistrarComentariosG"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontTecnologiasProyect"
+        mc:Ignorable="d"
+        Title="RegistrarComentariosG" Height="470" Width="800">
+    <Grid>
+        <ComboBox x:Name="cb_comentarioG" HorizontalAlignment="Left" Height="299" Margin="38,80,0,0" VerticalAlignment="Top" Width="728"/>
+        <Button Content="Guardar" HorizontalAlignment="Left" Height="38" Margin="296,390,0,0" VerticalAlignment="Top" Width="211" FontSize="16" Click="Btn_guardar"/>
+        <Label Content="Comentarios Generales de la Sesión de tutoría:" HorizontalAlignment="Left" Height="30" Margin="38,28,0,0" VerticalAlignment="Top" Width="381" FontSize="18"/>
+
+    </Grid>
+</Window>

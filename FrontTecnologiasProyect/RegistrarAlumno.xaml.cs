@@ -27,12 +27,9 @@ namespace FrontTecnologiasProyect
             ProgramaEducativoViewModel programaEducativoViewModel = new ProgramaEducativoViewModel();
             Cb_programaEducativo.DisplayMemberPath = "nombre";
             Cb_programaEducativo.ItemsSource = programaEducativoViewModel.programasEducativosBD;
-            Console.WriteLine("boton inicio");
-
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("boton inicio");
             Estudiante estudiante = new Estudiante();
             estudiante.matricula = tb_maticula.Text;
             estudiante.nombre = tb_nombre.Text;
@@ -40,9 +37,14 @@ namespace FrontTecnologiasProyect
             estudiante.apellidoMaterno = tb_apellidoM.Text;
             estudiante.correoPersonal = tb_correoP.Text;
             estudiante.correoInstitucional = tb_maticula.Text + "@estudiantes.uv.mx";
-            Console.WriteLine("boton");
+            estudiante.IdProgramaEducativo = 3;
+            estudiante.ProgramaEducativo = new ProgramaEducativo()
+            {
+                IdProgramaEducativo = estudiante.IdProgramaEducativo
+            };
+
             EstudianteViewModel estudianteViewModel = new EstudianteViewModel(estudiante);
-            Console.WriteLine("boton2");
+
         }
     }
 }
