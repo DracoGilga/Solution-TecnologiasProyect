@@ -43,6 +43,32 @@ namespace TecnologiasProyect.Model.DAO
                                                    select estudianteQuery;
             return estudiantesBD.ToList();
         }
+        public static List<Estudiante> ObtenerEstudiantesTutor(int idTutor)
+        {
+            DataClassesTutoriaDataContext conexionBD = GetConexion();
+            List<Estudiante> estudiantes = new List<Estudiante>();
+            IQueryable<Estudiante> estudiantesBD = from estudianteQuery in conexionBD.Estudiante
+                                                   join tutorQuery in conexionBD.Academico
+                                                   on estudianteQuery.IdTutor equals tutorQuery.IdAcademico
+                                                   where tutorQuery.IdAcademico == idTutor
+                                                   select estudianteQuery;
+            foreach (Estudiante estudiante in estudiantesBD)
+            {
+                estudiantes.Add(new Estudiante
+                {
+                    IdEstudiante = estudiante.IdEstudiante,
+                    matricula = estudiante.matricula,
+                    nombre = estudiante.nombre,
+                    apellidoPaterno = estudiante.apellidoPaterno,
+                    apellidoMaterno = estudiante.apellidoMaterno,
+                    correoPersonal = estudiante.correoPersonal,
+                    correoInstitucional = estudiante.correoInstitucional,
+                    IdProgramaEducativo = estudiante.IdProgramaEducativo,
+                    IdTutor = estudiante.IdTutor
+                });
+            }
+            return estudiantes;
+        }
 
         public static DataClassesTutoriaDataContext GetConexion()
         {

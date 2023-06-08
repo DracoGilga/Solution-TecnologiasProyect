@@ -1,0 +1,26 @@
+﻿<Window x:Class="FrontTecnologiasProyect.Cu10"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontTecnologiasProyect"
+        mc:Ignorable="d"
+        Title="Registrar Alumno" Height="584" Width="250" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Image HorizontalAlignment="Center" Height="130" Margin="0,10,0,0" VerticalAlignment="Top" Width="128" Source="/Usuario.webp"/>
+        <Label Content="Matricula:" HorizontalAlignment="Left" Height="23" Margin="17,151,0,0" VerticalAlignment="Top" Width="61"/>
+        <TextBox x:Name="tb_maticula" HorizontalAlignment="Left" Height="19" Margin="17,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Height="23" Margin="17,204,0,0" VerticalAlignment="Top" Width="61"/>
+        <TextBox x:Name="tb_nombre" HorizontalAlignment="Left" Height="19" Margin="17,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209"/>
+        <Label Content="Apellido Paterno:" HorizontalAlignment="Left" Height="26" Margin="17,256,0,0" VerticalAlignment="Top" Width="105"/>
+        <TextBox x:Name="tb_apellidoP" HorizontalAlignment="Left" Height="19" Margin="17,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209"/>
+        <Label Content="Apellido Materno:" HorizontalAlignment="Left" Height="24" Margin="17,311,0,0" VerticalAlignment="Top" Width="105"/>
+        <TextBox x:Name="tb_apellidoM" HorizontalAlignment="Left" Height="19" Margin="17,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209"/>
+        <Label Content="Correo Personal;" HorizontalAlignment="Left" Height="24" Margin="16,368,0,0" VerticalAlignment="Top" Width="105"/>
+        <TextBox x:Name="tb_correoP" HorizontalAlignment="Left" Height="19" Margin="16,397,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209"/>
+        <Label Content="Programa Educativo:" HorizontalAlignment="Left" Height="27" Margin="16,426,0,0" VerticalAlignment="Top" Width="126"/>
+        <ComboBox x:Name="Cb_programaEducativo" HorizontalAlignment="Left" Height="21" Margin="17,455,0,0" VerticalAlignment="Top" Width="209"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="31" Margin="84,506,0,0" VerticalAlignment="Top" Width="87" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>

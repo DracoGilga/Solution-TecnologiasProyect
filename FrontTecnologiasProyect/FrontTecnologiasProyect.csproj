@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Usuario.webp" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Imagenes\" />
   </ItemGroup>
 
@@ -17,6 +21,10 @@
     <PackageReference Include="System.ServiceModel.Http" Version="4.10.*" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.*" />
     <PackageReference Include="System.ServiceModel.Security" Version="4.10.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Usuario.webp" />
   </ItemGroup>
 
 </Project>

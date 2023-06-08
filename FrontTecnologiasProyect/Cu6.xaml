@@ -1,0 +1,38 @@
+﻿<Window x:Class="FrontTecnologiasProyect.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontTecnologiasProyect"
+        mc:Ignorable="d"
+        Title="Llenar Reporte de Tutoría Académica." Height="388" Width="693">
+    <Grid>
+        <DataGrid x:Name="tablaAlumno" AutoGenerateColumns="False" CanUserAddRows="False" Margin="30,59,24,25">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Matricula" Binding="{Binding matricula}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Apellido Paterno" Binding="{Binding apellidoPaterno}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Apellido Materno" Binding="{Binding apellidoMaterno}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Carrera" Binding="{Binding carrera}" Width="*" IsReadOnly="True"/>
+                <DataGridTemplateColumn Header="Asistencia" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding asistencia}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Riesgo" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding riesgo}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="Btn_problematicaA" Content="Problematica Academica&#xD;&#xA;" HorizontalAlignment="Left" Height="23" Margin="272,22,0,0" VerticalAlignment="Top" Width="142" Click="Btn_problematicaA_Click"/>
+        <Button x:Name="Btn_comentariosG" Content="Comentarios Generales" HorizontalAlignment="Left" Margin="431,22,0,0" VerticalAlignment="Top" Width="131" Height="23" Click="Btn_comentariosG_Click"/>
+        <Button x:Name="Btn_guardar" Content="Guardar" HorizontalAlignment="Left" Height="23" Margin="583,22,0,0" VerticalAlignment="Top" Width="86" Click="Btn_guardar_Click"/>
+
+    </Grid>
+</Window>
