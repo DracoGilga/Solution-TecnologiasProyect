@@ -7,5 +7,6 @@ namespace TecnologiasProyect.Model.DAO
 {
     public class PeriodoEscolarDAO
     {
+
     }
 }
