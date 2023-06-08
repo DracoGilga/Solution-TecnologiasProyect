@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontTecnologiasProyect"
         mc:Ignorable="d"
-        Title="ModificarProblematicaA" Height="450" Width="800">
+        Title="ModificarProblematicaA" Height="308" Width="417">
     <Grid>
-        
+        <Label Content="No. DE INCIDENCIAS:" HorizontalAlignment="Left" Height="32" Margin="24,19,0,0" VerticalAlignment="Top" Width="132"/>
+        <TextBox x:Name="Tb_incidencias" HorizontalAlignment="Left" Height="23" Margin="24,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding Numero}"/>
+        <Label Content="DESCRIPCION:" HorizontalAlignment="Left" Height="32" Margin="24,85,0,0" VerticalAlignment="Top" Width="132"/>
+        <TextBox x:Name="Tb_descripcion" HorizontalAlignment="Left" Height="108" Margin="24,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="372"/>
+        <Button Content="GUARDAR" HorizontalAlignment="Left" Height="23" Margin="156,244,0,0" VerticalAlignment="Top" Width="111"/>
+
     </Grid>
 </Window>
