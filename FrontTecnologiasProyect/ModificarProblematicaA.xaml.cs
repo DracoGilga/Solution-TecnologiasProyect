@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FrontTecnologiasProyect.Modelo;
+using ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,14 @@ namespace FrontTecnologiasProyect
         {
             InitializeComponent();
         }
+        private void Btn_Guardar(object sender, RoutedEventArgs e)
+        {
+            Problematica problematica = new Problematica();
+            problematica.noIncidencias = Convert.ToInt32(Tb_incidencias.Text);
+            problematica.descripcion = Tb_descripcion.Text;
+
+            ProblematicaAcademivaViewModel problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel(problematica);
+        }
 
 
 
@@ -37,5 +47,6 @@ namespace FrontTecnologiasProyect
                 }
             }
         }
+
     }
 }
