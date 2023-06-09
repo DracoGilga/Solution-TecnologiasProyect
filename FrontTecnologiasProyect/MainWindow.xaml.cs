@@ -45,7 +45,7 @@ namespace FrontTecnologiasProyect
 
             if (conexionServicios != null)
             {
-                Mensaje resultado = await conexionServicios.IniciarSesionAsync(numPersonal, password);
+                /*Mensaje resultado = await conexionServicios.
                 if (resultado.error == true)
                 {
                     MessageBox.Show(resultado.mensaje, "Credenciales incorrectas");
@@ -57,7 +57,10 @@ namespace FrontTecnologiasProyect
                     MenuPrincipal ventanaMenu = new MenuPrincipal();
                     ventanaMenu.Show();
                     this.Close();
-                }
+                }*/
+                MenuPrincipal ventanaMenu = new MenuPrincipal();
+                ventanaMenu.Show();
+                this.Close();
             }
             else
             {
