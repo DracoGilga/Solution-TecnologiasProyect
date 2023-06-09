@@ -41,8 +41,7 @@ namespace TecnologiasProyect.Model.DAO
                     apellidoMaterno = academicoNuevo.apellidoMaterno,
                     correoPersonal = academicoNuevo.correoPersonal,
                     correoInstitucional = academicoNuevo.correoInstitucional,
-                    password = academicoNuevo.password,
-                    //rol = academicoNuevo.rol
+                    password = academicoNuevo.password
                 };
                 conexionBD.Academico.InsertOnSubmit(tutor);
                 conexionBD.SubmitChanges();
