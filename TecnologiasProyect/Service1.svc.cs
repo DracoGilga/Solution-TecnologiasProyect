@@ -90,7 +90,7 @@ namespace TecnologiasProyect
             return listaProgramas;
         }
 
-        public Mensaje IniciarSesison(string numPersonal, string password)
+        public Mensaje IniciarSesion(string numPersonal, string password)
         {
             return AcademicoDAO.iniciarSesion(numPersonal, password);
         }
