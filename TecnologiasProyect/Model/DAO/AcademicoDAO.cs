@@ -12,8 +12,7 @@ namespace TecnologiasProyect.Model.DAO
             DataClassesTutoriaDataContext conexionBD = GetConexion();
             Mensaje respuesta = new Mensaje();
             var usuario = (from userLogin in conexionBD.Academico
-                               where userLogin.noPersonal == numPersonal &&
-                                     userLogin.password == password
+                           where userLogin.noPersonal == numPersonal && userLogin.password == password
                            select userLogin).FirstOrDefault();
             if (usuario != null)
             {
@@ -28,6 +27,7 @@ namespace TecnologiasProyect.Model.DAO
             }
             return respuesta;
         }
+
         public static Boolean RegistrarTutorAcademico(Academico academicoNuevo)
         {
             try

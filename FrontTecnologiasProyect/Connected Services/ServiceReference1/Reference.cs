@@ -24,18 +24,7 @@ namespace ServiceReference1
         
         private ServiceReference1.Academico usuarioAutenticadoField;
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool error
-        {
-            get
-            {
-                return this.errorField;
-            }
-            set
-            {
-                this.errorField = value;
-            }
-        }
+        private System.Nullable<int> IdTutorField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string mensaje
@@ -123,7 +112,7 @@ namespace ServiceReference1
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdAcademico
+        public System.Nullable<int> IdTutor
         {
             get
             {
@@ -282,8 +271,6 @@ namespace ServiceReference1
         
         private ServiceReference1.ProblematicaPersonal[] ProblematicaPersonalField;
         
-        private ServiceReference1.ProgramaEducativo ProgramaEducativoField;
-        
         private ServiceReference1.ReporteTutoria[] ReporteTutoriaField;
         
         private string apellidoMaternoField;
@@ -310,6 +297,8 @@ namespace ServiceReference1
                 this.AcademicoField = value;
             }
         }
+        
+        private string rolField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int IdEstudiante
@@ -373,6 +362,19 @@ namespace ServiceReference1
             set
             {
                 this.ProgramaEducativoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.ProgramaEducativoTutor[] ProgramaEducativoTutor
+        {
+            get
+            {
+                return this.ProgramaEducativoTutorField;
+            }
+            set
+            {
+                this.ProgramaEducativoTutorField = value;
             }
         }
         
@@ -466,6 +468,19 @@ namespace ServiceReference1
                 this.nombreField = value;
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string password
+        {
+            get
+            {
+                return this.passwordField;
+            }
+            set
+            {
+                this.passwordField = value;
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -486,7 +501,7 @@ namespace ServiceReference1
         
         private int IdProgramaEducativoField;
         
-        private ServiceReference1.Materia MateriaField;
+        private ServiceReference1.ReporteTutoria[] ReporteTutoriaField;
         
         private ServiceReference1.PeriodoEscolar PeriodoEscolarField;
         
@@ -577,7 +592,7 @@ namespace ServiceReference1
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.Materia Materia
+        public ServiceReference1.ReporteTutoria[] ReporteTutoria
         {
             get
             {
@@ -1026,9 +1041,24 @@ namespace ServiceReference1
             }
             set
             {
-                this.asistenciaField = value;
+                this.nrcField = value;
             }
         }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Materia", Namespace="http://schemas.datacontract.org/2004/07/TecnologiasProyect.Model")]
+    public partial class Materia : object
+    {
+        
+        private ServiceReference1.ExperienciaEducativa[] ExperienciaEducativaField;
+        
+        private int IdMateriaField;
+        
+        private int creditosField;
+        
+        private string nombreField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string descripcion
@@ -1807,6 +1837,57 @@ namespace ServiceReference1
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
+    public partial class Mensaje : object
+    {
+
+        private bool errorField;
+
+        private string mensajeField;
+
+        private ServiceReference1.Academico usuarioAutenticadoField;
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool error
+        {
+            get
+            {
+                return this.errorField;
+            }
+            set
+            {
+                this.errorField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mensaje
+        {
+            get
+            {
+                return this.mensajeField;
+            }
+            set
+            {
+                this.mensajeField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Academico usuarioAutenticado
+        {
+            get
+            {
+                return this.usuarioAutenticadoField;
+            }
+            set
+            {
+                this.usuarioAutenticadoField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName = "ServiceReference1.IService1")]
     public interface IService1
     {
         
@@ -1825,26 +1906,17 @@ namespace ServiceReference1
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GuardarComentarioGeneral", ReplyAction="http://tempuri.org/IService1/GuardarComentarioGeneralResponse")]
         System.Threading.Tasks.Task<bool> GuardarComentarioGeneralAsync(ServiceReference1.ComentarioGeneral comentarioGeneral);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistrarAcademico", ReplyAction="http://tempuri.org/IService1/RegistrarAcademicoResponse")]
-        System.Threading.Tasks.Task<bool> RegistrarAcademicoAsync(ServiceReference1.Academico academico);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/registrarAcademico", ReplyAction="http://tempuri.org/IService1/registrarAcademicoResponse")]
+        System.Threading.Tasks.Task<bool> registrarAcademicoAsync(ServiceReference1.Academico academico);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ModificarProblematica", ReplyAction="http://tempuri.org/IService1/ModificarProblematicaResponse")]
         System.Threading.Tasks.Task<bool> ModificarProblematicaAsync(ServiceReference1.Problematica problematica);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerProblematicas", ReplyAction="http://tempuri.org/IService1/ObtenerProblematicasResponse")]
-        System.Threading.Tasks.Task<ServiceReference1.Problematica[]> ObtenerProblematicasAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerAcademicos", ReplyAction="http://tempuri.org/IService1/ObtenerAcademicosResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.Academico[]> ObtenerAcademicosAsync(int programaEducativo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerEstudiantes", ReplyAction="http://tempuri.org/IService1/ObtenerEstudiantesResponse")]
         System.Threading.Tasks.Task<ServiceReference1.Estudiante[]> ObtenerEstudiantesAsync(int programaEducativo);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerMateria", ReplyAction="http://tempuri.org/IService1/ObtenerMateriaResponse")]
-        System.Threading.Tasks.Task<ServiceReference1.Materia[]> ObtenerMateriaAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerEstudiantesTutor", ReplyAction="http://tempuri.org/IService1/ObtenerEstudiantesTutorResponse")]
-        System.Threading.Tasks.Task<ServiceReference1.Estudiante[]> ObtenerEstudiantesTutorAsync(int idTutor);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerProgramas", ReplyAction="http://tempuri.org/IService1/ObtenerProgramasResponse")]
-        System.Threading.Tasks.Task<ServiceReference1.ProgramaEducativo[]> ObtenerProgramasAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -1922,39 +1994,24 @@ namespace ServiceReference1
             return base.Channel.GuardarComentarioGeneralAsync(comentarioGeneral);
         }
         
-        public System.Threading.Tasks.Task<bool> RegistrarAcademicoAsync(ServiceReference1.Academico academico)
+        public System.Threading.Tasks.Task<bool> registrarAcademicoAsync(ServiceReference1.Academico academico)
         {
-            return base.Channel.RegistrarAcademicoAsync(academico);
+            return base.Channel.registrarAcademicoAsync(academico);
         }
         
         public System.Threading.Tasks.Task<bool> ModificarProblematicaAsync(ServiceReference1.Problematica problematica)
         {
-            return base.Channel.ModificarProblematicaAsync(problematica);
+            return base.Channel.RegistrarTutorAcademicoAsync(academico);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.Problematica[]> ObtenerProblematicasAsync()
+        public System.Threading.Tasks.Task<ServiceReference1.Academico[]> ObtenerAcademicosAsync(int programaEducativo)
         {
-            return base.Channel.ObtenerProblematicasAsync();
+            return base.Channel.ObtenerAcademicosAsync(programaEducativo);
         }
         
         public System.Threading.Tasks.Task<ServiceReference1.Estudiante[]> ObtenerEstudiantesAsync(int programaEducativo)
         {
             return base.Channel.ObtenerEstudiantesAsync(programaEducativo);
-        }
-        
-        public System.Threading.Tasks.Task<ServiceReference1.Materia[]> ObtenerMateriaAsync()
-        {
-            return base.Channel.ObtenerMateriaAsync();
-        }
-        
-        public System.Threading.Tasks.Task<ServiceReference1.Estudiante[]> ObtenerEstudiantesTutorAsync(int idTutor)
-        {
-            return base.Channel.ObtenerEstudiantesTutorAsync(idTutor);
-        }
-        
-        public System.Threading.Tasks.Task<ServiceReference1.ProgramaEducativo[]> ObtenerProgramasAsync()
-        {
-            return base.Channel.ObtenerProgramasAsync();
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

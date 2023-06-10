@@ -62,6 +62,11 @@ namespace TecnologiasProyect
             List<Estudiante> listaEstudiantes = EstudianteDAO.ObtenerEstudiantes(programaEducativo);
             return listaEstudiantes;
         }
+        public List<TipoProblematica> ObtenerTipoProblematicas()
+        {
+            List<TipoProblematica> listaTipoProblematicas = TipoProblematicaDAO.ObtenerTipoProblematicas();
+            return listaTipoProblematicas;
+        }
 
         public List<Problematica> ObtenerProblematicas()
         {
@@ -87,7 +92,7 @@ namespace TecnologiasProyect
             return listaProgramas;
         }
 
-        public Mensaje IniciarSesison(string numPersonal, string password)
+        public Mensaje IniciarSesion(string numPersonal, string password)
         {
             return AcademicoDAO.iniciarSesion(numPersonal, password);
         }
