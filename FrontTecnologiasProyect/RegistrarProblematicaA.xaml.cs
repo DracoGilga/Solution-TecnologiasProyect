@@ -49,5 +49,10 @@ namespace FrontTecnologiasProyect
                 }
             }
         }
+
+        private void Btn_guardar(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

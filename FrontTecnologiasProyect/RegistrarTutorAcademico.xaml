@@ -1,0 +1,29 @@
+﻿<Window x:Class="FrontTecnologiasProyect.RegistrarTutorAcademico"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontTecnologiasProyect"
+        mc:Ignorable="d"
+        Title="Registrar Tutor Académico" Height="470" Width="800">
+    <Grid Height="NaN" Margin="0,0,0,6">
+        <Label Content="Registrar Tutor Académico" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="100,60,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbx_Nombre" HorizontalAlignment="Left" Margin="216,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="508" Height="25"/>
+        <Label Content="Apellido Paterno:" HorizontalAlignment="Left" Margin="100,114,0,0" VerticalAlignment="Top"/>
+        <Label Content="Apellido Materno:" HorizontalAlignment="Left" Margin="100,167,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.527,1.716"/>
+        <TextBox x:Name="tbx_ApellidoPaterno" HorizontalAlignment="Left" Margin="216,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="508" Height="25"/>
+        <TextBox x:Name="tbx_ApellidoMaterno" HorizontalAlignment="Left" Margin="216,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="508" Height="25"/>
+        <Label Content="Correo electrónico:" HorizontalAlignment="Left" Margin="100,256,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.527,1.716"/>
+        <TextBox x:Name="tbx_CorreoElectronico" HorizontalAlignment="Left" Margin="216,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="508" Height="25"/>
+        <Label Content="Correo institucional:" HorizontalAlignment="Left" Margin="100,302,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.527,1.716"/>
+        <TextBox x:Name="tbx_CorreoInstitucional" HorizontalAlignment="Left" Margin="216,302,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="508" Height="25"/>
+        <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="100,347,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.527,1.716"/>
+        <PasswordBox x:Name="pb_Password" HorizontalAlignment="Left" Margin="216,352,0,0" VerticalAlignment="Top" Width="508" Height="25"/>
+        <Button Content="Guardar" HorizontalAlignment="Left" Margin="654,398,0,0" VerticalAlignment="Top" Width="70" Height="25" Click="Btn_Guardar"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="544,398,0,0" VerticalAlignment="Top" Width="70" Height="25" Click="Btn_Cancelar"/>
+        <Label Content="No. de Personal:" HorizontalAlignment="Left" Margin="100,213,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.527,1.716"/>
+        <TextBox x:Name="tbx_NumeroPersonal" HorizontalAlignment="Left" Margin="216,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="508" Height="25"/>
+
+    </Grid>
+</Window>

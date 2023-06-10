@@ -30,7 +30,7 @@ namespace TecnologiasProyect
         Boolean GuardarComentarioGeneral(ComentarioGeneral comentarioGeneral);
 
         [OperationContract]
-        Boolean registrarAcademico(Academico academico);
+        Boolean RegistrarAcademico(Academico academico);
 
         //Modificaciones
         [OperationContract]

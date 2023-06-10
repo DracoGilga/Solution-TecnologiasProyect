@@ -69,10 +69,12 @@ namespace TecnologiasProyect
             return listaProblematicas;
         }
 
-        public Boolean registrarAcademico(Academico academico)
+        public Boolean RegistrarAcademico(Academico academico)
         {
-            throw new NotImplementedException();
+            Boolean guardarTutor = AcademicoDAO.RegistrarTutorAcademico(academico);
+            return guardarTutor;
         }
+
         public List<Estudiante> ObtenerEstudiantesTutor(int idTutor)
         {
             List<Estudiante> listaEstudiantes = EstudianteDAO.ObtenerEstudiantesTutor(idTutor);
