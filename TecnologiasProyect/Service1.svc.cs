@@ -91,6 +91,11 @@ namespace TecnologiasProyect
             List<ProgramaEducativo> listaProgramas = ProgramaEducativoDAO.ObtenerProgramasEducativos();
             return listaProgramas;
         }
+        public List<ExperienciaEducativa> ObtenerExperienciasEducativas()
+        {
+            List<ExperienciaEducativa> listaExperienciasEducativas = ExperienciaEducativaDAO.ObtenerExperienciasEducativas();
+            return listaExperienciasEducativas;
+        }
 
         public Mensaje IniciarSesion(string numPersonal, string password)
         {

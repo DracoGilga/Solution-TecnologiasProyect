@@ -1848,6 +1848,9 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerTipoProblematicas", ReplyAction="http://tempuri.org/IService1/ObtenerTipoProblematicasResponse")]
         System.Threading.Tasks.Task<ServiceReference1.TipoProblematica[]> ObtenerTipoProblematicasAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerExperienciasEducativas", ReplyAction="http://tempuri.org/IService1/ObtenerExperienciasEducativasResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.ExperienciaEducativa[]> ObtenerExperienciasEducativasAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -1963,6 +1966,11 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task<ServiceReference1.TipoProblematica[]> ObtenerTipoProblematicasAsync()
         {
             return base.Channel.ObtenerTipoProblematicasAsync();
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.ExperienciaEducativa[]> ObtenerExperienciasEducativasAsync()
+        {
+            return base.Channel.ObtenerExperienciasEducativasAsync();
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

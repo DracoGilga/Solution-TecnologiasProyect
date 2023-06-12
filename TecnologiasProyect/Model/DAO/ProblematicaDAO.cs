@@ -15,7 +15,7 @@ namespace TecnologiasProyect.Model.DAO
                 var problematica = new Problematica()
                 {
                     titulo = problematicaNuevo.titulo,
-                    descripcion = problematicaNuevo.titulo,
+                    descripcion = problematicaNuevo.descripcion,
                     noIncidencias = problematicaNuevo.noIncidencias,
                     IdReporte = problematicaNuevo.IdReporte,
                     IdTipo = problematicaNuevo.IdTipo,

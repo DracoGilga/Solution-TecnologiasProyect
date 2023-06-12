@@ -24,9 +24,8 @@ namespace FrontTecnologiasProyect
         public RegistrarProblematicaA()
         {
             InitializeComponent();
-            TipoProblematicaViewModel tipoProblematicaViewModel = new TipoProblematicaViewModel();
-            Cb_tipoProblematica.DisplayMemberPath = "tipo";
-            Cb_tipoProblematica.ItemsSource = tipoProblematicaViewModel.tipoProblematicaBD;
+            
+            EditarCombox();
         }        
 
         private void Btn_guardar(object sender, RoutedEventArgs e)
@@ -35,10 +34,25 @@ namespace FrontTecnologiasProyect
             problematica.titulo = Tb_titulo.Text;
             problematica.noIncidencias = Convert.ToInt32(Tb_incidencias.Text);
             problematica.descripcion = Tb_descripcion.Text;
-            var problematicaLlave = (TipoProblematica)Cb_tipoProblematica.SelectedItem;
-            problematica.IdTipo = problematicaLlave.IdTipo;
+            var problematicaLlaveTipo = (TipoProblematica)Cb_tipoProblematica.SelectedItem;
+            problematica.IdTipo = problematicaLlaveTipo.IdTipo;
+            problematica.TipoProblematica = new TipoProblematica()
+            {
+                IdTipo = problematica.IdTipo
+            };
+            problematica.IdReporte = 0;
+            problematica.ReporteTutoria= new ReporteTutoria()
+            {
+                IdReporte = problematica.IdReporte
+            };
+            var problematicaLlaveExperiencia = (ExperienciaEducativa)cb_Nrc.SelectedItem;
+            problematica.IdExperienciaEducativa = problematicaLlaveExperiencia.IdExperienciaEducativa;
+            problematica.ExperienciaEducativa = new ExperienciaEducativa()
+            {
+                IdExperienciaEducativa = problematica.IdExperienciaEducativa
+            };
 
-            ProblematicaAcademivaViewModel problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel(problematica);
+            ProblematicaAcademivaViewModel problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel(3,problematica);
         }
         
 
@@ -53,6 +67,18 @@ namespace FrontTecnologiasProyect
                     break;
                 }
             }
+        }
+        private void EditarCombox()
+        {
+            //tipo de problematica
+            TipoProblematicaViewModel tipoProblematicaViewModel = new TipoProblematicaViewModel();
+            Cb_tipoProblematica.DisplayMemberPath = "tipo";
+            Cb_tipoProblematica.ItemsSource = tipoProblematicaViewModel.tipoProblematicaBD;
+
+            //experiencia educativa
+            ExperienciaEducativaViewModel experienciaEducativaViewModel = new ExperienciaEducativaViewModel();
+            cb_Nrc.DisplayMemberPath = "nrc";
+            cb_Nrc.ItemsSource = experienciaEducativaViewModel.experienciaEducativaBD;
         }
 
     }

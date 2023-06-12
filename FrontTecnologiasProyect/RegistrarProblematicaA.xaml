@@ -10,13 +10,15 @@
     <Grid>
         <Label Content="TITULO:" HorizontalAlignment="Left" Height="32" Margin="24,28,0,0" VerticalAlignment="Top" Width="88"/>
         <TextBox x:Name="Tb_titulo" HorizontalAlignment="Left" Height="23" Margin="24,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
-        <Label Content="No. DE INCIDENCIAS:" HorizontalAlignment="Left" Height="32" Margin="24,94,0,0" VerticalAlignment="Top" Width="132"/>
+        <Label Content="No. DE INCIDENCIAS:" HorizontalAlignment="Left" Height="32" Margin="24,94,0,0" VerticalAlignment="Top" Width="122"/>
         <TextBox x:Name="Tb_incidencias" HorizontalAlignment="Left" Height="23" Margin="24,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding Numero}"/>
         <Label Content="DESCRIPCION:" HorizontalAlignment="Left" Height="32" Margin="24,160,0,0" VerticalAlignment="Top" Width="132"/>
         <TextBox x:Name="Tb_descripcion" HorizontalAlignment="Left" Height="108" Margin="24,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="372"/>
         <Button Content="GUARDAR" HorizontalAlignment="Left" Height="23" Margin="156,319,0,0" VerticalAlignment="Top" Width="111" Click="Btn_guardar"/>
-        <Label Content="TIPO:" HorizontalAlignment="Left" Height="32" Margin="165,94,0,0" VerticalAlignment="Top" Width="132"/>
-        <ComboBox x:Name="Cb_tipoProblematica" HorizontalAlignment="Left" Height="23" Margin="172,131,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label Content="TIPO:" HorizontalAlignment="Left" Height="32" Margin="153,94,0,0" VerticalAlignment="Top" Width="132"/>
+        <ComboBox x:Name="Cb_tipoProblematica" HorizontalAlignment="Left" Height="23" Margin="153,131,0,0" VerticalAlignment="Top" Width="132"/>
+        <Label Content="NRC:" HorizontalAlignment="Left" Height="32" Margin="297,92,0,0" VerticalAlignment="Top" Width="71"/>
+        <ComboBox x:Name="cb_Nrc" HorizontalAlignment="Left" Height="23" Margin="297,131,0,0" VerticalAlignment="Top" Width="71"/>
 
     </Grid>
 </Window>
