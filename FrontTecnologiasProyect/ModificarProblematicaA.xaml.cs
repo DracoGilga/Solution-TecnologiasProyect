@@ -31,13 +31,11 @@ namespace FrontTecnologiasProyect
         private void Btn_Guardar(object sender, RoutedEventArgs e)
         {
             var problematicaLlave= (Problematica)cb_Problematica.SelectedItem;
-            Problematica problematica = problematicaLlave;
-            Tb_incidencias.Text = problematica.noIncidencias.ToString();
-            Tb_descripcion.Text = problematica.descripcion;
+            Problematica problematica = new Problematica();
             problematica.noIncidencias = Convert.ToInt32(Tb_incidencias.Text);
             problematica.descripcion = Tb_descripcion.Text;
-            int idreporte = 1;
-            ProblematicaAcademivaViewModel problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel(idreporte,problematica);
+            problematica.IdProblematica = problematicaLlave.IdProblematica;
+            ProblematicaAcademivaViewModel problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel(problematica);
         }
 
 

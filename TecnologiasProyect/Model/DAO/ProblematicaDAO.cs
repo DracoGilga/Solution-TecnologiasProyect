@@ -73,22 +73,21 @@ namespace TecnologiasProyect.Model.DAO
             }
             return listas;
         }
-        public static Boolean ModificarProblematica(Problematica problematica)
+        public static Boolean ModificarProblematica(Problematica problematicaM)
         {
             try
             {
                 DataClassesTutoriaDataContext conexionBD = GetConexion();
-                var problematicaTemp = (from prob in conexionBD.Problematica
-                                        where prob.IdProblematica == problematica.IdProblematica
-                                        select prob).Single();
-                problematicaTemp.titulo = problematica.titulo;
-                problematicaTemp.descripcion = problematica.descripcion;
-                problematicaTemp.noIncidencias = problematica.noIncidencias;
-                problematicaTemp.IdReporte = problematica.IdReporte;
-                problematicaTemp.IdTipo = problematica.IdTipo;
-                problematicaTemp.IdExperienciaEducativa = problematica.IdExperienciaEducativa;
-                conexionBD.SubmitChanges();
-                return true;
+                var problematicaTemp = conexionBD.Problematica.FirstOrDefault(p => p.IdProblematica == problematicaM.IdProblematica);
+                if (problematicaTemp != null)
+                {
+                    problematicaTemp.descripcion = problematicaM.descripcion;
+                    problematicaTemp.noIncidencias = problematicaM.noIncidencias;
+                    conexionBD.SubmitChanges();
+                    return true;
+                }
+                else
+                    return false;
             }
             catch (Exception)
             {
