@@ -21,7 +21,6 @@ namespace TecnologiasProyect.Model.DAO
                     correoPersonal = estudianteNuevo.correoPersonal,
                     correoInstitucional = estudianteNuevo.correoInstitucional,
                     IdProgramaEducativo = estudianteNuevo.IdProgramaEducativo,
-                    ProgramaEducativo = estudianteNuevo.ProgramaEducativo,
                 };
                 conexionBD.Estudiante.InsertOnSubmit(estudiante);
                 conexionBD.SubmitChanges();
