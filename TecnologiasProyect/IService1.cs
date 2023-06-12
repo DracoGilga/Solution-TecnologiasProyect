@@ -54,6 +54,8 @@ namespace TecnologiasProyect
         List<TipoProblematica> ObtenerTipoProblematicas();
         [OperationContract]
         List<ExperienciaEducativa> ObtenerExperienciasEducativas();
+        [OperationContract]
+        List<Problematica> ObtenerProblemticasId(int idProblematica);
         
     }
 }

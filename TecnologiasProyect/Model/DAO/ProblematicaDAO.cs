@@ -47,8 +47,29 @@ namespace TecnologiasProyect.Model.DAO
                     IdReporte = prob.IdReporte,
                     IdTipo = prob.IdTipo,
                     IdExperienciaEducativa = prob.IdExperienciaEducativa
-                }
-                               );
+                });
+            }
+            return listas;
+        }
+        public static List<Problematica> ObtenerPRoblematicasId(int idProblemaatica)
+        {
+            List<Problematica> listas = new List<Problematica>();
+            DataClassesTutoriaDataContext conexionBD = GetConexion();
+            IQueryable<Problematica> problematicas = from problematica in conexionBD.Problematica
+                                                     where problematica.IdProblematica == idProblemaatica
+                                                     select problematica;
+            foreach (var prob in problematicas)
+            {
+                listas.Add(new Problematica
+                {
+                    IdProblematica = prob.IdProblematica,
+                    titulo = prob.titulo,
+                    descripcion = prob.descripcion,
+                    noIncidencias = prob.noIncidencias,
+                    IdReporte = prob.IdReporte,
+                    IdTipo = prob.IdTipo,
+                    IdExperienciaEducativa = prob.IdExperienciaEducativa
+                });
             }
             return listas;
         }
