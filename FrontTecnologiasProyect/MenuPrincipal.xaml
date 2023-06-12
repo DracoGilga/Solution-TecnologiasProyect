@@ -10,8 +10,8 @@
         <Button Content="Registrar fechas de sesión de tutoría" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" FontFamily="Gill Sans MT" FontSize="15" Width="300" Height="25" Click="Btn_RegistrarFechasTutoria"/>
         <Button Content="Editar fechas de sesión de tutoría" HorizontalAlignment="Left" Margin="50,100,0,0" VerticalAlignment="Top" FontFamily="Gill Sans MT" FontSize="15" Width="300" Height="25"/>
         <Button Content="Registrar fechas de cierre de sesión de tutoría" HorizontalAlignment="Left" Margin="50,150,0,0" VerticalAlignment="Top" FontFamily="Gill Sans MT" FontSize="15" Width="300" Height="25"/>
-        <Button Content="Consultar Concentrado de Asistencias" HorizontalAlignment="Left" Margin="50,200,0,0" VerticalAlignment="Top" FontFamily="Gill Sans MT" FontSize="15" Width="300" Height="25"/>
-        <Button Content="Consultar Reporte por Tutor Académico" HorizontalAlignment="Left" Margin="50,250,0,0" VerticalAlignment="Top" FontFamily="Gill Sans MT" FontSize="15" Width="300" Height="25"/>
+        <Button Content="Consultar Concentrado de Asistencias" HorizontalAlignment="Left" Margin="50,200,0,0" VerticalAlignment="Top" FontFamily="Gill Sans MT" FontSize="15" Width="300" Height="25" Click="Btn_ConcentradoAsistencias"/>
+        <Button Content="Consultar Reporte por Tutor Académico" HorizontalAlignment="Left" Margin="50,250,0,0" VerticalAlignment="Top" FontFamily="Gill Sans MT" FontSize="15" Width="300" Height="25" Click="Btn_ConsultarReporteTutor"/>
         
     </Grid>
 </Window>

@@ -1,5 +1,4 @@
-﻿using ServiceReference1;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,23 +15,13 @@ using System.Windows.Shapes;
 namespace FrontTecnologiasProyect
 {
     /// <summary>
-    /// Lógica de interacción para RegistrarFechasTutoria.xaml
+    /// Lógica de interacción para ReportePorTutor.xaml
     /// </summary>
-    public partial class RegistrarFechasTutoria : Window
+    public partial class ReportePorTutor : Window
     {
-        public RegistrarFechasTutoria()
+        public ReportePorTutor()
         {
             InitializeComponent();
-        }
-
-        private void Btn_RegistrarPeriodoEscolar(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        public void validarFechas()
-        {
-
         }
     }
 }

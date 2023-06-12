@@ -27,5 +27,19 @@ namespace FrontTecnologiasProyect
             ventanaRegistrarFechas.Show();
             this.Close();
         }
+
+        private void Btn_ConcentradoAsistencias(object sender, RoutedEventArgs e)
+        {
+            ConcentradoAsistencias ventanaConcentradoAsistencias = new ConcentradoAsistencias();
+            ventanaConcentradoAsistencias.Show();
+            this.Close();
+        }
+
+        private void Btn_ConsultarReporteTutor(object sender, RoutedEventArgs e)
+        {
+            ReportePorTutor ventanaConsultarReporte = new ReportePorTutor();
+            ventanaConsultarReporte.Show();
+            this.Close();
+        }
     }
 }
