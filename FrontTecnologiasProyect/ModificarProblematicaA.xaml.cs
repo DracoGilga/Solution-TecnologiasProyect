@@ -24,14 +24,18 @@ namespace FrontTecnologiasProyect
         public ModificarProblematicaA()
         {
             InitializeComponent();
+            ProblematicaAcademivaViewModel problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel(0);
+            cb_Problematica.DisplayMemberPath = "titulo";
+            cb_Problematica.ItemsSource = problematicaAcademivaViewModel.problematicaBD;
         }
         private void Btn_Guardar(object sender, RoutedEventArgs e)
         {
+            var problematicaLlave= (Problematica)cb_Problematica.SelectedItem;
             Problematica problematica = new Problematica();
             problematica.noIncidencias = Convert.ToInt32(Tb_incidencias.Text);
             problematica.descripcion = Tb_descripcion.Text;
-            int idreporte = 1;
-            ProblematicaAcademivaViewModel problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel(idreporte,problematica);
+            problematica.IdProblematica = problematicaLlave.IdProblematica;
+            ProblematicaAcademivaViewModel problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel(problematica);
         }
 
 
@@ -45,6 +49,15 @@ namespace FrontTecnologiasProyect
                     e.Handled = true;
                     break;
                 }
+            }
+        }
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedItem = (Problematica)cb_Problematica.SelectedItem;
+            if (selectedItem != null)
+            {
+                Tb_incidencias.Text = selectedItem.noIncidencias.ToString();
+                Tb_descripcion.Text = selectedItem.descripcion;
             }
         }
 

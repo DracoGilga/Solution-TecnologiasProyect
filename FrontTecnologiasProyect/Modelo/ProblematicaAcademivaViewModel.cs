@@ -24,6 +24,27 @@ namespace FrontTecnologiasProyect.Modelo
                 bool problematicaService = await conexionServicios.GuardarProblematicaAsync(problematica);
             }
         }
+
+        public ProblematicaAcademivaViewModel(int idReporte)
+        {
+            problematicaBD = new ObservableCollection<Problematica>();
+            ConsultarProblematicas(idReporte);
+        }
+        public async void ConsultarProblematicas(int idReporte)
+        {
+            var conexionServicios = new Service1Client();
+            if (conexionServicios != null)
+            {
+                Problematica[] problematicaService = await conexionServicios.ObtenerProblemticasIdAsync(idReporte);
+                if (problematicaService != null)
+                {
+                    foreach (Problematica item in problematicaService)
+                    {
+                        problematicaBD.Add(item);
+                    }
+                }
+            }
+        }
         public ProblematicaAcademivaViewModel(Problematica problematica)
         {
             problematicaBD = new ObservableCollection<Problematica>();

@@ -45,18 +45,12 @@ namespace TecnologiasProyect
         }
 
         //obtener
-        //public List<Academico> ObtenerAcademicos(int programaEducativo)
-        //{
-           // List<Academico> listaAcademicos = AcademicoDAO.ObtenerAcademicos(programaEducativo);
-            //return listaAcademicos;
-        //}
         public List<Materia> ObtenerMateria()
         {
             List<Materia> listaMaterias = MateriaDAO.ObtenerMaterias();
             
             return listaMaterias;
         }
-
         public List<Estudiante> ObtenerEstudiantes(int programaEducativo)
         {
             List<Estudiante> listaEstudiantes = EstudianteDAO.ObtenerEstudiantes(programaEducativo);
@@ -67,13 +61,11 @@ namespace TecnologiasProyect
             List<TipoProblematica> listaTipoProblematicas = TipoProblematicaDAO.ObtenerTipoProblematicas();
             return listaTipoProblematicas;
         }
-
         public List<Problematica> ObtenerProblematicas()
         {
             List<Problematica> listaProblematicas = ProblematicaDAO.ObtenerProblematicas();
             return listaProblematicas;
         }
-
         public Boolean RegistrarAcademico(Academico academico)
         {
             Boolean guardarTutor = AcademicoDAO.RegistrarTutorAcademico(academico);
@@ -85,7 +77,6 @@ namespace TecnologiasProyect
             List<Estudiante> listaEstudiantes = EstudianteDAO.ObtenerEstudiantesTutor(idTutor);
             return listaEstudiantes;
         }
-
         public List<ProgramaEducativo> ObtenerProgramas()
         {
             List<ProgramaEducativo> listaProgramas = ProgramaEducativoDAO.ObtenerProgramasEducativos();
@@ -96,7 +87,15 @@ namespace TecnologiasProyect
             List<ExperienciaEducativa> listaExperienciasEducativas = ExperienciaEducativaDAO.ObtenerExperienciasEducativas();
             return listaExperienciasEducativas;
         }
+        public List<Problematica> ObtenerProblemticasId(int idProblematica)
+        {
+            List<Problematica> listaProblematicas = ProblematicaDAO.ObtenerPRoblematicasId(idProblematica);
+            return listaProblematicas;
+        }
 
+
+
+        //login
         public Mensaje IniciarSesion(string numPersonal, string password)
         {
             return AcademicoDAO.iniciarSesion(numPersonal, password);

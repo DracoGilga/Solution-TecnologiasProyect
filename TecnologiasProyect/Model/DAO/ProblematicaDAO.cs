@@ -47,27 +47,47 @@ namespace TecnologiasProyect.Model.DAO
                     IdReporte = prob.IdReporte,
                     IdTipo = prob.IdTipo,
                     IdExperienciaEducativa = prob.IdExperienciaEducativa
-                }
-                               );
+                });
             }
             return listas;
         }
-        public static Boolean ModificarProblematica(Problematica problematica)
+        public static List<Problematica> ObtenerPRoblematicasId(int idReporte)
+        {
+            List<Problematica> listas = new List<Problematica>();
+            DataClassesTutoriaDataContext conexionBD = GetConexion();
+            IQueryable<Problematica> problematicas = from problematica in conexionBD.Problematica
+                                                     where problematica.IdReporte == idReporte
+                                                     select problematica;
+            foreach (var prob in problematicas)
+            {
+                listas.Add(new Problematica
+                {
+                    IdProblematica = prob.IdProblematica,
+                    titulo = prob.titulo,
+                    descripcion = prob.descripcion,
+                    noIncidencias = prob.noIncidencias,
+                    IdReporte = prob.IdReporte,
+                    IdTipo = prob.IdTipo,
+                    IdExperienciaEducativa = prob.IdExperienciaEducativa
+                });
+            }
+            return listas;
+        }
+        public static Boolean ModificarProblematica(Problematica problematicaM)
         {
             try
             {
                 DataClassesTutoriaDataContext conexionBD = GetConexion();
-                var problematicaTemp = (from prob in conexionBD.Problematica
-                                        where prob.IdProblematica == problematica.IdProblematica
-                                        select prob).Single();
-                problematicaTemp.titulo = problematica.titulo;
-                problematicaTemp.descripcion = problematica.descripcion;
-                problematicaTemp.noIncidencias = problematica.noIncidencias;
-                problematicaTemp.IdReporte = problematica.IdReporte;
-                problematicaTemp.IdTipo = problematica.IdTipo;
-                problematicaTemp.IdExperienciaEducativa = problematica.IdExperienciaEducativa;
-                conexionBD.SubmitChanges();
-                return true;
+                var problematicaTemp = conexionBD.Problematica.FirstOrDefault(p => p.IdProblematica == problematicaM.IdProblematica);
+                if (problematicaTemp != null)
+                {
+                    problematicaTemp.descripcion = problematicaM.descripcion;
+                    problematicaTemp.noIncidencias = problematicaM.noIncidencias;
+                    conexionBD.SubmitChanges();
+                    return true;
+                }
+                else
+                    return false;
             }
             catch (Exception)
             {
