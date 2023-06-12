@@ -29,6 +29,11 @@ namespace FrontTecnologiasProyect
         {
             ComentarioGeneral comentarioGeneral = new ComentarioGeneral();
             comentarioGeneral.descripcion = cb_comentarioG.Text;
+            comentarioGeneral.IdReporte = 0;
+            comentarioGeneral.ReporteTutoria = new ReporteTutoria()
+            {
+                IdReporte = comentarioGeneral.IdReporte
+            };
             ComentarioGeneralViewModel comentarioGeneralViewModel = new ComentarioGeneralViewModel(comentarioGeneral);
         }
     }
