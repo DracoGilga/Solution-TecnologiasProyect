@@ -35,7 +35,7 @@ namespace FrontTecnologiasProyect.Modelo
             var conexionServicios = new Service1Client();
             if (conexionServicios != null)
             {
-                Problematica[] problematicaService = await conexionServicios.ObtenerProblematicasAsync(idReporte);
+                Problematica[] problematicaService = await conexionServicios.ObtenerProblemticasIdAsync(idReporte);
                 if (problematicaService != null)
                 {
                     foreach (Problematica item in problematicaService)

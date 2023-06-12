@@ -14,7 +14,7 @@
         <TextBox x:Name="Tb_descripcion" HorizontalAlignment="Left" Height="108" Margin="24,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="372"/>
         <Button Content="GUARDAR" HorizontalAlignment="Left" Height="23" Margin="156,244,0,0" VerticalAlignment="Top" Width="111" Click="Btn_Guardar"/>
         <Label Content="PROBLEMATICA:" HorizontalAlignment="Left" Height="26" Margin="24,32,0,0" VerticalAlignment="Top" Width="114"/>
-        <ComboBox x:Name="cb_Problematica" HorizontalAlignment="Left" Height="23" Margin="24,57,0,0" VerticalAlignment="Top" Width="114"/>
+        <ComboBox x:Name="cb_Problematica" HorizontalAlignment="Left" Height="23" Margin="24,57,0,0" VerticalAlignment="Top" Width="114" SelectionChanged="ComboBox_SelectionChanged"/>
 
     </Grid>
 </Window>

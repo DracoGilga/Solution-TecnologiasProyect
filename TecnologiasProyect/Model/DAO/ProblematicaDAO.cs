@@ -51,12 +51,12 @@ namespace TecnologiasProyect.Model.DAO
             }
             return listas;
         }
-        public static List<Problematica> ObtenerPRoblematicasId(int idProblemaatica)
+        public static List<Problematica> ObtenerPRoblematicasId(int idReporte)
         {
             List<Problematica> listas = new List<Problematica>();
             DataClassesTutoriaDataContext conexionBD = GetConexion();
             IQueryable<Problematica> problematicas = from problematica in conexionBD.Problematica
-                                                     where problematica.IdProblematica == idProblemaatica
+                                                     where problematica.IdReporte == idReporte
                                                      select problematica;
             foreach (var prob in problematicas)
             {
