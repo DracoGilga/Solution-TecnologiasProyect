@@ -96,9 +96,6 @@ namespace TecnologiasProyect
 
 
         //login
-        public Mensaje IniciarSesion(string numPersonal, string password)
-        {
-            return AcademicoDAO.iniciarSesion(numPersonal, password);
-        }
+
     }
 }
