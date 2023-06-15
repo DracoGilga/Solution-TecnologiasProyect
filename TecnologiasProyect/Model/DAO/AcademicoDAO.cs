@@ -32,20 +32,6 @@ namespace TecnologiasProyect.Model.DAO
             }
         }
 
-        /*public static List<Academico> ObtenerAcademicos(int programaEducativo)
-        {
-            DataClassesTutoriaDataContext conexionBD = GetConexion();
-
-            IQueryable<Academico> academicosBD = from academicoQuery in conexionBD.Academico
-                                                 join programaQuery in conexionBD.ProgramaEducativoTutor on
-                                                 academicoQuery.IdAcademico equals programaQuery.IdAcademico
-                                                 join programaEducativoQuery in conexionBD.ProgramaEducativo on
-                                                 programaQuery.IdProgramaEducativo equals programaEducativoQuery.IdProgramaEducativo
-                                                 where programaEducativoQuery.IdProgramaEducativo == programaEducativo
-                                                 select academicoQuery;
-            return academicosBD.ToList();
-        }*/
-
         public static DataClassesTutoriaDataContext GetConexion()
         {
             return new DataClassesTutoriaDataContext(global::System.Configuration.
