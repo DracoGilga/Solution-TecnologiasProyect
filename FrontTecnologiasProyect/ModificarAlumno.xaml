@@ -5,15 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontTecnologiasProyect"
         mc:Ignorable="d"
-        Title="ModificarAlumno" Height="430" Width="624">
+        Title="ModificarAlumno" Height="435" Width="742">
     <Grid>
-        <Label Content="Tutor:" HorizontalAlignment="Left" Height="28" Margin="40,38,0,0" VerticalAlignment="Top" Width="42"/>
-        <Label Content="Alumno:" HorizontalAlignment="Left" Height="28" Margin="126,38,0,0" VerticalAlignment="Top" Width="55"/>
-        <ComboBox x:Name="cb_Tutor" HorizontalAlignment="Left" Height="16" Margin="40,66,0,0" VerticalAlignment="Top" Width="74"/>
-        <ComboBox x:Name="cb_Alumno" HorizontalAlignment="Left" Height="16" Margin="126,66,0,0" VerticalAlignment="Top" Width="72"/>
-        <Button Content="Añadir" HorizontalAlignment="Left" Height="22" Margin="230,52,0,0" VerticalAlignment="Top" Width="57" Click="btn_AgregarTabla"/>
-        <DataGrid HorizontalAlignment="Left" Height="258" Margin="22,94,0,0" VerticalAlignment="Top" Width="575" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-        <Button Content="Guardar" HorizontalAlignment="Left" Height="19" Margin="280,366,0,0" VerticalAlignment="Top" Width="60" Click="btn_ModificarEstudiante"/>
+        <Label Content="Tutor:" HorizontalAlignment="Left" Height="28" Margin="22,26,0,0" VerticalAlignment="Top" Width="42"/>
+        <Label Content="Alumno:" HorizontalAlignment="Left" Height="28" Margin="108,26,0,0" VerticalAlignment="Top" Width="55"/>
+        <ComboBox x:Name="cb_Tutor" HorizontalAlignment="Left" Height="22" Margin="22,52,0,0" VerticalAlignment="Top" Width="74"/>
+        <ComboBox x:Name="cb_Alumno" HorizontalAlignment="Left" Height="22" Margin="108,52,0,0" VerticalAlignment="Top" Width="99"/>
+        <Button Content="Añadir" HorizontalAlignment="Left" Height="22" Margin="243,52,0,0" VerticalAlignment="Top" Width="57" Click="btn_AgregarTabla"/>
+        <DataGrid x:Name="tablaAlumno" AutoGenerateColumns="False" CanUserAddRows="False" Margin="22,94,30,0" Height="280" VerticalAlignment="Top">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Matricula" Binding="{Binding Matricula}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Apellido Paterno" Binding="{Binding ApellidoPaterno}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Apellido Materno" Binding="{Binding ApellidoMaterno}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="No Tutor" Binding="{Binding NoTutor}" Width="*" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="GUARDAR" HorizontalAlignment="Left" Margin="641,52,0,0" VerticalAlignment="Top" Width="71" Height="22" RenderTransformOrigin="0.718,-0.225"/>
 
     </Grid>
 </Window>
