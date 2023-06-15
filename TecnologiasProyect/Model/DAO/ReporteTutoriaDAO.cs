@@ -31,34 +31,6 @@ namespace TecnologiasProyect.Model.DAO
             }
         }
 
-        public static List<ReporteTutoria> ObtenerReporteTutoriaPorTutor(int idTutor)
-        {
-            DataClassesTutoriaDataContext conexionBD = GetConexion();
-
-            IQueryable<ReporteTutoria> reportesBD = from reportesQuery in conexionBD.ReporteTutoria
-                                                    join tutorQuery in conexionBD.Academico
-                                                    on reportesQuery.IdTutor equals tutorQuery.IdAcademico
-                                                    where reportesQuery.IdTutor == idTutor
-                                                    select reportesQuery;
-
-            return reportesBD.ToList();
-        }
-
-        public static List<ReporteTutoria> ObtenerConcentradoAsistencias(int idPeriodoEscolar)
-        {
-            DataClassesTutoriaDataContext conexionBD = GetConexion();
-
-            IQueryable<ReporteTutoria> asistenciasBD = from asistenciasQuery in conexionBD.ReporteTutoria
-                                                    join tutoriaQuery in conexionBD.Tutoria
-                                                    on asistenciasQuery.IdTutoria equals tutoriaQuery.IdTutoria
-                                                    join periodoQuery in conexionBD.PeriodoEscolar
-                                                    on tutoriaQuery.IdPeriodoEscolar equals periodoQuery.IdPeriodoEscolar
-                                                    where tutoriaQuery.IdPeriodoEscolar == idPeriodoEscolar
-                                                    select asistenciasQuery;
-
-            return asistenciasBD.ToList();
-        }
-
         public static DataClassesTutoriaDataContext GetConexion()
         {
             return new DataClassesTutoriaDataContext(global::System.Configuration.
