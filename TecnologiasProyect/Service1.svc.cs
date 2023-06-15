@@ -43,6 +43,11 @@ namespace TecnologiasProyect
             Boolean modificarProblematica = ProblematicaDAO.ModificarProblematica(problematica);
             return modificarProblematica;
         }
+        public Boolean ModificarEstudiante(int idEstudiante, int idTutor)
+        {
+            Boolean modificarEstudiante = EstudianteDAO.ModificarEstudiante(idEstudiante, idTutor);
+            return modificarEstudiante;
+        }
 
         //obtener
         public List<Materia> ObtenerMateria()

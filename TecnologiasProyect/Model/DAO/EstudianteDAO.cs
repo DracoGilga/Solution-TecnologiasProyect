@@ -94,7 +94,7 @@ namespace TecnologiasProyect.Model.DAO
             return estudiantes;
         }
 
-        public Boolean ModificarEstudiante(int idEstudiante, int idTutor)
+        public static Boolean ModificarEstudiante(int idEstudiante, int idTutor)
         {
             try
             {

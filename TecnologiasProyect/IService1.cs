@@ -32,6 +32,8 @@ namespace TecnologiasProyect
         //Modificaciones
         [OperationContract]
         Boolean ModificarProblematica(Problematica problematica);
+        [OperationContract]
+        Boolean ModificarEstudiante(int idEstudiante, int idTutor);
 
         //consultas
         [OperationContract]
