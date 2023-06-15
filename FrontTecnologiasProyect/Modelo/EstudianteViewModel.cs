@@ -65,12 +65,6 @@ namespace FrontTecnologiasProyect.Modelo
                 }
             }
         }
-        public EstudianteViewModel(int idTutor, int idEstudiante)
-        {
-            estudiantesBD = new ObservableCollection<Estudiante>();
-            ModificarAlumno(idTutor, idEstudiante);
-        }
-
         public async Task<bool> ModificarAlumno(int idTutor, int idEstudiante)
         {
             var conexionServicios = new Service1Client();

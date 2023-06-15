@@ -60,5 +60,10 @@ namespace TecnologiasProyect
         List<Academico> ObtenerAcademico();
 
 
+        //login
+        [OperationContract]
+        Academico Login(string noPersonal, string contrasena);
+        [OperationContract]
+        int TipoAcademico(int IdPersonal);
     }
 }

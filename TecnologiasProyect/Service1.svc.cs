@@ -110,6 +110,14 @@ namespace TecnologiasProyect
 
 
         //login
-
+        public Academico Login(string noPersonal, string contrasena)
+        {
+            Academico academico = AcademicoDAO.Login(noPersonal, contrasena);
+            return academico;
+        }
+        public int TipoAcademico(int IdPersonal) {             
+            int tipoAcademico = ProgramaEducativoDAO.TipoAcademico(IdPersonal);
+            return tipoAcademico;
+        }
     }
 }

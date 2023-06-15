@@ -54,6 +54,34 @@ namespace TecnologiasProyect.Model.DAO
             return academicos;
         }
 
+        public static Academico Login(string noPersonal, string password)
+        {
+            DataClassesTutoriaDataContext conexionBD = GetConexion();
+            IQueryable<Academico> academicoBD = from academicoQuery in conexionBD.Academico
+                                                where academicoQuery.noPersonal == noPersonal
+                                                && academicoQuery.password == password
+                                                select academicoQuery;
+            if (academicoBD.Count() > 0)
+            {
+                Academico academico = academicoBD.First();
+                return new Academico
+                {
+                    IdAcademico = academico.IdAcademico,
+                    noPersonal = academico.noPersonal,
+                    nombre = academico.nombre,
+                    apellidoPaterno = academico.apellidoPaterno,
+                    apellidoMaterno = academico.apellidoMaterno,
+                    correoPersonal = academico.correoPersonal,
+                    correoInstitucional = academico.correoInstitucional,
+                    password = academico.password
+                };
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static DataClassesTutoriaDataContext GetConexion()
         {
             return new DataClassesTutoriaDataContext(global::System.Configuration.
