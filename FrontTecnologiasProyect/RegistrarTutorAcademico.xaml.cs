@@ -38,9 +38,7 @@ namespace FrontTecnologiasProyect
 
         private void Btn_Cancelar(object sender, RoutedEventArgs e)
         {
-            MenuPrincipal menu = new MenuPrincipal();
-            menu.Show();
-            this.Close();
+           
         }
 
         private void Btn_Guardar(object sender, RoutedEventArgs e)

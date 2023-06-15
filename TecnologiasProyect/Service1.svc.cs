@@ -92,7 +92,16 @@ namespace TecnologiasProyect
             List<Problematica> listaProblematicas = ProblematicaDAO.ObtenerPRoblematicasId(idProblematica);
             return listaProblematicas;
         }
-
+        public List<Estudiante> ObtenerEstudianteSinTutor()
+        {
+            List<Estudiante> listaEstudiantes = EstudianteDAO.ObtenerEstudiantesSinTutor();
+            return listaEstudiantes;
+        }
+        public List<Academico> ObtenerAcademico()
+        {
+            List<Academico> listaAcademico = AcademicoDAO.ObtenerAcademico();
+            return listaAcademico;
+        }
 
 
         //login

@@ -69,7 +69,7 @@ namespace TecnologiasProyect.Model.DAO
             }
             return estudiantes;
         }
-        public List<Estudiante> ObtenerEstudiantesSinTutor()
+        public static List<Estudiante> ObtenerEstudiantesSinTutor()
         {
             DataClassesTutoriaDataContext conexionBD = GetConexion();
             List<Estudiante> estudiantes = new List<Estudiante>();

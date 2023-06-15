@@ -46,5 +46,25 @@ namespace FrontTecnologiasProyect.Modelo
                 bool estudianteService = await conexionServicios.GuardarAlumnoAsync(estudiante);
             }
         }
+        public EstudianteViewModel()
+        {
+            estudiantesBD = new ObservableCollection<Estudiante>();
+            ObtenerEstudiantes();
+        }
+        private async void ObtenerEstudiantes()
+        {
+            var conexionServicios = new Service1Client();
+            if (conexionServicios != null)
+            {
+                Estudiante[] estudianteService = await conexionServicios.ObtenerEstudianteSinTutorAsync();
+                if (estudianteService != null)
+                {
+                    foreach (Estudiante item in estudianteService)
+                    {
+                        estudiantesBD.Add(item);
+                    }
+                }
+            }
+        }
     }
 }

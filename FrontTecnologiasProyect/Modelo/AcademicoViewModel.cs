@@ -25,5 +25,26 @@ namespace FrontTecnologiasProyect.Modelo
                 Boolean resultado = await conexionServicios.RegistrarAcademicoAsync(academico);
             }
         }
+
+        public AcademicoViewModel()
+        {
+            academicoBD = new ObservableCollection<Academico>();
+            ObtenerAcademico();
+        }
+        public async void ObtenerAcademico()
+        {
+            var conexionServicios = new Service1Client();
+            if(conexionServicios != null)
+            {
+                Academico[] academicoService = await conexionServicios.ObtenerAcademicoAsync();
+                if(academicoService != null)
+                {
+                    foreach(Academico item in academicoService)
+                    {
+                        academicoBD.Add(item);
+                    }
+                }
+            }
+        }
     }
 }

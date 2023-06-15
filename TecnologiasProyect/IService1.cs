@@ -52,6 +52,11 @@ namespace TecnologiasProyect
         List<ExperienciaEducativa> ObtenerExperienciasEducativas();
         [OperationContract]
         List<Problematica> ObtenerProblemticasId(int idProblematica);
-        
+        [OperationContract]
+        List<Estudiante> ObtenerEstudianteSinTutor();
+        [OperationContract]
+        List<Academico> ObtenerAcademico();
+
+
     }
 }

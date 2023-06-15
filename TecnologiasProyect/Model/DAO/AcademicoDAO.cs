@@ -31,6 +31,28 @@ namespace TecnologiasProyect.Model.DAO
                 return false;
             }
         }
+        public static List<Academico> ObtenerAcademico()
+        {
+            DataClassesTutoriaDataContext conexionBD = GetConexion();
+            List<Academico> academicos = new List<Academico>();
+            IQueryable<Academico> academicoBD = from academicoQuery in conexionBD.Academico
+                                                select academicoQuery;
+            foreach (Academico academico in academicoBD)
+            {
+                academicos.Add(new Academico
+                {
+                    IdAcademico = academico.IdAcademico,
+                    noPersonal = academico.noPersonal,
+                    nombre = academico.nombre,
+                    apellidoPaterno = academico.apellidoPaterno,
+                    apellidoMaterno = academico.apellidoMaterno,
+                    correoPersonal = academico.correoPersonal,
+                    correoInstitucional = academico.correoInstitucional,
+                    password = academico.password
+                });
+            }
+            return academicos;
+        }
 
         public static DataClassesTutoriaDataContext GetConexion()
         {

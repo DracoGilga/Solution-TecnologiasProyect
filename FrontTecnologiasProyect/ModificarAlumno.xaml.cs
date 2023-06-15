@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FrontTecnologiasProyect.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace FrontTecnologiasProyect
         public ModificarAlumno()
         {
             InitializeComponent();
+            CargarCombobox();
         }
 
         private void btn_AgregarTabla(object sender, RoutedEventArgs e)
@@ -36,7 +38,13 @@ namespace FrontTecnologiasProyect
 
         public void CargarCombobox()
         {
+            EstudianteViewModel estudianteViewModel = new EstudianteViewModel();
+            cb_Alumno.DisplayMemberPath = "matricula";
+            cb_Alumno.ItemsSource = estudianteViewModel.estudiantesBD;
 
+            AcademicoViewModel academicoViewModel = new AcademicoViewModel();
+            cb_Tutor.DisplayMemberPath = "noPersonal";
+            cb_Tutor.ItemsSource = academicoViewModel.academicoBD;
         }
     }
 }

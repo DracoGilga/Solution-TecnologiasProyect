@@ -13,7 +13,7 @@
         <ComboBox x:Name="cb_Alumno" HorizontalAlignment="Left" Height="16" Margin="126,66,0,0" VerticalAlignment="Top" Width="72"/>
         <Button Content="Añadir" HorizontalAlignment="Left" Height="22" Margin="230,52,0,0" VerticalAlignment="Top" Width="57" Click="btn_AgregarTabla"/>
         <DataGrid HorizontalAlignment="Left" Height="258" Margin="22,94,0,0" VerticalAlignment="Top" Width="575" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-        <Button Content="Guardar" HorizontalAlignment="Left" Height="19" Margin="280,366,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Content="Guardar" HorizontalAlignment="Left" Height="19" Margin="280,366,0,0" VerticalAlignment="Top" Width="60" Click="btn_ModificarEstudiante"/>
 
     </Grid>
 </Window>
