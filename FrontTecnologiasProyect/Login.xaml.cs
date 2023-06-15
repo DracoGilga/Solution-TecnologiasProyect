@@ -18,9 +18,9 @@ using System.Windows.Shapes;
 namespace FrontTecnologiasProyect
 {
 
-    public partial class MainWindow : Window
+    public partial class Login : Window
     {
-        public MainWindow()
+        public Login()
         {
             InitializeComponent();
         }
@@ -41,7 +41,7 @@ namespace FrontTecnologiasProyect
 
         private async void verificarInicioSesion(string numPersonal, string password)
         {
-            var conexionServicios = new Service1Client();
+            /*var conexionServicios = new Service1Client();
 
             if (conexionServicios != null)
             {
@@ -63,7 +63,7 @@ namespace FrontTecnologiasProyect
             else
             {
                 MessageBox.Show("Sin servicio disponible...", "Error");
-            }
+            }*/
         }
 
     }

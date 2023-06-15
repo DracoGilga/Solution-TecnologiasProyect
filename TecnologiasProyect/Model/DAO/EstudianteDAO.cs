@@ -69,6 +69,46 @@ namespace TecnologiasProyect.Model.DAO
             }
             return estudiantes;
         }
+        public List<Estudiante> ObtenerEstudiantesSinTutor()
+        {
+            DataClassesTutoriaDataContext conexionBD = GetConexion();
+            List<Estudiante> estudiantes = new List<Estudiante>();
+            IQueryable<Estudiante> estudiantesBD = from estudianteQuery in conexionBD.Estudiante
+                                                   where estudianteQuery.IdTutor == null
+                                                   select estudianteQuery;
+            foreach (Estudiante estudiante in estudiantesBD)
+            {
+                estudiantes.Add(new Estudiante
+                {
+                    IdEstudiante = estudiante.IdEstudiante,
+                    matricula = estudiante.matricula,
+                    nombre = estudiante.nombre,
+                    apellidoPaterno = estudiante.apellidoPaterno,
+                    apellidoMaterno = estudiante.apellidoMaterno,
+                    correoPersonal = estudiante.correoPersonal,
+                    correoInstitucional = estudiante.correoInstitucional,
+                    IdProgramaEducativo = estudiante.IdProgramaEducativo,
+                    IdTutor = estudiante.IdTutor
+                });
+            }
+            return estudiantes;
+        }
+
+        public Boolean ModificarEstudiante(int idEstudiante, int idTutor)
+        {
+            try
+            {
+                DataClassesTutoriaDataContext conexionBD = GetConexion();
+                Estudiante estudiante = conexionBD.Estudiante.FirstOrDefault(estudianteQuery => estudianteQuery.IdEstudiante == idEstudiante);
+                estudiante.IdTutor = idTutor;
+                conexionBD.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         public static DataClassesTutoriaDataContext GetConexion()
         {
