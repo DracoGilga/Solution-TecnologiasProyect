@@ -67,7 +67,11 @@ namespace FrontTecnologiasProyect
 
         private void btn_ModificarEstudiante(object sender, RoutedEventArgs e)
         {
-
+            foreach(dynamic fila in tablaAlumno.Items)
+            {
+                EstudianteViewModel estudianteViewModel = new EstudianteViewModel(fila.IdEstudiante, fila.IdAcademico);
+            }
+            CargarCombobox();
         }
 
         public void CargarCombobox()

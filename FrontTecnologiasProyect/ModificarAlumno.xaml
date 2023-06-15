@@ -21,7 +21,7 @@
                 <DataGridTextColumn Header="No Tutor" Binding="{Binding NoTutor}" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="GUARDAR" HorizontalAlignment="Left" Margin="641,52,0,0" VerticalAlignment="Top" Width="71" Height="22" RenderTransformOrigin="0.718,-0.225"/>
+        <Button Content="GUARDAR" HorizontalAlignment="Left" Margin="641,52,0,0" VerticalAlignment="Top" Width="71" Height="22" RenderTransformOrigin="0.718,-0.225" Click="btn_ModificarEstudiante"/>
 
     </Grid>
 </Window>
