@@ -21,9 +21,11 @@ namespace FrontTecnologiasProyect
     /// </summary>
     public partial class ModificarAlumno : Window
     {
+        private EstudianteViewModel estudianteViewModelGuardar;
         public ModificarAlumno()
         {
             InitializeComponent();
+            estudianteViewModelGuardar = new EstudianteViewModel();
             CargarCombobox();
         }
 
@@ -65,14 +67,37 @@ namespace FrontTecnologiasProyect
             }
         }
 
-        private void btn_ModificarEstudiante(object sender, RoutedEventArgs e)
+        private async void btn_ModificarEstudiante(object sender, RoutedEventArgs e)
         {
-            foreach(dynamic fila in tablaAlumno.Items)
+            if (tablaAlumno.Items.Count > 0)
             {
-                EstudianteViewModel estudianteViewModel = new EstudianteViewModel(fila.IdEstudiante, fila.IdAcademico);
+                int contadorAgregados = 0;
+                int contadorNoAgregados = 0;
+
+                foreach (dynamic fila in tablaAlumno.Items)
+                {
+                    bool resultado =await estudianteViewModelGuardar.ModificarAlumno(fila.IdEstudiante, fila.IdAcademico);
+                    if (resultado)
+                    {
+                        contadorAgregados++;
+                    }
+                    else
+                    {
+                        contadorNoAgregados++;
+                    }
+                }
+
+                MessageBox.Show($"Se modificaron {contadorAgregados} estudiantes correctamente. No se pudieron modificar {contadorNoAgregados} estudiantes.");
+                tablaAlumno.Items.Clear();
+                CargarCombobox();
             }
-            CargarCombobox();
+            else
+            {
+                MessageBox.Show("No hay filas para modificar.");
+            }
         }
+
+
 
         public void CargarCombobox()
         {

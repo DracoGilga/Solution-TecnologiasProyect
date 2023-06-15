@@ -31,7 +31,6 @@ namespace FrontTecnologiasProyect.Modelo
                     estudiantesBD.Add(item);
                 }
             }
-
         }
         public EstudianteViewModel(Estudiante estudiante)
         {
@@ -72,13 +71,16 @@ namespace FrontTecnologiasProyect.Modelo
             ModificarAlumno(idTutor, idEstudiante);
         }
 
-        private async void ModificarAlumno(int idTutor, int idEstudiante)
+        public async Task<bool> ModificarAlumno(int idTutor, int idEstudiante)
         {
             var conexionServicios = new Service1Client();
             if (conexionServicios != null)
             {
                 bool estudianteService = await conexionServicios.ModificarEstudianteAsync(idTutor, idEstudiante);
+                return estudianteService;
             }
+
+            return false;
         }
     }
 }
