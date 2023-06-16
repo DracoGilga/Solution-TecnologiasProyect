@@ -1,4 +1,5 @@
 ﻿using FrontTecnologiasProyect.Modelo;
+using ServiceReference1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +21,12 @@ namespace FrontTecnologiasProyect
     /// </summary>
     public partial class LlenarReporteTA : Window
     {
-        public LlenarReporteTA()
+        Academico academicoLlave;
+        public LlenarReporteTA(Academico traspasoAcademicoc)
         {
             InitializeComponent();
-            EstudianteViewModel modelo = new EstudianteViewModel(4);
+            academicoLlave = traspasoAcademicoc;
+            EstudianteViewModel modelo = new EstudianteViewModel(traspasoAcademicoc.IdAcademico);
             tablaAlumno.ItemsSource = modelo.estudiantesBD;
         }
 

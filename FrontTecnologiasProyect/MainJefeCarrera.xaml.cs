@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace FrontTecnologiasProyect
     /// </summary>
     public partial class MainJefeCarrera : Window
     {
-        public MainJefeCarrera()
+        public MainJefeCarrera(Academico traspasoAcademico)
         {
             InitializeComponent();
         }

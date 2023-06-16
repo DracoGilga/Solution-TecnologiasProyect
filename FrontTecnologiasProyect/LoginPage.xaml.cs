@@ -44,17 +44,17 @@ namespace FrontTecnologiasProyect
                 switch (tipoAcademico)
                 {
                       case 1:
-                        MainJefeCarrera menuAdministrador = new MainJefeCarrera();
+                        MainJefeCarrera menuAdministrador = new MainJefeCarrera(resultadoAcademico);
                         menuAdministrador.Show();
                         this.Close();
                         break;
                     case 2:
-                        MainCordinadorTutoria menuTutor = new MainCordinadorTutoria();
+                        MainCordinadorTutoria menuTutor = new MainCordinadorTutoria(resultadoAcademico);
                         menuTutor.Show();
                         this.Close();
                         break;
                     case 3:
-                        MainAcademico menuAcademico = new MainAcademico();
+                        LlenarReporteTA menuAcademico = new LlenarReporteTA(resultadoAcademico);
                         menuAcademico.Show();
                         this.Close();
                         break;
