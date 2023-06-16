@@ -20,9 +20,30 @@ namespace FrontTecnologiasProyect
     /// </summary>
     public partial class MainCordinadorTutoria : Window
     {
+        Academico academicoLlave;
         public MainCordinadorTutoria(Academico traspasoAcademico)
         {
             InitializeComponent();
+            academicoLlave = traspasoAcademico;
+        }
+        private void btn_LlenarReporteTA(object sender, RoutedEventArgs e)
+        {
+            LlenarReporteTA llenarReporteTA = new LlenarReporteTA(academicoLlave);
+            llenarReporteTA.Show();
+        }
+        private void btn_RegistrarAlumno(object sender, RoutedEventArgs e)
+        {
+            RegistrarAlumno registrarAlumno = new RegistrarAlumno();
+            registrarAlumno.Show();
+        }
+        private void btn_RegistrarTutorAcademico(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("No se ha implementado esta funcionalidad");
+        }
+        private void btn_AsignarTutorAcademico(object sender, RoutedEventArgs e)
+        {
+            ModificarAlumno modificarAlumno = new ModificarAlumno();
+            modificarAlumno.Show();
         }
     }
 }

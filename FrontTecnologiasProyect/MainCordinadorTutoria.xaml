@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontTecnologiasProyect"
         mc:Ignorable="d"
-        Title="MainCordinadorTutoria" Height="304" Width="254">
+        Title="MainCordinadorTutoria" Height="400" Width="254">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Height="47" Margin="34,36,0,0" VerticalAlignment="Top" Width="181"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="47" Margin="34,120,0,0" VerticalAlignment="Top" Width="181"/>
-        <Button Content="Button" HorizontalAlignment="Center" Height="47" Margin="0,207,0,0" VerticalAlignment="Top" Width="181"/>
+        <Button Content="LLENAR REPORTE TUTORIA&#xD;&#xA;ACADEMICA" HorizontalAlignment="Left" Height="47" Margin="34,36,0,0" VerticalAlignment="Top" Width="181" Click="btn_LlenarReporteTA"/>
+        <Button Content="REGISTRAR ALUMNO" HorizontalAlignment="Left" Height="47" Margin="34,120,0,0" VerticalAlignment="Top" Width="181" Click="btn_RegistrarAlumno"/>
+        <Button Content="REGISTRAR TUTOR&#xD;&#xA; ACADEMICO" HorizontalAlignment="Center" Height="47" Margin="0,207,0,0" VerticalAlignment="Top" Width="181" Click="btn_RegistrarTutorAcademico"/>
+        <Button Content="ASIGNAR TUTOR ACADEMICO&#xD;&#xA;A ESTUDIANTE" HorizontalAlignment="Center" Height="47" Margin="0,291,0,0" VerticalAlignment="Top" Width="182" Click="btn_AsignarTutorAcademico"/>
 
     </Grid>
 </Window>

@@ -5,12 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontTecnologiasProyect"
         mc:Ignorable="d"
-        Title="MainJefeCarrera" Height="392" Width="257">
+        Title="MainJefeCarrera" Height="292" Width="257">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Height="47" Margin="32,24,0,0" VerticalAlignment="Top" Width="181"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="47" Margin="32,108,0,0" VerticalAlignment="Top" Width="181"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="47" Margin="34,195,0,0" VerticalAlignment="Top" Width="181"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="47" Margin="34,282,0,0" VerticalAlignment="Top" Width="181"/>
+        <Button Content="REGISTRAR SOLUCION A &#xD;&#xA;PROBLEMATICA ACADEMICA" HorizontalAlignment="Left" Height="47" Margin="32,108,0,0" VerticalAlignment="Top" Width="181" Click="btn_ModificarSolucionPA"/>
+        <Button Content="EDITAR SOLUCION A&#xD;&#xA;PROBLEMATICA ACADEMICA" HorizontalAlignment="Left" Height="47" Margin="34,195,0,0" VerticalAlignment="Top" Width="181" Click="btn_RegistraSolucionPA"/>
+        <Button Content="LLENAR REPORTE TUTORIA&#xA;ACADEMICA" HorizontalAlignment="Left" Height="47" Margin="34,28,0,0" VerticalAlignment="Top" Width="181" Click="btn_LlenarReporteTA"/>
 
     </Grid>
 </Window>

@@ -20,9 +20,27 @@ namespace FrontTecnologiasProyect
     /// </summary>
     public partial class MainJefeCarrera : Window
     {
+        Academico academicoLlave;
         public MainJefeCarrera(Academico traspasoAcademico)
         {
             InitializeComponent();
+            academicoLlave = traspasoAcademico;
+        }
+
+        private void btn_LlenarReporteTA(object sender, RoutedEventArgs e)
+        {
+            LlenarReporteTA llenarReporteTA = new LlenarReporteTA(academicoLlave);
+            llenarReporteTA.Show();
+        }
+
+        private void btn_ModificarSolucionPA(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("No se ha implementado esta funcionalidad");
+        }
+
+        private void btn_RegistraSolucionPA(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("No se ha implementado esta funcionalidad");
         }
     }
 }
