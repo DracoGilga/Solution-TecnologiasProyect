@@ -1808,6 +1808,12 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerAcademico", ReplyAction="http://tempuri.org/IService1/ObtenerAcademicoResponse")]
         System.Threading.Tasks.Task<ServiceReference1.Academico[]> ObtenerAcademicoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.Academico> LoginAsync(string noPersonal, string contrasena);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/TipoAcademico", ReplyAction="http://tempuri.org/IService1/TipoAcademicoResponse")]
+        System.Threading.Tasks.Task<int> TipoAcademicoAsync(int IdPersonal);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -1943,6 +1949,16 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task<ServiceReference1.Academico[]> ObtenerAcademicoAsync()
         {
             return base.Channel.ObtenerAcademicoAsync();
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.Academico> LoginAsync(string noPersonal, string contrasena)
+        {
+            return base.Channel.LoginAsync(noPersonal, contrasena);
+        }
+        
+        public System.Threading.Tasks.Task<int> TipoAcademicoAsync(int IdPersonal)
+        {
+            return base.Channel.TipoAcademicoAsync(IdPersonal);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

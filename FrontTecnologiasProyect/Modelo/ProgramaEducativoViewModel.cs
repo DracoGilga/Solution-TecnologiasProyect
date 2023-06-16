@@ -16,7 +16,7 @@ namespace FrontTecnologiasProyect.Modelo
             programasEducativosBD = new ObservableCollection<ProgramaEducativo>();
             CargarProgramasEducativos();
         }
-        private async void CargarProgramasEducativos()
+        public async void CargarProgramasEducativos()
         {
             var conexionServicios = new Service1Client();
             if (conexionServicios != null)
@@ -28,5 +28,16 @@ namespace FrontTecnologiasProyect.Modelo
                 }
             }
         }
+        public async Task<int> TipoAcademico(int IdPersonal)
+        {
+            var conexionServicios = new Service1Client();
+            if (conexionServicios != null)
+            {
+                int tipoAcademico = await conexionServicios.TipoAcademicoAsync(IdPersonal);
+                return tipoAcademico;
+            }
+            return 0;
+        }
+
     }
 }
