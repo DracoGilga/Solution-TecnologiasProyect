@@ -41,9 +41,9 @@ namespace FrontTecnologiasProyect
            
         }
 
-        private void Btn_Guardar(object sender, RoutedEventArgs e)
+        private async void Btn_Guardar(object sender, RoutedEventArgs e)
         {
-            nombre = tbx_Nombre.Text;
+            nombre = "NP" + tbx_Nombre.Text;
             apellidoPaterno = tbx_ApellidoPaterno.Text;
             apellidoMaterno = tbx_ApellidoMaterno.Text;
             noPersonal = tbx_NumeroPersonal.Text;
@@ -61,12 +61,19 @@ namespace FrontTecnologiasProyect
                     noPersonal = noPersonal,
                     correoPersonal = correoElectronico,
                     correoInstitucional = correoInstitucional,
-                    password = Encriptar(password)
+                    password = password
                 };
 
-                AcademicoViewModel academicoViewModel = new AcademicoViewModel(academico);
-                MessageBox.Show("El Tutor Académico ha sido guardado", "Confirmación de guardado", MessageBoxButton.OK);
-                this.Close();
+                AcademicoViewModel academicoViewModel = new AcademicoViewModel(1);
+                bool resultado = await academicoViewModel.GuardarTutorAcademico(academico);
+                if (resultado)
+                {
+                    MessageBox.Show("El Tutor Académico ha sido guardado", "Confirmación de guardado", MessageBoxButton.OK);
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("El Tutor Académico no ha sido guardado", "Error de guardado", MessageBoxButton.OK);
+                
             }
         }
 
@@ -205,14 +212,6 @@ namespace FrontTecnologiasProyect
                 caracterInvalido = true;
             }
             return caracterInvalido;
-        }
-
-        public String Encriptar(String texto)
-        {
-            string resultado = string.Empty;
-            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(texto);
-            resultado = Convert.ToBase64String(encryted);
-            return resultado;
         }
 
     }

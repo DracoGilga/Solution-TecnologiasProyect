@@ -32,15 +32,10 @@ namespace FrontTecnologiasProyect
             LlenarReporteTA llenarReporteTA = new LlenarReporteTA(academicoLlave);
             llenarReporteTA.Show();
         }
-
-        private void btn_ModificarSolucionPA(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("No se ha implementado esta funcionalidad");
-        }
-
         private void btn_RegistraSolucionPA(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("No se ha implementado esta funcionalidad");
+            ConsultarProblematicas consultarProblematicas = new ConsultarProblematicas();
+            consultarProblematicas.Show();
         }
     }
 }

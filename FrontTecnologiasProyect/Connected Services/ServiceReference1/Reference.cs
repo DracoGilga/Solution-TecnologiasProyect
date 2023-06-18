@@ -1872,6 +1872,9 @@ namespace ServiceReference1
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerProblematicas", ReplyAction="http://tempuri.org/IService1/ObtenerProblematicasResponse")]
         System.Threading.Tasks.Task<ServiceReference1.Problematica[]> ObtenerProblematicasAsync(ServiceReference1.Problematica problematica);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MostrarProblematicas", ReplyAction="http://tempuri.org/IService1/MostrarProblematicasResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.Problematica[]> MostrarProblematicasAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerEstudiantes", ReplyAction="http://tempuri.org/IService1/ObtenerEstudiantesResponse")]
         System.Threading.Tasks.Task<ServiceReference1.Estudiante[]> ObtenerEstudiantesAsync(int programaEducativo);
         
@@ -1997,6 +2000,11 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task<ServiceReference1.Problematica[]> ObtenerProblematicasAsync(ServiceReference1.Problematica problematica)
         {
             return base.Channel.ObtenerProblematicasAsync(problematica);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.Problematica[]> MostrarProblematicasAsync()
+        {
+            return base.Channel.MostrarProblematicasAsync();
         }
         
         public System.Threading.Tasks.Task<ServiceReference1.Estudiante[]> ObtenerEstudiantesAsync(int programaEducativo)

@@ -1,0 +1,24 @@
+﻿<Window x:Class="FrontTecnologiasProyect.ConsultarProblematicas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontTecnologiasProyect"
+        mc:Ignorable="d"
+        Title="Consultar Problemáticas" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Problemáticas" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <DataGrid x:Name="dg_Problematicas" AutoGenerateColumns="False" Margin="54,69,62,84" CanUserAddRows="False" MouseDoubleClick="Dc_Solucion" IsReadOnly="True">
+            <DataGrid.CurrentCell>
+                <DataGridCellInfo/>
+            </DataGrid.CurrentCell>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Número de incidencias" Binding="{Binding noIncidencias}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Título" Binding="{Binding titulo}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Descripción" Binding="{Binding descripcion}" Width="*" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Cerrar" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Width="80" Height="25" Click="Btn_Cerrar"/>
+
+    </Grid>
+</Window>

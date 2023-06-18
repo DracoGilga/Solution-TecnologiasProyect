@@ -47,6 +47,26 @@ namespace FrontTecnologiasProyect.Modelo
                 }
             }
         }
+        public ProblematicaAcademivaViewModel(int idProblematica)
+        {
+            problematicaBD = new ObservableCollection<Problematica>();
+            ObtenerProblematicas();
+        }
+        public async void ObtenerProblematicas()
+        {
+            var conexionServicios = new Service1Client();
+            if (conexionServicios != null)
+            {
+                Problematica[] problematicaService = await conexionServicios.MostrarProblematicasAsync();
+                if (problematicaService != null)
+                {
+                    foreach (Problematica item in problematicaService)
+                    {
+                        problematicaBD.Add(item);
+                    }
+                }
+            }
+        }
         public ProblematicaAcademivaViewModel()
         {
             

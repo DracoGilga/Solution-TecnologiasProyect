@@ -38,6 +38,8 @@ namespace TecnologiasProyect
         //consultas
         [OperationContract]
         List<Problematica> ObtenerProblematicas(Problematica problematica);
+        [OperationContract]
+        List<Problematica> MostrarProblematicas();
 
         [OperationContract]
         List<Estudiante> ObtenerEstudiantes(int programaEducativo);

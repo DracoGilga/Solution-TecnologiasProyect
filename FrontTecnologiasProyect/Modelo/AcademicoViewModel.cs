@@ -12,18 +12,20 @@ namespace FrontTecnologiasProyect.Modelo
     {
         public ObservableCollection<Academico> academicoBD { get; set; }
 
-        public AcademicoViewModel(Academico academico)
+        public AcademicoViewModel(int i)
         {
-            academicoBD = new ObservableCollection<Academico>();
-            GuardarTutorAcademico(academico);
+            
         }
-        public async void GuardarTutorAcademico(Academico academico)
+        public async Task<Boolean> GuardarTutorAcademico(Academico academico)
         {
             var conexionServicios = new Service1Client();
             if (conexionServicios != null)
             {
                 Boolean resultado = await conexionServicios.RegistrarAcademicoAsync(academico);
+                return resultado;
             }
+            else
+                return false;
         }
 
         public AcademicoViewModel()

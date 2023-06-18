@@ -1,0 +1,29 @@
+﻿<Window x:Class="FrontTecnologiasProyect.RegistrarSolucionProblematica"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontTecnologiasProyect"
+        mc:Ignorable="d"
+        Title="Registrar Solución a Problemática Académica" Height="450" Width="850" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Registrar Solución" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.673,-1.606" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Título:" HorizontalAlignment="Left" Margin="63,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.041,0.644"/>
+        <TextBox x:Name="tbx_ExperienciaEducativa" HorizontalAlignment="Left" Margin="452,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="320" IsReadOnly="True" />
+        <TextBox x:Name="tbx_Titulo" HorizontalAlignment="Left" Margin="63,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="320" IsReadOnly="True" />
+        <Label Content="Experiencia Educativa:" HorizontalAlignment="Left" Margin="452,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.041,0.644"/>
+        <Label Content="Descripción:" HorizontalAlignment="Left" Margin="63,150,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.041,0.644"/>
+        <TextBox x:Name="tbx_DescripcionProblematica" HorizontalAlignment="Left" Margin="63,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="68" Width="320" IsReadOnly="True" />
+        <Label Content="Impartida por:" HorizontalAlignment="Left" Margin="452,150,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.041,0.644"/>
+        <TextBox x:Name="tbx_Academico" HorizontalAlignment="Left" Margin="452,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="320" IsReadOnly="True"/>
+        <Label Content="Número de incidencias:" HorizontalAlignment="Left" Margin="452,223,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.041,0.644"/>
+        <TextBox x:Name="tbx_NoIncidencias" HorizontalAlignment="Left" Margin="612,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="160" IsReadOnly="True"/>
+        <Label Content="Título de la solución:" HorizontalAlignment="Left" Margin="63,290,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.041,0.644"/>
+        <Label Content="Descripción de la solución:" HorizontalAlignment="Left" Margin="452,290,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.041,0.644"/>
+        <TextBox x:Name="tbx_Solucion" HorizontalAlignment="Left" Margin="63,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="25"/>
+        <TextBox x:Name="tbx_Descripcion" HorizontalAlignment="Left" Margin="452,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="25"/>
+        <Button Content="Guardar" HorizontalAlignment="Left" Margin="666,381,0,0" VerticalAlignment="Top" RenderTransformOrigin="9.816,1.04" Height="22" Width="106" Click="Btn_GuardarSolucion"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="515,381,0,0" VerticalAlignment="Top" RenderTransformOrigin="9.816,1.04" Height="22" Width="106" Click="Btn_CancelarSolucion"/>
+
+    </Grid>
+</Window>

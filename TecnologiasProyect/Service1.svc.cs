@@ -71,6 +71,11 @@ namespace TecnologiasProyect
             List<Problematica> listaProblematicas = ProblematicaDAO.ObtenerProblematicas(problematica);
             return listaProblematicas;
         }
+        public List<Problematica> MostrarProblematicas()
+        {
+            List<Problematica> listaProblematicas = ProblematicaDAO.MostrarProblematica();
+            return listaProblematicas;
+        }
         public Boolean RegistrarAcademico(Academico academico)
         {
             Boolean guardarTutor = AcademicoDAO.RegistrarTutorAcademico(academico);

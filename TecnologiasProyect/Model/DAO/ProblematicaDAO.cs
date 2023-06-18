@@ -55,6 +55,28 @@ namespace TecnologiasProyect.Model.DAO
             }
             return listas;
         }
+        public static List<Problematica> MostrarProblematica()
+        {
+            List<Problematica> listas = new List<Problematica>();
+            DataClassesTutoriaDataContext conexionBD = GetConexion();
+            IQueryable<Problematica> problematicas = from problematica in conexionBD.Problematica
+                                                     select problematica;
+            foreach (var prob in problematicas)
+            {
+                listas.Add(new Problematica
+                {
+                    IdProblematica = prob.IdProblematica,
+                    titulo = prob.titulo,
+                    descripcion = prob.descripcion,
+                    noIncidencias = prob.noIncidencias,
+                    IdTutoria = prob.IdTutoria,
+                    IdTutor = prob.IdTutor,
+                    IdTipo = prob.IdTipo,
+                    IdExperienciaEducativa = prob.IdExperienciaEducativa
+                });
+            }
+            return listas;
+        }
         public static Boolean ModificarProblematica(Problematica problematicaM)
         {
             try

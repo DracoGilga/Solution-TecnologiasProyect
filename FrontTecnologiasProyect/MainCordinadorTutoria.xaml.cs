@@ -38,7 +38,8 @@ namespace FrontTecnologiasProyect
         }
         private void btn_RegistrarTutorAcademico(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("No se ha implementado esta funcionalidad");
+            RegistrarTutorAcademico registrarTutorAcademico = new RegistrarTutorAcademico();
+            registrarTutorAcademico.Show();
         }
         private void btn_AsignarTutorAcademico(object sender, RoutedEventArgs e)
         {
