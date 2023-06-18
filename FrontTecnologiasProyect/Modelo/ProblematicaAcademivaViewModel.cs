@@ -16,26 +16,28 @@ namespace FrontTecnologiasProyect.Modelo
             problematicaBD = new ObservableCollection<Problematica>();
             GuardarProblematica(problematica);
         }
-        public async void GuardarProblematica(Problematica problematica)
+        public async Task<bool> GuardarProblematica(Problematica problematica)
         {
             var conexionServicios = new Service1Client();
             if (conexionServicios != null)
             {
                 bool problematicaService = await conexionServicios.GuardarProblematicaAsync(problematica);
+                return problematicaService;
             }
+            return false;
         }
 
-        public ProblematicaAcademivaViewModel(int idReporte)
+        public ProblematicaAcademivaViewModel(Problematica problematica)
         {
             problematicaBD = new ObservableCollection<Problematica>();
-            ConsultarProblematicas(idReporte);
+            ConsultarProblematicas(problematica);
         }
-        public async void ConsultarProblematicas(int idReporte)
+        public async void ConsultarProblematicas(Problematica problematica)
         {
             var conexionServicios = new Service1Client();
             if (conexionServicios != null)
             {
-                Problematica[] problematicaService = await conexionServicios.ObtenerProblemticasIdAsync(idReporte);
+                Problematica[] problematicaService = await conexionServicios.ObtenerProblematicasAsync(problematica);
                 if (problematicaService != null)
                 {
                     foreach (Problematica item in problematicaService)
@@ -45,18 +47,19 @@ namespace FrontTecnologiasProyect.Modelo
                 }
             }
         }
-        public ProblematicaAcademivaViewModel(Problematica problematica)
+        public ProblematicaAcademivaViewModel()
         {
-            problematicaBD = new ObservableCollection<Problematica>();
-            ModificarProblematica(problematica);
+            
         }
-        public async void ModificarProblematica(Problematica problematica)
+        public async Task<bool> ModificarProblematica(Problematica problematica)
         {
             var conexionServicios = new Service1Client();
             if (conexionServicios != null)
             {
                 bool problematicaService = await conexionServicios.ModificarProblematicaAsync(problematica);
+                return problematicaService;
             }
+            return false;
         }
     }
 }

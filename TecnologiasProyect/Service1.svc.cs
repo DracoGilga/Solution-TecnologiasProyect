@@ -66,9 +66,9 @@ namespace TecnologiasProyect
             List<TipoProblematica> listaTipoProblematicas = TipoProblematicaDAO.ObtenerTipoProblematicas();
             return listaTipoProblematicas;
         }
-        public List<Problematica> ObtenerProblematicas()
+        public List<Problematica> ObtenerProblematicas(Problematica problematica)
         {
-            List<Problematica> listaProblematicas = ProblematicaDAO.ObtenerProblematicas();
+            List<Problematica> listaProblematicas = ProblematicaDAO.ObtenerProblematicas(problematica);
             return listaProblematicas;
         }
         public Boolean RegistrarAcademico(Academico academico)
@@ -92,11 +92,6 @@ namespace TecnologiasProyect
             List<ExperienciaEducativa> listaExperienciasEducativas = ExperienciaEducativaDAO.ObtenerExperienciasEducativas();
             return listaExperienciasEducativas;
         }
-        public List<Problematica> ObtenerProblemticasId(int idProblematica)
-        {
-            List<Problematica> listaProblematicas = ProblematicaDAO.ObtenerPRoblematicasId(idProblematica);
-            return listaProblematicas;
-        }
         public List<Estudiante> ObtenerEstudianteSinTutor()
         {
             List<Estudiante> listaEstudiantes = EstudianteDAO.ObtenerEstudiantesSinTutor();
@@ -106,6 +101,27 @@ namespace TecnologiasProyect
         {
             List<Academico> listaAcademico = AcademicoDAO.ObtenerAcademico();
             return listaAcademico;
+        }
+        public Tutoria ObtenerTutoria(DateTime fecha)
+        {
+            List<Tutoria> listaTutoria = TutoriaDAO.ObtenerFechaTutoria();
+            if(listaTutoria != null)
+            {
+                foreach(Tutoria tutoria in listaTutoria)
+                {
+                    if (fecha >= tutoria.fechaSesion && fecha <= tutoria.fechaEntrega)
+                    {
+                        return tutoria;
+                    }
+                }
+            }
+            return null;
+            
+        }
+        public List<ReporteTutoria> ObtenerReporteTutoria(ReporteTutoria reporteTutoria)
+        {
+            List<ReporteTutoria> reporte = ReporteTutoriaDAO.ObtenerReporteTutoria(reporteTutoria);
+            return reporte;
         }
 
 

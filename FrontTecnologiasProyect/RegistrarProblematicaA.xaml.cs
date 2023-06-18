@@ -21,29 +21,39 @@ namespace FrontTecnologiasProyect
     /// </summary>
     public partial class RegistrarProblematicaA : Window
     {
-        public RegistrarProblematicaA()
+        Tutoria tutoriaLlave;
+        Academico academicoLlave;
+        private ProblematicaAcademivaViewModel problematicaAcademivaViewModel;
+        public RegistrarProblematicaA(Tutoria tutoria, Academico academico)
         {
             InitializeComponent();
-            
+            tutoriaLlave = tutoria;
+            academicoLlave = academico;
+            problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel();
             EditarCombox();
         }        
 
-        private void Btn_guardar(object sender, RoutedEventArgs e)
+        private async void Btn_guardar(object sender, RoutedEventArgs e)
         {
             Problematica problematica = new Problematica();
             problematica.titulo = Tb_titulo.Text;
             problematica.noIncidencias = Convert.ToInt32(Tb_incidencias.Text);
             problematica.descripcion = Tb_descripcion.Text;
+            problematica.IdTutoria = tutoriaLlave.IdTutoria;
+            problematica.Tutoria = new Tutoria()
+            {
+                IdTutoria = problematica.IdTutoria
+            };
+            problematica.IdTutor = academicoLlave.IdAcademico;
+            problematica.Academico = new Academico()
+            {
+                IdAcademico = problematica.IdTutor
+            };
             var problematicaLlaveTipo = (TipoProblematica)Cb_tipoProblematica.SelectedItem;
             problematica.IdTipo = problematicaLlaveTipo.IdTipo;
             problematica.TipoProblematica = new TipoProblematica()
             {
                 IdTipo = problematica.IdTipo
-            };
-            problematica.IdReporte = 0;
-            problematica.ReporteTutoria= new ReporteTutoria()
-            {
-                IdReporte = problematica.IdReporte
             };
             var problematicaLlaveExperiencia = (ExperienciaEducativa)cb_Nrc.SelectedItem;
             problematica.IdExperienciaEducativa = problematicaLlaveExperiencia.IdExperienciaEducativa;
@@ -52,7 +62,16 @@ namespace FrontTecnologiasProyect
                 IdExperienciaEducativa = problematica.IdExperienciaEducativa
             };
 
-            ProblematicaAcademivaViewModel problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel(3,problematica);
+            bool problematicaRespuesta = await problematicaAcademivaViewModel.GuardarProblematica(problematica);
+            if (problematicaRespuesta)
+            {
+                MessageBox.Show("Se guardo correctamente");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("No se guardo correctamente");
+            }
         }
         
 

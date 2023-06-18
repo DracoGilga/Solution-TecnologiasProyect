@@ -21,24 +21,53 @@ namespace FrontTecnologiasProyect
     /// </summary>
     public partial class ModificarProblematicaA : Window
     {
-        public ModificarProblematicaA()
+        Tutoria tutoriaLlave;
+        Academico academicoLlave;
+        ProblematicaAcademivaViewModel problematicaAcademivaViewModel;
+        public ModificarProblematicaA(Tutoria tutoria,Academico academico)
         {
             InitializeComponent();
-            ProblematicaAcademivaViewModel problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel(0);
-            cb_Problematica.DisplayMemberPath = "titulo";
-            cb_Problematica.ItemsSource = problematicaAcademivaViewModel.problematicaBD;
+            tutoriaLlave = tutoria;
+            academicoLlave = academico;
+            ConfigurarComboBox();
+            problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel();
         }
-        private void Btn_Guardar(object sender, RoutedEventArgs e)
+        private async void Btn_Guardar(object sender, RoutedEventArgs e)
         {
             var problematicaLlave= (Problematica)cb_Problematica.SelectedItem;
             Problematica problematica = new Problematica();
             problematica.noIncidencias = Convert.ToInt32(Tb_incidencias.Text);
             problematica.descripcion = Tb_descripcion.Text;
             problematica.IdProblematica = problematicaLlave.IdProblematica;
-            ProblematicaAcademivaViewModel problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel(problematica);
+            bool respuesta =await problematicaAcademivaViewModel.ModificarProblematica(problematica);
+            if (respuesta)
+            {
+                MessageBox.Show("Se modifico correctamente");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("No se modifico correctamente");
+            }
         }
 
-
+        private void ConfigurarComboBox()
+        {
+            Problematica problematica = new Problematica();
+            problematica.IdTutoria = tutoriaLlave.IdTutoria;
+            problematica.Tutoria = new Tutoria()
+            {
+                IdTutoria = tutoriaLlave.IdTutoria
+            };
+            problematica.IdTutor = academicoLlave.IdAcademico;
+            problematica.Academico = new Academico()
+            {
+                IdAcademico = academicoLlave.IdAcademico
+            };
+            ProblematicaAcademivaViewModel problematicaAcademivaViewModel = new ProblematicaAcademivaViewModel(problematica);
+            cb_Problematica.DisplayMemberPath = "titulo";
+            cb_Problematica.ItemsSource = problematicaAcademivaViewModel.problematicaBD;
+        }
 
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {

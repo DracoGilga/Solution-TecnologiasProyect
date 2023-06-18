@@ -17,7 +17,8 @@ namespace TecnologiasProyect.Model.DAO
                     titulo = problematicaNuevo.titulo,
                     descripcion = problematicaNuevo.descripcion,
                     noIncidencias = problematicaNuevo.noIncidencias,
-                    IdReporte = problematicaNuevo.IdReporte,
+                    IdTutoria = problematicaNuevo.IdTutoria,
+                    IdTutor = problematicaNuevo.IdTutor,
                     IdTipo = problematicaNuevo.IdTipo,
                     IdExperienciaEducativa = problematicaNuevo.IdTipo
                 };
@@ -30,11 +31,13 @@ namespace TecnologiasProyect.Model.DAO
                 return false;
             }
         }
-        public static List<Problematica> ObtenerProblematicas()
+        public static List<Problematica> ObtenerProblematicas(Problematica problema)
         {
             List<Problematica> listas = new List<Problematica>();
             DataClassesTutoriaDataContext conexionBD = GetConexion();
             IQueryable<Problematica> problematicas = from problematica in conexionBD.Problematica
+                                                     where problematica.IdTutor == problema.IdTutor
+                                                     && problematica.IdTutoria == problema.IdTutoria
                                                      select problematica;
             foreach (var prob in problematicas)
             {
@@ -44,29 +47,8 @@ namespace TecnologiasProyect.Model.DAO
                     titulo = prob.titulo,
                     descripcion = prob.descripcion,
                     noIncidencias = prob.noIncidencias,
-                    IdReporte = prob.IdReporte,
-                    IdTipo = prob.IdTipo,
-                    IdExperienciaEducativa = prob.IdExperienciaEducativa
-                });
-            }
-            return listas;
-        }
-        public static List<Problematica> ObtenerPRoblematicasId(int idReporte)
-        {
-            List<Problematica> listas = new List<Problematica>();
-            DataClassesTutoriaDataContext conexionBD = GetConexion();
-            IQueryable<Problematica> problematicas = from problematica in conexionBD.Problematica
-                                                     where problematica.IdReporte == idReporte
-                                                     select problematica;
-            foreach (var prob in problematicas)
-            {
-                listas.Add(new Problematica
-                {
-                    IdProblematica = prob.IdProblematica,
-                    titulo = prob.titulo,
-                    descripcion = prob.descripcion,
-                    noIncidencias = prob.noIncidencias,
-                    IdReporte = prob.IdReporte,
+                    IdTutoria = prob.IdTutoria,
+                    IdTutor = prob.IdTutor,
                     IdTipo = prob.IdTipo,
                     IdExperienciaEducativa = prob.IdExperienciaEducativa
                 });

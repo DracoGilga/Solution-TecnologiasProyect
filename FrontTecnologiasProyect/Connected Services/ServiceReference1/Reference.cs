@@ -220,11 +220,15 @@ namespace ServiceReference1
     public partial class Academico : object
     {
         
+        private ServiceReference1.ComentarioGeneral[] ComentarioGeneralField;
+        
         private ServiceReference1.Estudiante[] EstudianteField;
         
         private ServiceReference1.ExperienciaEducativa[] ExperienciaEducativaField;
         
         private int IdAcademicoField;
+        
+        private ServiceReference1.Problematica[] ProblematicaField;
         
         private ServiceReference1.ProgramaEducativo[] ProgramaEducativoField;
         
@@ -245,6 +249,19 @@ namespace ServiceReference1
         private string nombreField;
         
         private string passwordField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.ComentarioGeneral[] ComentarioGeneral
+        {
+            get
+            {
+                return this.ComentarioGeneralField;
+            }
+            set
+            {
+                this.ComentarioGeneralField = value;
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ServiceReference1.Estudiante[] Estudiante
@@ -282,6 +299,19 @@ namespace ServiceReference1
             set
             {
                 this.IdAcademicoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Problematica[] Problematica
+        {
+            get
+            {
+                return this.ProblematicaField;
+            }
+            set
+            {
+                this.ProblematicaField = value;
             }
         }
         
@@ -708,8 +738,6 @@ namespace ServiceReference1
         
         private ServiceReference1.Academico AcademicoField;
         
-        private ServiceReference1.ComentarioGeneral[] ComentarioGeneralField;
-        
         private ServiceReference1.Estudiante EstudianteField;
         
         private int IdEstudianteField;
@@ -722,15 +750,13 @@ namespace ServiceReference1
         
         private int IdTutoriaField;
         
-        private ServiceReference1.Problematica[] ProblematicaField;
-        
         private ServiceReference1.ProgramaEducativo ProgramaEducativoField;
         
         private ServiceReference1.Tutoria TutoriaField;
         
-        private bool asistenciaField;
+        private System.Nullable<bool> asistenciaField;
         
-        private string descripcionField;
+        private System.Nullable<bool> riesgoField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ServiceReference1.Academico Academico
@@ -742,19 +768,6 @@ namespace ServiceReference1
             set
             {
                 this.AcademicoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.ComentarioGeneral[] ComentarioGeneral
-        {
-            get
-            {
-                return this.ComentarioGeneralField;
-            }
-            set
-            {
-                this.ComentarioGeneralField = value;
             }
         }
         
@@ -837,19 +850,6 @@ namespace ServiceReference1
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.Problematica[] Problematica
-        {
-            get
-            {
-                return this.ProblematicaField;
-            }
-            set
-            {
-                this.ProblematicaField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public ServiceReference1.ProgramaEducativo ProgramaEducativo
         {
             get
@@ -876,7 +876,7 @@ namespace ServiceReference1
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool asistencia
+        public System.Nullable<bool> asistencia
         {
             get
             {
@@ -885,6 +885,103 @@ namespace ServiceReference1
             set
             {
                 this.asistenciaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> riesgo
+        {
+            get
+            {
+                return this.riesgoField;
+            }
+            set
+            {
+                this.riesgoField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ComentarioGeneral", Namespace="http://schemas.datacontract.org/2004/07/TecnologiasProyect.Model")]
+    public partial class ComentarioGeneral : object
+    {
+        
+        private ServiceReference1.Academico AcademicoField;
+        
+        private int IdComentarioField;
+        
+        private int IdTutorField;
+        
+        private int IdTutoriaField;
+        
+        private ServiceReference1.Tutoria TutoriaField;
+        
+        private string descripcionField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Academico Academico
+        {
+            get
+            {
+                return this.AcademicoField;
+            }
+            set
+            {
+                this.AcademicoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdComentario
+        {
+            get
+            {
+                return this.IdComentarioField;
+            }
+            set
+            {
+                this.IdComentarioField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdTutor
+        {
+            get
+            {
+                return this.IdTutorField;
+            }
+            set
+            {
+                this.IdTutorField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdTutoria
+        {
+            get
+            {
+                return this.IdTutoriaField;
+            }
+            set
+            {
+                this.IdTutoriaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Tutoria Tutoria
+        {
+            get
+            {
+                return this.TutoriaField;
+            }
+            set
+            {
+                this.TutoriaField = value;
             }
         }
         
@@ -1091,158 +1188,11 @@ namespace ServiceReference1
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Materia", Namespace="http://schemas.datacontract.org/2004/07/TecnologiasProyect.Model")]
-    public partial class Materia : object
-    {
-        
-        private ServiceReference1.ExperienciaEducativa[] ExperienciaEducativaField;
-        
-        private int IdMateriaField;
-        
-        private int creditosField;
-        
-        private string nombreField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.ExperienciaEducativa[] ExperienciaEducativa
-        {
-            get
-            {
-                return this.ExperienciaEducativaField;
-            }
-            set
-            {
-                this.ExperienciaEducativaField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdMateria
-        {
-            get
-            {
-                return this.IdMateriaField;
-            }
-            set
-            {
-                this.IdMateriaField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int creditos
-        {
-            get
-            {
-                return this.creditosField;
-            }
-            set
-            {
-                this.creditosField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string nombre
-        {
-            get
-            {
-                return this.nombreField;
-            }
-            set
-            {
-                this.nombreField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PeriodoEscolar", Namespace="http://schemas.datacontract.org/2004/07/TecnologiasProyect.Model")]
-    public partial class PeriodoEscolar : object
-    {
-        
-        private ServiceReference1.ExperienciaEducativa[] ExperienciaEducativaField;
-        
-        private int IdPeriodoEscolarField;
-        
-        private System.DateTime fechaFinField;
-        
-        private System.DateTime fechaInicioField;
-        
-        private string nombreField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.ExperienciaEducativa[] ExperienciaEducativa
-        {
-            get
-            {
-                return this.ExperienciaEducativaField;
-            }
-            set
-            {
-                this.ExperienciaEducativaField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdPeriodoEscolar
-        {
-            get
-            {
-                return this.IdPeriodoEscolarField;
-            }
-            set
-            {
-                this.IdPeriodoEscolarField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime fechaFin
-        {
-            get
-            {
-                return this.fechaFinField;
-            }
-            set
-            {
-                this.fechaFinField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime fechaInicio
-        {
-            get
-            {
-                return this.fechaInicioField;
-            }
-            set
-            {
-                this.fechaInicioField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string nombre
-        {
-            get
-            {
-                return this.nombreField;
-            }
-            set
-            {
-                this.nombreField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Problematica", Namespace="http://schemas.datacontract.org/2004/07/TecnologiasProyect.Model")]
     public partial class Problematica : object
     {
+        
+        private ServiceReference1.Academico AcademicoField;
         
         private ServiceReference1.ExperienciaEducativa ExperienciaEducativaField;
         
@@ -1250,23 +1200,38 @@ namespace ServiceReference1
         
         private int IdProblematicaField;
         
-        private int IdReporteField;
-        
         private int IdTipoField;
         
-        private ServiceReference1.ProblematicaPersonal[] ProblematicaPersonalField;
+        private int IdTutorField;
         
-        private ServiceReference1.ReporteTutoria ReporteTutoriaField;
+        private int IdTutoriaField;
+        
+        private ServiceReference1.ProblematicaPersonal[] ProblematicaPersonalField;
         
         private ServiceReference1.Solucion[] SolucionField;
         
         private ServiceReference1.TipoProblematica TipoProblematicaField;
+        
+        private ServiceReference1.Tutoria TutoriaField;
         
         private string descripcionField;
         
         private int noIncidenciasField;
         
         private string tituloField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Academico Academico
+        {
+            get
+            {
+                return this.AcademicoField;
+            }
+            set
+            {
+                this.AcademicoField = value;
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ServiceReference1.ExperienciaEducativa ExperienciaEducativa
@@ -1308,19 +1273,6 @@ namespace ServiceReference1
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdReporte
-        {
-            get
-            {
-                return this.IdReporteField;
-            }
-            set
-            {
-                this.IdReporteField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public int IdTipo
         {
             get
@@ -1334,6 +1286,32 @@ namespace ServiceReference1
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdTutor
+        {
+            get
+            {
+                return this.IdTutorField;
+            }
+            set
+            {
+                this.IdTutorField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdTutoria
+        {
+            get
+            {
+                return this.IdTutoriaField;
+            }
+            set
+            {
+                this.IdTutoriaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public ServiceReference1.ProblematicaPersonal[] ProblematicaPersonal
         {
             get
@@ -1343,19 +1321,6 @@ namespace ServiceReference1
             set
             {
                 this.ProblematicaPersonalField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.ReporteTutoria ReporteTutoria
-        {
-            get
-            {
-                return this.ReporteTutoriaField;
-            }
-            set
-            {
-                this.ReporteTutoriaField = value;
             }
         }
         
@@ -1382,6 +1347,19 @@ namespace ServiceReference1
             set
             {
                 this.TipoProblematicaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Tutoria Tutoria
+        {
+            get
+            {
+                return this.TutoriaField;
+            }
+            set
+            {
+                this.TutoriaField = value;
             }
         }
         
@@ -1421,6 +1399,133 @@ namespace ServiceReference1
             set
             {
                 this.tituloField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Tutoria", Namespace="http://schemas.datacontract.org/2004/07/TecnologiasProyect.Model")]
+    public partial class Tutoria : object
+    {
+        
+        private ServiceReference1.ComentarioGeneral[] ComentarioGeneralField;
+        
+        private int IdPeriodoEscolarField;
+        
+        private int IdTutoriaField;
+        
+        private ServiceReference1.Problematica[] ProblematicaField;
+        
+        private ServiceReference1.ReporteTutoria[] ReporteTutoriaField;
+        
+        private System.DateTime fechaEntregaField;
+        
+        private System.DateTime fechaSesionField;
+        
+        private string noSesionField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.ComentarioGeneral[] ComentarioGeneral
+        {
+            get
+            {
+                return this.ComentarioGeneralField;
+            }
+            set
+            {
+                this.ComentarioGeneralField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdPeriodoEscolar
+        {
+            get
+            {
+                return this.IdPeriodoEscolarField;
+            }
+            set
+            {
+                this.IdPeriodoEscolarField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdTutoria
+        {
+            get
+            {
+                return this.IdTutoriaField;
+            }
+            set
+            {
+                this.IdTutoriaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Problematica[] Problematica
+        {
+            get
+            {
+                return this.ProblematicaField;
+            }
+            set
+            {
+                this.ProblematicaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.ReporteTutoria[] ReporteTutoria
+        {
+            get
+            {
+                return this.ReporteTutoriaField;
+            }
+            set
+            {
+                this.ReporteTutoriaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime fechaEntrega
+        {
+            get
+            {
+                return this.fechaEntregaField;
+            }
+            set
+            {
+                this.fechaEntregaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime fechaSesion
+        {
+            get
+            {
+                return this.fechaSesionField;
+            }
+            set
+            {
+                this.fechaSesionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string noSesion
+        {
+            get
+            {
+                return this.noSesionField;
+            }
+            set
+            {
+                this.noSesionField = value;
             }
         }
     }
@@ -1591,21 +1696,99 @@ namespace ServiceReference1
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Tutoria", Namespace="http://schemas.datacontract.org/2004/07/TecnologiasProyect.Model")]
-    public partial class Tutoria : object
+    [System.Runtime.Serialization.DataContractAttribute(Name="Materia", Namespace="http://schemas.datacontract.org/2004/07/TecnologiasProyect.Model")]
+    public partial class Materia : object
     {
+        
+        private ServiceReference1.ExperienciaEducativa[] ExperienciaEducativaField;
+        
+        private int IdMateriaField;
+        
+        private int creditosField;
+        
+        private string nombreField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.ExperienciaEducativa[] ExperienciaEducativa
+        {
+            get
+            {
+                return this.ExperienciaEducativaField;
+            }
+            set
+            {
+                this.ExperienciaEducativaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdMateria
+        {
+            get
+            {
+                return this.IdMateriaField;
+            }
+            set
+            {
+                this.IdMateriaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int creditos
+        {
+            get
+            {
+                return this.creditosField;
+            }
+            set
+            {
+                this.creditosField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string nombre
+        {
+            get
+            {
+                return this.nombreField;
+            }
+            set
+            {
+                this.nombreField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PeriodoEscolar", Namespace="http://schemas.datacontract.org/2004/07/TecnologiasProyect.Model")]
+    public partial class PeriodoEscolar : object
+    {
+        
+        private ServiceReference1.ExperienciaEducativa[] ExperienciaEducativaField;
         
         private int IdPeriodoEscolarField;
         
-        private int IdTutoriaField;
+        private System.DateTime fechaFinField;
         
-        private ServiceReference1.ReporteTutoria[] ReporteTutoriaField;
+        private System.DateTime fechaInicioField;
         
-        private System.DateTime fechaEntregaField;
+        private string nombreField;
         
-        private System.DateTime fechaSesionField;
-        
-        private string noSesionField;
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.ExperienciaEducativa[] ExperienciaEducativa
+        {
+            get
+            {
+                return this.ExperienciaEducativaField;
+            }
+            set
+            {
+                this.ExperienciaEducativaField = value;
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int IdPeriodoEscolar
@@ -1621,134 +1804,41 @@ namespace ServiceReference1
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdTutoria
+        public System.DateTime fechaFin
         {
             get
             {
-                return this.IdTutoriaField;
+                return this.fechaFinField;
             }
             set
             {
-                this.IdTutoriaField = value;
+                this.fechaFinField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.ReporteTutoria[] ReporteTutoria
+        public System.DateTime fechaInicio
         {
             get
             {
-                return this.ReporteTutoriaField;
+                return this.fechaInicioField;
             }
             set
             {
-                this.ReporteTutoriaField = value;
+                this.fechaInicioField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime fechaEntrega
+        public string nombre
         {
             get
             {
-                return this.fechaEntregaField;
+                return this.nombreField;
             }
             set
             {
-                this.fechaEntregaField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime fechaSesion
-        {
-            get
-            {
-                return this.fechaSesionField;
-            }
-            set
-            {
-                this.fechaSesionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string noSesion
-        {
-            get
-            {
-                return this.noSesionField;
-            }
-            set
-            {
-                this.noSesionField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ComentarioGeneral", Namespace="http://schemas.datacontract.org/2004/07/TecnologiasProyect.Model")]
-    public partial class ComentarioGeneral : object
-    {
-        
-        private int IdComentarioField;
-        
-        private int IdReporteField;
-        
-        private ServiceReference1.ReporteTutoria ReporteTutoriaField;
-        
-        private string descripcionField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdComentario
-        {
-            get
-            {
-                return this.IdComentarioField;
-            }
-            set
-            {
-                this.IdComentarioField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdReporte
-        {
-            get
-            {
-                return this.IdReporteField;
-            }
-            set
-            {
-                this.IdReporteField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.ReporteTutoria ReporteTutoria
-        {
-            get
-            {
-                return this.ReporteTutoriaField;
-            }
-            set
-            {
-                this.ReporteTutoriaField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string descripcion
-        {
-            get
-            {
-                return this.descripcionField;
-            }
-            set
-            {
-                this.descripcionField = value;
+                this.nombreField = value;
             }
         }
     }
@@ -1780,7 +1870,7 @@ namespace ServiceReference1
         System.Threading.Tasks.Task<bool> ModificarEstudianteAsync(int idEstudiante, int idTutor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerProblematicas", ReplyAction="http://tempuri.org/IService1/ObtenerProblematicasResponse")]
-        System.Threading.Tasks.Task<ServiceReference1.Problematica[]> ObtenerProblematicasAsync();
+        System.Threading.Tasks.Task<ServiceReference1.Problematica[]> ObtenerProblematicasAsync(ServiceReference1.Problematica problematica);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerEstudiantes", ReplyAction="http://tempuri.org/IService1/ObtenerEstudiantesResponse")]
         System.Threading.Tasks.Task<ServiceReference1.Estudiante[]> ObtenerEstudiantesAsync(int programaEducativo);
@@ -1800,14 +1890,17 @@ namespace ServiceReference1
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerExperienciasEducativas", ReplyAction="http://tempuri.org/IService1/ObtenerExperienciasEducativasResponse")]
         System.Threading.Tasks.Task<ServiceReference1.ExperienciaEducativa[]> ObtenerExperienciasEducativasAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerProblemticasId", ReplyAction="http://tempuri.org/IService1/ObtenerProblemticasIdResponse")]
-        System.Threading.Tasks.Task<ServiceReference1.Problematica[]> ObtenerProblemticasIdAsync(int idProblematica);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerEstudianteSinTutor", ReplyAction="http://tempuri.org/IService1/ObtenerEstudianteSinTutorResponse")]
         System.Threading.Tasks.Task<ServiceReference1.Estudiante[]> ObtenerEstudianteSinTutorAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerAcademico", ReplyAction="http://tempuri.org/IService1/ObtenerAcademicoResponse")]
         System.Threading.Tasks.Task<ServiceReference1.Academico[]> ObtenerAcademicoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerTutoria", ReplyAction="http://tempuri.org/IService1/ObtenerTutoriaResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.Tutoria> ObtenerTutoriaAsync(System.DateTime fecha);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerReporteTutoria", ReplyAction="http://tempuri.org/IService1/ObtenerReporteTutoriaResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.ReporteTutoria[]> ObtenerReporteTutoriaAsync(ServiceReference1.ReporteTutoria reporteTutoria);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
         System.Threading.Tasks.Task<ServiceReference1.Academico> LoginAsync(string noPersonal, string contrasena);
@@ -1901,9 +1994,9 @@ namespace ServiceReference1
             return base.Channel.ModificarEstudianteAsync(idEstudiante, idTutor);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.Problematica[]> ObtenerProblematicasAsync()
+        public System.Threading.Tasks.Task<ServiceReference1.Problematica[]> ObtenerProblematicasAsync(ServiceReference1.Problematica problematica)
         {
-            return base.Channel.ObtenerProblematicasAsync();
+            return base.Channel.ObtenerProblematicasAsync(problematica);
         }
         
         public System.Threading.Tasks.Task<ServiceReference1.Estudiante[]> ObtenerEstudiantesAsync(int programaEducativo)
@@ -1936,11 +2029,6 @@ namespace ServiceReference1
             return base.Channel.ObtenerExperienciasEducativasAsync();
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.Problematica[]> ObtenerProblemticasIdAsync(int idProblematica)
-        {
-            return base.Channel.ObtenerProblemticasIdAsync(idProblematica);
-        }
-        
         public System.Threading.Tasks.Task<ServiceReference1.Estudiante[]> ObtenerEstudianteSinTutorAsync()
         {
             return base.Channel.ObtenerEstudianteSinTutorAsync();
@@ -1949,6 +2037,16 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task<ServiceReference1.Academico[]> ObtenerAcademicoAsync()
         {
             return base.Channel.ObtenerAcademicoAsync();
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.Tutoria> ObtenerTutoriaAsync(System.DateTime fecha)
+        {
+            return base.Channel.ObtenerTutoriaAsync(fecha);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.ReporteTutoria[]> ObtenerReporteTutoriaAsync(ServiceReference1.ReporteTutoria reporteTutoria)
+        {
+            return base.Channel.ObtenerReporteTutoriaAsync(reporteTutoria);
         }
         
         public System.Threading.Tasks.Task<ServiceReference1.Academico> LoginAsync(string noPersonal, string contrasena)

@@ -9,8 +9,10 @@
       <Column Name="correoPersonal" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
       <Column Name="correoInstitucional" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
       <Column Name="password" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Association Name="Academico_ComentarioGeneral" Member="ComentarioGeneral" ThisKey="IdAcademico" OtherKey="IdTutor" Type="ComentarioGeneral" />
       <Association Name="Academico_Estudiante" Member="Estudiante" ThisKey="IdAcademico" OtherKey="IdTutor" Type="Estudiante" />
       <Association Name="Academico_ExperienciaEducativa" Member="ExperienciaEducativa" ThisKey="IdAcademico" OtherKey="IdAcademico" Type="ExperienciaEducativa" />
+      <Association Name="Academico_Problematica" Member="Problematica" ThisKey="IdAcademico" OtherKey="IdTutor" Type="Problematica" />
       <Association Name="Academico_ProgramaEducativo" Member="ProgramaEducativo" ThisKey="IdAcademico" OtherKey="IdAcademicoJefe" Type="ProgramaEducativo" />
       <Association Name="Academico_ProgramaEducativo1" Member="ProgramaEducativo1" ThisKey="IdAcademico" OtherKey="IdCoordinador" Type="ProgramaEducativo" />
       <Association Name="Academico_ReporteTutoria" Member="ReporteTutoria" ThisKey="IdAcademico" OtherKey="IdTutor" Type="ReporteTutoria" />
@@ -19,9 +21,11 @@
   <Table Name="dbo.ComentarioGeneral" Member="ComentarioGeneral">
     <Type Name="ComentarioGeneral">
       <Column Name="IdComentario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IdReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="descripcion" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
-      <Association Name="ReporteTutoria_ComentarioGeneral" Member="ReporteTutoria" ThisKey="IdReporte" OtherKey="IdReporte" Type="ReporteTutoria" IsForeignKey="true" />
+      <Column Name="IdTutoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdTutor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(700)" CanBeNull="true" />
+      <Association Name="Academico_ComentarioGeneral" Member="Academico" ThisKey="IdTutor" OtherKey="IdAcademico" Type="Academico" IsForeignKey="true" />
+      <Association Name="Tutoria_ComentarioGeneral" Member="Tutoria" ThisKey="IdTutoria" OtherKey="IdTutoria" Type="Tutoria" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Estudiante" Member="Estudiante">
@@ -77,7 +81,8 @@
   <Table Name="dbo.Problematica" Member="Problematica">
     <Type Name="Problematica">
       <Column Name="IdProblematica" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IdReporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdTutoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdTutor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="descripcion" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
       <Column Name="titulo" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
       <Column Name="noIncidencias" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -86,8 +91,9 @@
       <Association Name="Problematica_ProblematicaPersonal" Member="ProblematicaPersonal" ThisKey="IdProblematica" OtherKey="IdProblematica" Type="ProblematicaPersonal" />
       <Association Name="Problematica_Solucion" Member="Solucion" ThisKey="IdProblematica" OtherKey="IdProblematica" Type="Solucion" />
       <Association Name="ExperienciaEducativa_Problematica" Member="ExperienciaEducativa" ThisKey="IdExperienciaEducativa" OtherKey="IdExperienciaEducativa" Type="ExperienciaEducativa" IsForeignKey="true" />
-      <Association Name="ReporteTutoria_Problematica" Member="ReporteTutoria" ThisKey="IdReporte" OtherKey="IdReporte" Type="ReporteTutoria" IsForeignKey="true" />
+      <Association Name="Academico_Problematica" Member="Academico" ThisKey="IdTutor" OtherKey="IdAcademico" Type="Academico" IsForeignKey="true" />
       <Association Name="TipoProblematica_Problematica" Member="TipoProblematica" ThisKey="IdTipo" OtherKey="IdTipo" Type="TipoProblematica" IsForeignKey="true" />
+      <Association Name="Tutoria_Problematica" Member="Tutoria" ThisKey="IdTutoria" OtherKey="IdTutoria" Type="Tutoria" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ProblematicaPersonal" Member="ProblematicaPersonal">
@@ -119,14 +125,12 @@
   <Table Name="dbo.ReporteTutoria" Member="ReporteTutoria">
     <Type Name="ReporteTutoria">
       <Column Name="IdReporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="descripcion" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
       <Column Name="IdProgramaEducativo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="IdTutoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="IdTutor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="IdEstudiante" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="asistencia" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="ReporteTutoria_ComentarioGeneral" Member="ComentarioGeneral" ThisKey="IdReporte" OtherKey="IdReporte" Type="ComentarioGeneral" />
-      <Association Name="ReporteTutoria_Problematica" Member="Problematica" ThisKey="IdReporte" OtherKey="IdReporte" Type="Problematica" />
+      <Column Name="asistencia" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="riesgo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="Estudiante_ReporteTutoria" Member="Estudiante" ThisKey="IdEstudiante" OtherKey="IdEstudiante" Type="Estudiante" IsForeignKey="true" />
       <Association Name="ProgramaEducativo_ReporteTutoria" Member="ProgramaEducativo" ThisKey="IdProgramaEducativo" OtherKey="IdProgramaEducativo" Type="ProgramaEducativo" IsForeignKey="true" />
       <Association Name="Academico_ReporteTutoria" Member="Academico" ThisKey="IdTutor" OtherKey="IdAcademico" Type="Academico" IsForeignKey="true" />
@@ -158,6 +162,8 @@
       <Column Name="noSesion" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="IdPeriodoEscolar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="fechaEntrega" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Tutoria_ComentarioGeneral" Member="ComentarioGeneral" ThisKey="IdTutoria" OtherKey="IdTutoria" Type="ComentarioGeneral" />
+      <Association Name="Tutoria_Problematica" Member="Problematica" ThisKey="IdTutoria" OtherKey="IdTutoria" Type="Problematica" />
       <Association Name="Tutoria_ReporteTutoria" Member="ReporteTutoria" ThisKey="IdTutoria" OtherKey="IdTutoria" Type="ReporteTutoria" />
     </Type>
   </Table>

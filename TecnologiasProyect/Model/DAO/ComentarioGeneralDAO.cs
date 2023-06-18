@@ -14,7 +14,8 @@ namespace TecnologiasProyect.Model.DAO
                 DataClassesTutoriaDataContext conexionBD = GetConexion();
                 var comentarioGeneral = new ComentarioGeneral()
                 {
-                    IdReporte = comentarioGeneralNuevo.IdReporte,
+                    IdTutoria= comentarioGeneralNuevo.IdTutoria,
+                    IdTutor = comentarioGeneralNuevo.IdTutor,
                     descripcion = comentarioGeneralNuevo.descripcion
                 };
                 conexionBD.ComentarioGeneral.InsertOnSubmit(comentarioGeneral);

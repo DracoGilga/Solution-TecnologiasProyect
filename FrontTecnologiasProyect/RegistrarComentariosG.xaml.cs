@@ -21,20 +21,41 @@ namespace FrontTecnologiasProyect
     /// </summary>
     public partial class RegistrarComentariosG : Window
     {
-        public RegistrarComentariosG()
+        Tutoria tutoriaLlave;
+        Academico academicoLlave;
+        ComentarioGeneralViewModel comentarioGeneralViewModel;
+        public RegistrarComentariosG(Tutoria tutoria, Academico academico)
         {
             InitializeComponent();
+            tutoriaLlave = tutoria;
+            academicoLlave = academico;
+            comentarioGeneralViewModel = new ComentarioGeneralViewModel();
         }
-        private void Btn_guardar(object sender, RoutedEventArgs e)
+        private async void Btn_guardar(object sender, RoutedEventArgs e)
         {
             ComentarioGeneral comentarioGeneral = new ComentarioGeneral();
             comentarioGeneral.descripcion = cb_comentarioG.Text;
-            comentarioGeneral.IdReporte = 0;
-            comentarioGeneral.ReporteTutoria = new ReporteTutoria()
+            comentarioGeneral.IdTutoria = tutoriaLlave.IdTutoria;
+            comentarioGeneral.Tutoria = new Tutoria()
             {
-                IdReporte = comentarioGeneral.IdReporte
+                IdTutoria = tutoriaLlave.IdTutoria
             };
-            ComentarioGeneralViewModel comentarioGeneralViewModel = new ComentarioGeneralViewModel(comentarioGeneral);
+            comentarioGeneral.IdTutor = academicoLlave.IdAcademico;
+            comentarioGeneral.Academico = new Academico()
+            {
+                IdAcademico = academicoLlave.IdAcademico
+            };
+            
+            bool respuesta = await comentarioGeneralViewModel.GuardarComentarioGeneral(comentarioGeneral);
+            if (respuesta)
+            {
+                MessageBox.Show("Comentario general guardado");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar el comentario general");
+            }
         }
     }
 }

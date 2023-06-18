@@ -12,18 +12,19 @@ namespace FrontTecnologiasProyect.Modelo
     {
         public ObservableCollection<ComentarioGeneral> comentarioGeneralBD { get; set; }
 
-        public ComentarioGeneralViewModel(ComentarioGeneral comentarioGeneral)
+        public ComentarioGeneralViewModel()
         {
-            comentarioGeneralBD = new ObservableCollection<ComentarioGeneral>();
-            GuardarComentarioGeneral(comentarioGeneral);
+            
         }
-        public async void GuardarComentarioGeneral(ComentarioGeneral comentarioGeneral)
+        public async Task<Boolean> GuardarComentarioGeneral(ComentarioGeneral comentarioGeneral)
         {
             var conexionServicios = new Service1Client();
             if (conexionServicios != null)
             {
                 bool comentarioGeneralService = await conexionServicios.GuardarComentarioGeneralAsync(comentarioGeneral);
+                return comentarioGeneralService;
             }
+            return false;
         }
     }
 }

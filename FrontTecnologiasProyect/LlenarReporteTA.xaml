@@ -14,27 +14,26 @@
                 <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="*" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Apellido Paterno" Binding="{Binding apellidoPaterno}" Width="*" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Apellido Materno" Binding="{Binding apellidoMaterno}" Width="*" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Carrera" Binding="{Binding carrera}" Width="*" IsReadOnly="True"/>
                 <DataGridTemplateColumn Header="Asistencia" Width="Auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <CheckBox IsChecked="{Binding asistencia}" />
+                            <CheckBox x:Name="cbx_Asistencia" IsChecked="{Binding asistencia}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Riesgo" Width="Auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <CheckBox IsChecked="{Binding riesgo}" />
+                            <CheckBox x:Name="cbx_Riesgo" IsChecked="{Binding riesgo}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="REGISTRAR PROBLEMATICA" HorizontalAlignment="Left" Height="21" Margin="32,25,0,0" VerticalAlignment="Top" Width="159" Click="Btn_registrarProblematica"/>
-        <Button Content="MODIFICAR PROBLEMATICA" HorizontalAlignment="Left" Height="21" Margin="200,25,0,0" VerticalAlignment="Top" Width="164" Click="Btn_modificarProblematica"/>
-        <Button Content="COMENTARIOS GENERALES" HorizontalAlignment="Left" Height="21" Margin="375,25,0,0" VerticalAlignment="Top" Width="159" Click="Btn_comentariosGenerales"/>
-        <Button Content="GUARDAR" HorizontalAlignment="Left" Height="21" Margin="610,25,0,0" VerticalAlignment="Top" Width="59" Click="Btn_guardar"/>
+        <Button x:Name="RegistrarproblematicaA" Content="REGISTRAR PROBLEMATICA" HorizontalAlignment="Left" Height="21" Margin="32,25,0,0" VerticalAlignment="Top" Width="159" Click="Btn_registrarProblematica"/>
+        <Button x:Name="ModificarProblematicaA" Content="MODIFICAR PROBLEMATICA" HorizontalAlignment="Left" Height="21" Margin="200,25,0,0" VerticalAlignment="Top" Width="164" Click="Btn_modificarProblematica"/>
+        <Button x:Name="RegistrarComentariosGenerales" Content="COMENTARIOS GENERALES" HorizontalAlignment="Left" Height="21" Margin="375,25,0,0" VerticalAlignment="Top" Width="159" Click="Btn_comentariosGenerales"/>
+        <Button x:Name="GuardarRepoteTA" Content="GUARDAR" HorizontalAlignment="Left" Height="21" Margin="610,25,0,0" VerticalAlignment="Top" Width="59" Click="Btn_guardar"/>
 
     </Grid>
 </Window>

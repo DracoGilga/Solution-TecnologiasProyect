@@ -37,7 +37,7 @@ namespace TecnologiasProyect
 
         //consultas
         [OperationContract]
-        List<Problematica> ObtenerProblematicas();
+        List<Problematica> ObtenerProblematicas(Problematica problematica);
 
         [OperationContract]
         List<Estudiante> ObtenerEstudiantes(int programaEducativo);
@@ -53,11 +53,13 @@ namespace TecnologiasProyect
         [OperationContract]
         List<ExperienciaEducativa> ObtenerExperienciasEducativas();
         [OperationContract]
-        List<Problematica> ObtenerProblemticasId(int idProblematica);
-        [OperationContract]
         List<Estudiante> ObtenerEstudianteSinTutor();
         [OperationContract]
         List<Academico> ObtenerAcademico();
+        [OperationContract]
+        Tutoria ObtenerTutoria(DateTime fecha);
+        [OperationContract]
+        List<ReporteTutoria> ObtenerReporteTutoria(ReporteTutoria reporteTutoria);
 
 
         //login
