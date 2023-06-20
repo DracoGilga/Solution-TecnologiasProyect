@@ -27,7 +27,7 @@ namespace FrontTecnologiasProyect
         {
             InitializeComponent();
             academicoViewModel = new AcademicoViewModel();
-            programaEducativoViewModel = new ProgramaEducativoViewModel();
+            programaEducativoViewModel = new ProgramaEducativoViewModel(true);
         }
         private async void btn_Iniciar(object sender, RoutedEventArgs e)
         {

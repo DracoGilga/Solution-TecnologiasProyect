@@ -1863,6 +1863,9 @@ namespace ServiceReference1
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegistrarAcademico", ReplyAction="http://tempuri.org/IService1/RegistrarAcademicoResponse")]
         System.Threading.Tasks.Task<bool> RegistrarAcademicoAsync(ServiceReference1.Academico academico);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GuardarSolucion", ReplyAction="http://tempuri.org/IService1/GuardarSolucionResponse")]
+        System.Threading.Tasks.Task<bool> GuardarSolucionAsync(ServiceReference1.Solucion solucion);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ModificarProblematica", ReplyAction="http://tempuri.org/IService1/ModificarProblematicaResponse")]
         System.Threading.Tasks.Task<bool> ModificarProblematicaAsync(ServiceReference1.Problematica problematica);
         
@@ -1874,6 +1877,9 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MostrarProblematicas", ReplyAction="http://tempuri.org/IService1/MostrarProblematicasResponse")]
         System.Threading.Tasks.Task<ServiceReference1.Problematica[]> MostrarProblematicasAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ModificarSolucion", ReplyAction="http://tempuri.org/IService1/ModificarSolucionResponse")]
+        System.Threading.Tasks.Task<bool> ModificarSolucionAsync(ServiceReference1.Solucion solucion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerEstudiantes", ReplyAction="http://tempuri.org/IService1/ObtenerEstudiantesResponse")]
         System.Threading.Tasks.Task<ServiceReference1.Estudiante[]> ObtenerEstudiantesAsync(int programaEducativo);
@@ -1904,6 +1910,18 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerReporteTutoria", ReplyAction="http://tempuri.org/IService1/ObtenerReporteTutoriaResponse")]
         System.Threading.Tasks.Task<ServiceReference1.ReporteTutoria[]> ObtenerReporteTutoriaAsync(ServiceReference1.ReporteTutoria reporteTutoria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerSolucion", ReplyAction="http://tempuri.org/IService1/ObtenerSolucionResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.Solucion> ObtenerSolucionAsync(int IdProblematica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerExperienciaEducativaId", ReplyAction="http://tempuri.org/IService1/ObtenerExperienciaEducativaIdResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.ExperienciaEducativa> ObtenerExperienciaEducativaIdAsync(int IdExperienciaEducativa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerMateriaFiltrada", ReplyAction="http://tempuri.org/IService1/ObtenerMateriaFiltradaResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.Materia> ObtenerMateriaFiltradaAsync(int IdMateria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerAcademicoFiltrado", ReplyAction="http://tempuri.org/IService1/ObtenerAcademicoFiltradoResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.Academico> ObtenerAcademicoFiltradoAsync(int IdAcademico);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
         System.Threading.Tasks.Task<ServiceReference1.Academico> LoginAsync(string noPersonal, string contrasena);
@@ -1987,6 +2005,11 @@ namespace ServiceReference1
             return base.Channel.RegistrarAcademicoAsync(academico);
         }
         
+        public System.Threading.Tasks.Task<bool> GuardarSolucionAsync(ServiceReference1.Solucion solucion)
+        {
+            return base.Channel.GuardarSolucionAsync(solucion);
+        }
+        
         public System.Threading.Tasks.Task<bool> ModificarProblematicaAsync(ServiceReference1.Problematica problematica)
         {
             return base.Channel.ModificarProblematicaAsync(problematica);
@@ -2005,6 +2028,11 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task<ServiceReference1.Problematica[]> MostrarProblematicasAsync()
         {
             return base.Channel.MostrarProblematicasAsync();
+        }
+        
+        public System.Threading.Tasks.Task<bool> ModificarSolucionAsync(ServiceReference1.Solucion solucion)
+        {
+            return base.Channel.ModificarSolucionAsync(solucion);
         }
         
         public System.Threading.Tasks.Task<ServiceReference1.Estudiante[]> ObtenerEstudiantesAsync(int programaEducativo)
@@ -2055,6 +2083,26 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task<ServiceReference1.ReporteTutoria[]> ObtenerReporteTutoriaAsync(ServiceReference1.ReporteTutoria reporteTutoria)
         {
             return base.Channel.ObtenerReporteTutoriaAsync(reporteTutoria);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.Solucion> ObtenerSolucionAsync(int IdProblematica)
+        {
+            return base.Channel.ObtenerSolucionAsync(IdProblematica);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.ExperienciaEducativa> ObtenerExperienciaEducativaIdAsync(int IdExperienciaEducativa)
+        {
+            return base.Channel.ObtenerExperienciaEducativaIdAsync(IdExperienciaEducativa);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.Materia> ObtenerMateriaFiltradaAsync(int IdMateria)
+        {
+            return base.Channel.ObtenerMateriaFiltradaAsync(IdMateria);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.Academico> ObtenerAcademicoFiltradoAsync(int IdAcademico)
+        {
+            return base.Channel.ObtenerAcademicoFiltradoAsync(IdAcademico);
         }
         
         public System.Threading.Tasks.Task<ServiceReference1.Academico> LoginAsync(string noPersonal, string contrasena)

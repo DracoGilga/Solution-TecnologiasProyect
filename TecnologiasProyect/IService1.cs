@@ -28,6 +28,8 @@ namespace TecnologiasProyect
 
         [OperationContract]
         Boolean RegistrarAcademico(Academico academico);
+        [OperationContract]
+        Boolean GuardarSolucion(Solucion solucion);
 
         //Modificaciones
         [OperationContract]
@@ -40,6 +42,8 @@ namespace TecnologiasProyect
         List<Problematica> ObtenerProblematicas(Problematica problematica);
         [OperationContract]
         List<Problematica> MostrarProblematicas();
+        [OperationContract]
+        Boolean ModificarSolucion(Solucion solucion);
 
         [OperationContract]
         List<Estudiante> ObtenerEstudiantes(int programaEducativo);
@@ -62,6 +66,14 @@ namespace TecnologiasProyect
         Tutoria ObtenerTutoria(DateTime fecha);
         [OperationContract]
         List<ReporteTutoria> ObtenerReporteTutoria(ReporteTutoria reporteTutoria);
+        [OperationContract]
+        Solucion ObtenerSolucion(int IdProblematica);
+        [OperationContract]
+        ExperienciaEducativa ObtenerExperienciaEducativaId(int IdExperienciaEducativa);
+        [OperationContract]
+        Materia ObtenerMateriaFiltrada(int IdMateria);
+        [OperationContract]
+        Academico ObtenerAcademicoFiltrado(int IdAcademico);
 
 
         //login

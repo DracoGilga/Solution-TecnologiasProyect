@@ -36,6 +36,12 @@ namespace TecnologiasProyect
             Boolean guardarReporteTutoria = ReporteTutoriaDAO.GuardarReporteTuroria(reporteTutoria);
             return guardarReporteTutoria;
         }
+        public Boolean GuardarSolucion(Solucion solucion)
+        {
+            Boolean guardarSolucion = SolucionDAO.GuardarSolucion(solucion);
+            return guardarSolucion;
+        }
+
 
         //modificar
         public Boolean ModificarProblematica(Problematica problematica)
@@ -47,6 +53,11 @@ namespace TecnologiasProyect
         {
             Boolean modificarEstudiante = EstudianteDAO.ModificarEstudiante(idEstudiante, idTutor);
             return modificarEstudiante;
+        }
+        public Boolean ModificarSolucion(Solucion solucion)
+        {
+            Boolean modificarSolucion = SolucionDAO.ModificarSolucion(solucion);
+            return modificarSolucion;
         }
 
         //obtener
@@ -127,6 +138,67 @@ namespace TecnologiasProyect
         {
             List<ReporteTutoria> reporte = ReporteTutoriaDAO.ObtenerReporteTutoria(reporteTutoria);
             return reporte;
+        }
+        public Solucion ObtenerSolucion(int IdProblematica)
+        {
+            List<Solucion> solucion = SolucionDAO.ObtenerSolucion(IdProblematica);
+            if (solucion != null)
+            {
+                foreach (Solucion sol in solucion)
+                {
+                    if (sol.IdProblematica == IdProblematica)
+                    {
+                        return sol;
+                    }
+                }
+            }
+            return null;
+
+        }
+        public ExperienciaEducativa ObtenerExperienciaEducativaId(int IdExperienciaEducativa)
+        {
+            List<ExperienciaEducativa> experienciaEducativa = ExperienciaEducativaDAO.ObtenerExperienciaEducativaFiltrado(IdExperienciaEducativa);
+            if (experienciaEducativa != null)
+            {
+                foreach (ExperienciaEducativa experiencia in experienciaEducativa)
+                {
+                    if (experiencia.IdExperienciaEducativa == IdExperienciaEducativa)
+                    {
+                        return experiencia;
+                    }
+                }
+            }
+            return null;
+        }
+        public Materia ObtenerMateriaFiltrada(int IdMateria)
+        {
+            List<Materia> materia = MateriaDAO.ObtenerMateriaFiltrada(IdMateria);
+            if (materia != null)
+            {
+                foreach (Materia mat in materia)
+                {
+                    if (mat.IdMateria == IdMateria)
+                    {
+                        return mat;
+                    }
+                }
+            }
+            return null;
+        }
+        public Academico ObtenerAcademicoFiltrado(int IdAcademico)
+        {
+            List<Academico> academico = AcademicoDAO.ObtenerAcademicoFiltrado(IdAcademico);
+            if (academico != null)
+            {
+                foreach (Academico acade in academico)
+                {
+                    if (acade.IdAcademico == IdAcademico)
+                    {
+                        return acade;
+                    }
+                }
+            }
+            return null;
         }
 
 

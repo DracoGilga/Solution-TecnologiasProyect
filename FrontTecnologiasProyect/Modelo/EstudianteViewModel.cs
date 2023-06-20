@@ -32,18 +32,19 @@ namespace FrontTecnologiasProyect.Modelo
                 }
             }
         }
-        public EstudianteViewModel(Estudiante estudiante)
+        public EstudianteViewModel(bool i)
         {
-            estudiantesBD = new ObservableCollection<Estudiante>();
-            GuardarEstudiante(estudiante);
+            
         }
-        private async void GuardarEstudiante(Estudiante estudiante)
+        public async Task<bool> GuardarEstudiante(Estudiante estudiante)
         {
             var conexionServicios = new Service1Client();
             if (conexionServicios != null)
             {
                 bool estudianteService = await conexionServicios.GuardarAlumnoAsync(estudiante);
+                return estudianteService;
             }
+            return false;
         }
         public EstudianteViewModel()
         {

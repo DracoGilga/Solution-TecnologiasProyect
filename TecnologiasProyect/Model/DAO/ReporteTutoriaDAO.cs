@@ -25,9 +25,8 @@ namespace TecnologiasProyect.Model.DAO
                 conexionBD.SubmitChanges();
                 return true;
             }
-            catch(Exception e)
+            catch(Exception )
             {
-                Console.WriteLine(e);
                 return false;
             }
         }

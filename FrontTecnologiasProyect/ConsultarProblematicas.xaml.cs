@@ -22,32 +22,34 @@ namespace FrontTecnologiasProyect
     public partial class ConsultarProblematicas : Window
     {
         private Problematica problematica;
+        SolucionViewModel solucionViewModel = new SolucionViewModel();
         public ConsultarProblematicas()
         {
             InitializeComponent();
             ProblematicaAcademivaViewModel modelo = new ProblematicaAcademivaViewModel(1);
+            
             dg_Problematicas.ItemsSource = modelo.problematicaBD;
         }
 
-        private void Dc_Solucion(object sender, MouseButtonEventArgs e)
+        private async void Dc_Solucion(object sender, MouseButtonEventArgs e)
         {
             try
             {
                 Problematica dato = (Problematica)dg_Problematicas.SelectedItem;
                 if (dato != null)
                 {
-                    ProblematicaAcademivaViewModel model = new ProblematicaAcademivaViewModel(dato.IdProblematica);
-                    if (model.Equals(true))
+                    Solucion resultado = await solucionViewModel.ConsultarSolucion(dato.IdProblematica);
+                    if (resultado != null)
                     {
-                        EditarSolucion editarSolucion = new EditarSolucion(dato);
+                        EditarSolucion editarSolucion = new EditarSolucion(dato, resultado);
                         editarSolucion.Show();
-                        this.Close();
+                        
                     }
                     else
                     {
                         RegistrarSolucionProblematica solucion = new RegistrarSolucionProblematica(dato);
                         solucion.Show();
-                        this.Close();
+                        
                     }
                 }
             }

@@ -31,5 +31,22 @@ namespace FrontTecnologiasProyect.Modelo
                 }
             }
         }
+        public ExperienciaEducativaViewModel(int IdExperiencia)
+        {
+            
+        }
+        public async Task<ExperienciaEducativa> CargarExperienciaEducativaId(int IdExperiencia)
+        {
+            var conexionServicios = new Service1Client();
+            if (conexionServicios != null)
+            {
+                ExperienciaEducativa experienciaEducativaService = await conexionServicios.ObtenerExperienciaEducativaIdAsync(IdExperiencia);
+                if (experienciaEducativaService != null)
+                {
+                    return experienciaEducativaService;
+                }
+            }
+            return null;
+        }
     }
 }

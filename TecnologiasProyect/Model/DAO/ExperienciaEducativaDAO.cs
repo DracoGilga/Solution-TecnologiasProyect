@@ -28,6 +28,28 @@ namespace TecnologiasProyect.Model.DAO
             }
             return experienciasEducativas;
         }
+        public static List<ExperienciaEducativa> ObtenerExperienciaEducativaFiltrado(int IdExperienciaEducativa)
+        {
+            DataClassesTutoriaDataContext conexionBD = GetConexion();
+            List<ExperienciaEducativa> experienciaEducativa = new List<ExperienciaEducativa>();
+            IQueryable<ExperienciaEducativa> experienciaEducativaBD = from experienciaEducativaQuery in conexionBD.ExperienciaEducativa
+                                                                      where experienciaEducativaQuery.IdExperienciaEducativa == IdExperienciaEducativa
+                                                                      select experienciaEducativaQuery;
+            foreach (ExperienciaEducativa experienciaEducativaQuery in experienciaEducativaBD)
+            {
+                experienciaEducativa.Add(new ExperienciaEducativa
+                {
+                    IdExperienciaEducativa = experienciaEducativaQuery.IdExperienciaEducativa,
+                    nrc = experienciaEducativaQuery.nrc,
+                    bloque = experienciaEducativaQuery.bloque,
+                    IdPeriodoEscolar = experienciaEducativaQuery.IdPeriodoEscolar,
+                    IdMateria = experienciaEducativaQuery.IdMateria,
+                    IdProgramaEducativo = experienciaEducativaQuery.IdProgramaEducativo,
+                    IdAcademico = experienciaEducativaQuery.IdAcademico
+                });
+            }
+            return experienciaEducativa;
+        }
 
 
         public static DataClassesTutoriaDataContext GetConexion()

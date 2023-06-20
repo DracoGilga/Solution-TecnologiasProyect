@@ -28,6 +28,11 @@ namespace FrontTecnologiasProyect.Modelo
                 }
             }
         }
+
+        public ProgramaEducativoViewModel(bool i)
+        {
+
+        }
         public async Task<int> TipoAcademico(int IdPersonal)
         {
             var conexionServicios = new Service1Client();
@@ -38,6 +43,5 @@ namespace FrontTecnologiasProyect.Modelo
             }
             return 0;
         }
-
     }
 }

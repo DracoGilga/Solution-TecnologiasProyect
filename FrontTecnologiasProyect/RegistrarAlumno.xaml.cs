@@ -28,8 +28,9 @@ namespace FrontTecnologiasProyect
             Cb_programaEducativo.DisplayMemberPath = "nombre";
             Cb_programaEducativo.ItemsSource = programaEducativoViewModel.programasEducativosBD;
         }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private async void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            EstudianteViewModel estudianteViewModel = new EstudianteViewModel(true);
             Estudiante estudiante = new Estudiante();
             estudiante.matricula = tb_maticula.Text;
             estudiante.nombre = tb_nombre.Text;
@@ -43,7 +44,16 @@ namespace FrontTecnologiasProyect
                 IdProgramaEducativo = estudiante.IdProgramaEducativo
             };
 
-            EstudianteViewModel estudianteViewModel = new EstudianteViewModel(estudiante);
+            bool resultado = await estudianteViewModel.GuardarEstudiante(estudiante);
+            if (resultado)
+            {
+                MessageBox.Show("Se guardo correctamente");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("No se guardo correctamente");
+            }
 
         }
     }

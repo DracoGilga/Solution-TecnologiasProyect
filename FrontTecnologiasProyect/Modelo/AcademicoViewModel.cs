@@ -48,6 +48,17 @@ namespace FrontTecnologiasProyect.Modelo
                 }
             }
         }
+        public async Task<Academico> ObtenerAcademicoId(int IdAcademico)
+        {
+            var conexionServicios = new Service1Client();
+            if(conexionServicios != null)
+            {
+                Academico academico = await conexionServicios.ObtenerAcademicoFiltradoAsync(IdAcademico);
+                return academico;
+            }
+            else
+                return null;
+        }
         public async Task<Academico> Login (string noPersonal, string contraseña)
         {
             var conexionServicios = new Service1Client();
