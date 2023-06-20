@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontTecnologiasProyect"
         mc:Ignorable="d"
-Title="Editar Solución a Problemática Académica" Height="450" Width="850" WindowStartupLocation="CenterScreen">
+        Title="Editar Solución a Problemática Académica" Height="450" Width="850" 
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="NoResize"
+        >
     <Grid>
         <Label Content="Editar Solución" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.673,-1.606" FontSize="16" FontWeight="Bold"/>
         <Label Content="Título:" HorizontalAlignment="Left" Margin="63,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.041,0.644"/>
@@ -23,7 +26,7 @@ Title="Editar Solución a Problemática Académica" Height="450" Width="850" Win
         <TextBox x:Name="tb_TituloSolucion" HorizontalAlignment="Left" Margin="63,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="25"/>
         <TextBox x:Name="tb_DescripcionSolucion" HorizontalAlignment="Left" Margin="452,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="25"/>
         <Button Content="Guardar" HorizontalAlignment="Left" Margin="666,381,0,0" VerticalAlignment="Top" RenderTransformOrigin="9.816,1.04" Height="22" Width="106" Click="Btn_GuardarSolucion"/>
-        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="515,381,0,0" VerticalAlignment="Top" RenderTransformOrigin="9.816,1.04" Height="22" Width="106" Click="Btn_CancelarSolucion"/>
+        <Image HorizontalAlignment="Left" Height="26" Margin="802,10,0,0" VerticalAlignment="Top" Width="28" Source="/Cerrar.png" MouseUp="Cerrar" ToolTip="Cerrar"/>
 
     </Grid>
 </Window>

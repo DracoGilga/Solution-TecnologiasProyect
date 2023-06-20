@@ -100,5 +100,11 @@ namespace FrontTecnologiasProyect
             cb_Nrc.ItemsSource = experienciaEducativaViewModel.experienciaEducativaBD;
         }
 
+        private void Cerrar(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+
     }
 }

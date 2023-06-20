@@ -35,12 +35,6 @@ namespace FrontTecnologiasProyect
         {
             InitializeComponent();
         }
-
-        private void Btn_Cancelar(object sender, RoutedEventArgs e)
-        {
-           
-        }
-
         private async void Btn_Guardar(object sender, RoutedEventArgs e)
         {
             nombre = "NP" + tbx_Nombre.Text;
@@ -214,5 +208,10 @@ namespace FrontTecnologiasProyect
             return caracterInvalido;
         }
 
+
+        private void Cerrar(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

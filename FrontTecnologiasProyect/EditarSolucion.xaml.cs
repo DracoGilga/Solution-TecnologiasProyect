@@ -33,12 +33,6 @@ namespace FrontTecnologiasProyect
             solucionLlave = solucion;
             ConfigurarFormulario(problematicaLlave);
         }
-
-        private void Btn_CancelarSolucion(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Btn_GuardarSolucion(object sender, RoutedEventArgs e)
         {
 
@@ -61,6 +55,12 @@ namespace FrontTecnologiasProyect
             tb_Academico.Text = academico.nombre + " " + academico.apellidoPaterno + " " + academico.apellidoMaterno;
             tb_TituloSolucion.Text = solucionLlave.titulo;
             tb_DescripcionSolucion.Text = solucionLlave.descripcion;
+        }
+
+
+        private void Cerrar(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
         }
     }
 }

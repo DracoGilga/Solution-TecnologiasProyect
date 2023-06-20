@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontTecnologiasProyect"
         mc:Ignorable="d"
-        Title="ModificarAlumno" Height="435" Width="742">
+        Title="ModificarAlumno" Height="435" Width="742"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="NoResize"
+        >
     <Grid>
         <Label Content="Tutor:" HorizontalAlignment="Left" Height="28" Margin="22,26,0,0" VerticalAlignment="Top" Width="42"/>
         <Label Content="Alumno:" HorizontalAlignment="Left" Height="28" Margin="108,26,0,0" VerticalAlignment="Top" Width="55"/>
@@ -22,6 +25,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="GUARDAR" HorizontalAlignment="Left" Margin="641,52,0,0" VerticalAlignment="Top" Width="71" Height="22" RenderTransformOrigin="0.718,-0.225" Click="btn_ModificarEstudiante"/>
+        <Image HorizontalAlignment="Left" Height="26" Margin="706,10,0,0" VerticalAlignment="Top" Width="28" Source="/Cerrar.png" MouseUp="Cerrar" ToolTip="Cerrar"/>
 
     </Grid>
 </Window>

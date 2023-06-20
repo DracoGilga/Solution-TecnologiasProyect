@@ -5,12 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontTecnologiasProyect"
         mc:Ignorable="d"
-        Title="RegistrarComentariosG" Height="470" Width="800"
-        WindowStartupLocation="CenterScreen">
+        Title="RegistrarComentariosG" Height="372" Width="800"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="NoResize"
+        >
     <Grid>
-        <TextBox x:Name="cb_comentarioG" HorizontalAlignment="Left" Height="299" Margin="38,80,0,0" VerticalAlignment="Top" Width="728"/>
-        <Button Content="Guardar" HorizontalAlignment="Left" Height="38" Margin="296,390,0,0" VerticalAlignment="Top" Width="211" FontSize="16" Click="Btn_guardar"/>
+        <TextBox x:Name="cb_comentarioG" HorizontalAlignment="Left" Height="178" Margin="38,80,0,0" VerticalAlignment="Top" Width="728" FontSize="24"/>
+        <Button Content="Guardar" HorizontalAlignment="Center" Height="38" Margin="0,291,0,0" VerticalAlignment="Top" Width="212" FontSize="16" Click="Btn_guardar"/>
         <Label Content="Comentarios Generales de la Sesión de tutoría:" HorizontalAlignment="Left" Height="30" Margin="38,28,0,0" VerticalAlignment="Top" Width="381" FontSize="18"/>
+        <Image HorizontalAlignment="Left" Height="26" Margin="740,28,0,0" VerticalAlignment="Top" Width="28" Source="/Cerrar.png" MouseUp="Cerrar" ToolTip="Cerrar"/>
 
     </Grid>
 </Window>

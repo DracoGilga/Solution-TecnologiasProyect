@@ -109,5 +109,11 @@ namespace FrontTecnologiasProyect
             cb_Tutor.DisplayMemberPath = "noPersonal";
             cb_Tutor.ItemsSource = academicoViewModel.academicoBD;
         }
+
+
+        private void Cerrar(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

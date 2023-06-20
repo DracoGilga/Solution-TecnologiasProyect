@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:FrontTecnologiasProyect"
         mc:Ignorable="d"
         Title="Llenar Reporte de Tutoría Académica." Height="388" Width="693"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="NoResize"
+        >
     <Grid>
         <DataGrid x:Name="tablaAlumno" AutoGenerateColumns="False" CanUserAddRows="False" Margin="30,59,24,25">
             <DataGrid.Columns>
@@ -33,7 +35,8 @@
         <Button x:Name="RegistrarproblematicaA" Content="REGISTRAR PROBLEMATICA" HorizontalAlignment="Left" Height="21" Margin="32,25,0,0" VerticalAlignment="Top" Width="159" Click="Btn_registrarProblematica"/>
         <Button x:Name="ModificarProblematicaA" Content="MODIFICAR PROBLEMATICA" HorizontalAlignment="Left" Height="21" Margin="200,25,0,0" VerticalAlignment="Top" Width="164" Click="Btn_modificarProblematica"/>
         <Button x:Name="RegistrarComentariosGenerales" Content="COMENTARIOS GENERALES" HorizontalAlignment="Left" Height="21" Margin="375,25,0,0" VerticalAlignment="Top" Width="159" Click="Btn_comentariosGenerales"/>
-        <Button x:Name="GuardarRepoteTA" Content="GUARDAR" HorizontalAlignment="Left" Height="21" Margin="610,25,0,0" VerticalAlignment="Top" Width="59" Click="Btn_guardar"/>
+        <Button x:Name="GuardarRepoteTA" Content="GUARDAR" HorizontalAlignment="Left" Height="21" Margin="549,25,0,0" VerticalAlignment="Top" Width="59" Click="Btn_guardar"/>
+        <Image HorizontalAlignment="Left" Height="26" Margin="643,10,0,0" VerticalAlignment="Top" Width="28" Source="/Cerrar.png" MouseUp="Cerrar" ToolTip="Cerrar"/>
 
     </Grid>
 </Window>

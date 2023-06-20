@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontTecnologiasProyect"
         mc:Ignorable="d"
-        Title="Registrar Alumno" Height="584" Width="250" WindowStartupLocation="CenterScreen">
+        Title="Registrar Alumno" Height="558" Width="250" 
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="NoResize"
+        >
     <Grid>
         <Image HorizontalAlignment="Center" Height="130" Margin="0,10,0,0" VerticalAlignment="Top" Width="128" Source="/Usuario.webp"/>
         <Label Content="Matricula:" HorizontalAlignment="Left" Height="23" Margin="17,151,0,0" VerticalAlignment="Top" Width="61"/>
@@ -21,6 +24,7 @@
         <Label Content="Programa Educativo:" HorizontalAlignment="Left" Height="27" Margin="16,426,0,0" VerticalAlignment="Top" Width="126"/>
         <ComboBox x:Name="Cb_programaEducativo" HorizontalAlignment="Left" Height="21" Margin="17,455,0,0" VerticalAlignment="Top" Width="209"/>
         <Button Content="Button" HorizontalAlignment="Left" Height="31" Margin="84,506,0,0" VerticalAlignment="Top" Width="87" Click="Button_Click_1"/>
+        <Image HorizontalAlignment="Left" Height="26" Margin="216,8,0,0" VerticalAlignment="Top" Width="28" Source="/Cerrar.png" MouseUp="Cerrar" ToolTip="Cerrar"/>
 
     </Grid>
 </Window>

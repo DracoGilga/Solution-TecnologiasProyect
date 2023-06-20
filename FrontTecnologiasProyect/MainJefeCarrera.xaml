@@ -5,10 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontTecnologiasProyect"
         mc:Ignorable="d"
-        Title="MainJefeCarrera" Height="199" Width="257">
+        Title="MainJefeCarrera" Height="199" Width="257"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="NoResize"
+        >
     <Grid>
-        <Button Content="REGISTRAR SOLUCION A &#xD;&#xA;PROBLEMATICA ACADEMICA" HorizontalAlignment="Left" Height="47" Margin="32,108,0,0" VerticalAlignment="Top" Width="181" Click="btn_RegistraSolucionPA"/>
-        <Button Content="LLENAR REPORTE TUTORIA&#xA;ACADEMICA" HorizontalAlignment="Left" Height="47" Margin="34,28,0,0" VerticalAlignment="Top" Width="181" Click="btn_LlenarReporteTA"/>
+        <Button Content="REGISTRAR SOLUCION A &#xD;&#xA;PROBLEMATICA ACADEMICA" HorizontalAlignment="Left" Height="47" Margin="36,125,0,0" VerticalAlignment="Top" Width="181" Click="btn_RegistraSolucionPA"/>
+        <Button Content="LLENAR REPORTE TUTORIA&#xA;ACADEMICA" HorizontalAlignment="Center" Height="47" Margin="0,45,0,0" VerticalAlignment="Top" Width="181" Click="btn_LlenarReporteTA"/>
+        <Image HorizontalAlignment="Left" Height="26" Margin="221,7,0,0" VerticalAlignment="Top" Width="28" Source="/Cerrar.png" MouseUp="Cerrar" ToolTip="Cerrar"/>
 
     </Grid>
 </Window>

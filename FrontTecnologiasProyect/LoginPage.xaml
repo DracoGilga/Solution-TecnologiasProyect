@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontTecnologiasProyect"
         mc:Ignorable="d"
-        Title="LoginPage" Height="362" Width="755"
-        ResizeMode="CanMinimize">
-    
+        Title="LoginPage" Height="344" Width="755"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="NoResize"
+        >
+
     <Grid>
         <Label Content="NoPersonal:" HorizontalAlignment="Left" Height="43" Margin="19,10,0,0" VerticalAlignment="Top" Width="119" FontSize="20"/>
         <Label HorizontalAlignment="Left" Height="38" Margin="19,121,0,0" VerticalAlignment="Top" Width="119" Content="Contraseña:" FontSize="20"/>
@@ -15,6 +17,7 @@
         <TextBox x:Name="tb_Password" HorizontalAlignment="Left" Height="26" Margin="19,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" FontSize="20"/>
         <Button Content="Ingresar" HorizontalAlignment="Left" Height="36" Margin="74,227,0,0" VerticalAlignment="Top" Width="92" Click="btn_Iniciar" FontSize="20"/>
         <Image HorizontalAlignment="Left" Height="346" Margin="241,0,0,0" VerticalAlignment="Center" Width="516" Source="/LoginImage.jfif"/>
+        <Image HorizontalAlignment="Left" Height="48" Margin="677,18,0,0" VerticalAlignment="Top" Width="52" Source="/Cerrar.png" MouseUp="Cerrar" ToolTip="Cerrar"/>
 
     </Grid>
 </Window>

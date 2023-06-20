@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Cerrar.png" />
     <None Remove="LoginImage.jfif" />
     <None Remove="Usuario.webp" />
   </ItemGroup>
@@ -25,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Cerrar.png" />
     <Resource Include="LoginImage.jfif" />
     <Resource Include="Usuario.webp" />
   </ItemGroup>

@@ -33,11 +33,6 @@ namespace FrontTecnologiasProyect
             ConfigurarFormulario(problematicaLlave);
         }
 
-        private void Btn_CancelarSolucion(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         private async void Btn_GuardarSolucion(object sender, RoutedEventArgs e)
         {
             SolucionViewModel solucionViewModel = new SolucionViewModel();
@@ -73,6 +68,12 @@ namespace FrontTecnologiasProyect
             tb_DescripcionProblematica.Text = dato.descripcion;
             tb_ExperienciaEducativa.Text = experienciaEducativa.nrc + " - " + materia.nombre;
             tb_Academico.Text = academico.nombre + " " + academico.apellidoPaterno + " " + academico.apellidoMaterno;
+        }
+
+
+        private void Cerrar(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
         }
     }
 }

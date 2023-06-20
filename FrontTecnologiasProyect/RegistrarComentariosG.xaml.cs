@@ -57,5 +57,11 @@ namespace FrontTecnologiasProyect
                 MessageBox.Show("Error al guardar el comentario general");
             }
         }
+
+        private void Cerrar(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

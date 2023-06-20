@@ -54,7 +54,7 @@ namespace FrontTecnologiasProyect
                         this.Close();
                         break;
                     case 3:
-                        LlenarReporteTA menuAcademico = new LlenarReporteTA(resultadoAcademico);
+                        LlenarReporteTA menuAcademico = new LlenarReporteTA(resultadoAcademico, tipoAcademico);
                         menuAcademico.Show();
                         this.Close();
                         break;
@@ -65,6 +65,11 @@ namespace FrontTecnologiasProyect
             }   
             else
                 MessageBox.Show("usuario o contraseña incorrecto");
+        }
+
+        private void Cerrar(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
         }
     }
 }

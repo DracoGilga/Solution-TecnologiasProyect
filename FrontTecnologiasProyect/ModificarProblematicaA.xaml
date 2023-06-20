@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontTecnologiasProyect"
         mc:Ignorable="d"
-        Title="ModificarProblematicaA" Height="308" Width="417"
-        WindowStartupLocation="CenterScreen">
+        Title="ModificarProblematicaA" Height="287" Width="417"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="NoResize"
+        >
     <Grid>
         <Label Content="No. DE INCIDENCIAS:" HorizontalAlignment="Left" Height="26" Margin="144,32,0,0" VerticalAlignment="Top" Width="132"/>
         <TextBox x:Name="Tb_incidencias" HorizontalAlignment="Left" Height="23" Margin="144,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding Numero}"/>
@@ -15,6 +17,7 @@
         <Button Content="GUARDAR" HorizontalAlignment="Left" Height="23" Margin="156,244,0,0" VerticalAlignment="Top" Width="111" Click="Btn_Guardar"/>
         <Label Content="PROBLEMATICA:" HorizontalAlignment="Left" Height="26" Margin="24,32,0,0" VerticalAlignment="Top" Width="114"/>
         <ComboBox x:Name="cb_Problematica" HorizontalAlignment="Left" Height="23" Margin="24,57,0,0" VerticalAlignment="Top" Width="114" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Image HorizontalAlignment="Left" Height="26" Margin="360,10,0,0" VerticalAlignment="Top" Width="28" Source="/Cerrar.png" MouseUp="Cerrar" ToolTip="Cerrar"/>
 
     </Grid>
 </Window>

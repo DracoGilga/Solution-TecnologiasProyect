@@ -23,12 +23,14 @@ namespace FrontTecnologiasProyect
     {
         Academico academicoLlave;
         Tutoria tutoriaLlave;
+        int tipoAcademicoLlave;
         private LlenarReporteTAViewModel llenarReporteTAViewModel;
 
-        public LlenarReporteTA(Academico traspasoAcademicoc)
+        public LlenarReporteTA(Academico traspasoAcademicoc, int tipoAcademico)
         {
             InitializeComponent();
             academicoLlave = traspasoAcademicoc;
+            tipoAcademicoLlave = tipoAcademico;
             llenarReporteTAViewModel = new LlenarReporteTAViewModel();
             FormatoTabla(traspasoAcademicoc);
             
@@ -151,6 +153,17 @@ namespace FrontTecnologiasProyect
             }
             return null;
         }
+
+        private void Cerrar(object sender, MouseButtonEventArgs e)
+        {
+            if(tipoAcademicoLlave == 3)
+            {
+                LoginPage loginPage = new LoginPage();
+                loginPage.Show();
+            }
+            this.Close();
+        }
+
 
     }
 }

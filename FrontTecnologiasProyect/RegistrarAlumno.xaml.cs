@@ -56,5 +56,11 @@ namespace FrontTecnologiasProyect
             }
 
         }
+
+
+        private void Cerrar(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

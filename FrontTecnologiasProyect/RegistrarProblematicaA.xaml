@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:FrontTecnologiasProyect"
         mc:Ignorable="d"
         Title="RegistrarProblematicaA" Height="387" Width="428"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="NoResize"
+        >
     <Grid>
         <Label Content="TITULO:" HorizontalAlignment="Left" Height="32" Margin="24,28,0,0" VerticalAlignment="Top" Width="88"/>
         <TextBox x:Name="Tb_titulo" HorizontalAlignment="Left" Height="23" Margin="24,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
@@ -19,6 +21,7 @@
         <ComboBox x:Name="Cb_tipoProblematica" HorizontalAlignment="Left" Height="23" Margin="153,131,0,0" VerticalAlignment="Top" Width="132"/>
         <Label Content="NRC:" HorizontalAlignment="Left" Height="32" Margin="297,92,0,0" VerticalAlignment="Top" Width="71"/>
         <ComboBox x:Name="cb_Nrc" HorizontalAlignment="Left" Height="23" Margin="297,131,0,0" VerticalAlignment="Top" Width="71"/>
+        <Image HorizontalAlignment="Left" Height="26" Margin="376,10,0,0" VerticalAlignment="Top" Width="30" Source="/Cerrar.png" MouseUp="Cerrar" ToolTip="Cerrar"/>
 
     </Grid>
 </Window>

@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrontTecnologiasProyect"
         mc:Ignorable="d"
-        Title="Registrar Tutor Académico" Height="470" Width="800">
+        Title="Registrar Tutor Académico" Height="440" Width="800"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="NoResize"
+        >
     <Grid Height="NaN" Margin="0,0,0,6">
         <Label Content="Registrar Tutor Académico" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="Nombre:" HorizontalAlignment="Left" Margin="100,60,0,0" VerticalAlignment="Top"/>
@@ -21,9 +24,9 @@
         <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="100,347,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.527,1.716"/>
         <PasswordBox x:Name="pb_Password" HorizontalAlignment="Left" Margin="216,352,0,0" VerticalAlignment="Top" Width="508" Height="25"/>
         <Button Content="Guardar" HorizontalAlignment="Left" Margin="654,398,0,0" VerticalAlignment="Top" Width="70" Height="25" Click="Btn_Guardar"/>
-        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="544,398,0,0" VerticalAlignment="Top" Width="70" Height="25" Click="Btn_Cancelar"/>
         <Label Content="No. de Personal:" HorizontalAlignment="Left" Margin="100,213,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.527,1.716"/>
         <TextBox x:Name="tbx_NumeroPersonal" HorizontalAlignment="Left" Margin="216,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="508" Height="25"/>
+        <Image HorizontalAlignment="Left" Height="26" Margin="733,10,0,0" VerticalAlignment="Top" Width="28" Source="/Cerrar.png" MouseUp="Cerrar" ToolTip="Cerrar"/>
 
     </Grid>
 </Window>
