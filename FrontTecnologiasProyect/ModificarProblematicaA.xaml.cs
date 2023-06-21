@@ -34,20 +34,32 @@ namespace FrontTecnologiasProyect
         }
         private async void Btn_Guardar(object sender, RoutedEventArgs e)
         {
-            var problematicaLlave= (Problematica)cb_Problematica.SelectedItem;
-            Problematica problematica = new Problematica();
-            problematica.noIncidencias = Convert.ToInt32(Tb_incidencias.Text);
-            problematica.descripcion = Tb_descripcion.Text;
-            problematica.IdProblematica = problematicaLlave.IdProblematica;
-            bool respuesta =await problematicaAcademivaViewModel.ModificarProblematica(problematica);
-            if (respuesta)
+            try
             {
-                MessageBox.Show("Se modifico correctamente");
-                this.Close();
+                var problematicaLlave = (Problematica)cb_Problematica.SelectedItem;
+                Problematica problematica = new Problematica();
+                problematica.noIncidencias = Convert.ToInt32(Tb_incidencias.Text);
+                problematica.descripcion = Tb_descripcion.Text;
+                problematica.IdProblematica = problematicaLlave.IdProblematica;
+
+                if (!string.IsNullOrWhiteSpace(Tb_incidencias.Text) && !string.IsNullOrWhiteSpace(Tb_descripcion.Text))
+                {
+                    bool respuesta = await problematicaAcademivaViewModel.ModificarProblematica(problematica);
+                    if (respuesta)
+                    {
+                        MessageBox.Show("Se modifico correctamente");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se modifico correctamente");
+                    }
+                }
             }
-            else
+            catch (Exception )
             {
-                MessageBox.Show("No se modifico correctamente");
+                MessageBox.Show("Seleccione una problematica");
+                return;
             }
         }
 

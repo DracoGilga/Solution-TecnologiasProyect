@@ -35,11 +35,7 @@ namespace FrontTecnologiasProyect.Modelo
             }
             return false;
         }
-        public SolucionViewModel(int idSolucion, Solucion solucion)
-        {
-            solucionBD = new ObservableCollection<Solucion>();
-            ModificarSolucion(solucion);
-        }
+
         public async Task<bool> ModificarSolucion(Solucion solucion)
         {
             var conexionServicios = new Service1Client();

@@ -43,18 +43,20 @@ namespace FrontTecnologiasProyect
             {
                 var programaEducativo = (ProgramaEducativo)Cb_programaEducativo.SelectedItem;
                 estudiante.IdProgramaEducativo = programaEducativo.IdProgramaEducativo;
+                estudiante.ProgramaEducativo = new ProgramaEducativo()
+                {
+                    IdProgramaEducativo = estudiante.IdProgramaEducativo
+                };
             }
             catch(Exception)
             {
-                estudiante.IdProgramaEducativo = -1;
+                MessageBox.Show("No se selecciono un programa educativo");
+                return;
             }
-            estudiante.ProgramaEducativo = new ProgramaEducativo()
-            {
-                IdProgramaEducativo = estudiante.IdProgramaEducativo
-            };
-            if (String.IsNullOrWhiteSpace(estudiante.matricula) || String.IsNullOrWhiteSpace(estudiante.nombre) 
-                || String.IsNullOrWhiteSpace(estudiante.apellidoPaterno) || string.IsNullOrWhiteSpace(estudiante.apellidoPaterno) 
-                || String.IsNullOrWhiteSpace(estudiante.correoPersonal))
+            
+            if (!String.IsNullOrWhiteSpace(estudiante.matricula) && !String.IsNullOrWhiteSpace(estudiante.nombre) 
+                && !String.IsNullOrWhiteSpace(estudiante.apellidoPaterno) && !string.IsNullOrWhiteSpace(estudiante.apellidoPaterno) 
+                && !String.IsNullOrWhiteSpace(estudiante.correoPersonal) && estudiante.IdProgramaEducativo >= 0)
             {
                 if (ValidarCorreo(estudiante.correoPersonal))
                 {
@@ -71,7 +73,7 @@ namespace FrontTecnologiasProyect
                     MessageBox.Show("Correo no valido, favor de ingresar un correo valido");       
             }
             else
-                MessageBox.Show("Una o mas celdas vaacias, favor de llenar todas");
+                MessageBox.Show("Una o mas celdas vacias, favor de llenar todas");
         }
 
         public static bool ValidarCorreo(string correo)

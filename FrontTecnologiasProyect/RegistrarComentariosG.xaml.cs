@@ -33,6 +33,11 @@ namespace FrontTecnologiasProyect
         }
         private async void Btn_guardar(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(cb_comentarioG.Text))
+            {
+                MessageBox.Show("Debe ingresar un comentario general");
+                return;
+            }
             ComentarioGeneral comentarioGeneral = new ComentarioGeneral();
             comentarioGeneral.descripcion = cb_comentarioG.Text;
             comentarioGeneral.IdTutoria = tutoriaLlave.IdTutoria;

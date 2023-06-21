@@ -49,18 +49,35 @@ namespace FrontTecnologiasProyect
             {
                 IdAcademico = problematica.IdTutor
             };
-            var problematicaLlaveTipo = (TipoProblematica)Cb_tipoProblematica.SelectedItem;
-            problematica.IdTipo = problematicaLlaveTipo.IdTipo;
-            problematica.TipoProblematica = new TipoProblematica()
+            try
             {
-                IdTipo = problematica.IdTipo
-            };
-            var problematicaLlaveExperiencia = (ExperienciaEducativa)cb_Nrc.SelectedItem;
-            problematica.IdExperienciaEducativa = problematicaLlaveExperiencia.IdExperienciaEducativa;
-            problematica.ExperienciaEducativa = new ExperienciaEducativa()
+                var problematicaLlaveTipo = (TipoProblematica)Cb_tipoProblematica.SelectedItem;
+                problematica.IdTipo = problematicaLlaveTipo.IdTipo;
+                problematica.TipoProblematica = new TipoProblematica()
+                {
+                    IdTipo = problematica.IdTipo
+                };
+            }
+            catch(Exception)
             {
-                IdExperienciaEducativa = problematica.IdExperienciaEducativa
-            };
+                MessageBox.Show("Seleccione un tipo de problematica");
+                return;
+            }
+            try
+            {
+                var problematicaLlaveExperiencia = (ExperienciaEducativa)cb_Nrc.SelectedItem;
+                problematica.IdExperienciaEducativa = problematicaLlaveExperiencia.IdExperienciaEducativa;
+                problematica.ExperienciaEducativa = new ExperienciaEducativa()
+                {
+                    IdExperienciaEducativa = problematica.IdExperienciaEducativa
+                };
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Seleccione una experiencia educativa");
+                return;
+            }
+
 
             bool problematicaRespuesta = await problematicaAcademivaViewModel.GuardarProblematica(problematica);
             if (problematicaRespuesta)

@@ -18,6 +18,7 @@ namespace TecnologiasProyect.Model.DAO
             {
                 solucion.Add(new Solucion
                 {
+                    titulo = solu.titulo,
                     IdSolucion = solu.IdSolucion,
                     descripcion = solu.descripcion,
                     IdProblematica = solu.IdProblematica

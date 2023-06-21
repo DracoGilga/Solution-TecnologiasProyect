@@ -45,10 +45,10 @@ namespace FrontTecnologiasProyect
             correoInstitucional = tbx_CorreoInstitucional.Text;
             password = pb_Password.Password;
 
-            if (String.IsNullOrWhiteSpace(nombre) || String.IsNullOrWhiteSpace(apellidoPaterno) 
-                || String.IsNullOrWhiteSpace(apellidoMaterno) || String.IsNullOrWhiteSpace(noPersonal) 
-                || String.IsNullOrWhiteSpace(correoElectronico) || String.IsNullOrWhiteSpace(correoInstitucional) 
-                || String.IsNullOrEmpty(password))
+            if (!String.IsNullOrWhiteSpace(nombre) && !String.IsNullOrWhiteSpace(apellidoPaterno) 
+                && !String.IsNullOrWhiteSpace(apellidoMaterno) && !String.IsNullOrWhiteSpace(noPersonal) 
+                && !String.IsNullOrWhiteSpace(correoElectronico) && !String.IsNullOrWhiteSpace(correoInstitucional) 
+                && !String.IsNullOrEmpty(password))
             {
                 if (ValidarCorreo(correoElectronico))
                 {

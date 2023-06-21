@@ -3,6 +3,7 @@ using ServiceReference1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -33,9 +34,24 @@ namespace FrontTecnologiasProyect
             solucionLlave = solucion;
             ConfigurarFormulario(problematicaLlave);
         }
-        private void Btn_GuardarSolucion(object sender, RoutedEventArgs e)
+        private async void Btn_GuardarSolucion(object sender, RoutedEventArgs e)
         {
-
+            SolucionViewModel solucionViewModel = new SolucionViewModel();
+            Solucion solucion = new Solucion();
+            solucion.IdSolucion = solucionLlave.IdSolucion;
+            solucion.titulo = tb_TituloSolucion.Text;
+            solucion.descripcion = tb_DescripcionSolucion.Text;
+            if (!string.IsNullOrWhiteSpace(tb_TituloSolucion.Text) 
+                && !string.IsNullOrWhiteSpace(tb_DescripcionSolucion.Text))
+            {
+                bool resultado = await solucionViewModel.ModificarSolucion(solucion);
+                if (resultado)
+                    MessageBox.Show("Solucion Editada Correctamente");
+                else
+                    MessageBox.Show("Error al editar solucion");
+            }
+            else
+                MessageBox.Show("No se puede guardar una solución vacía");
         }
         private async void ConfigurarFormulario(Problematica dato)
         {
