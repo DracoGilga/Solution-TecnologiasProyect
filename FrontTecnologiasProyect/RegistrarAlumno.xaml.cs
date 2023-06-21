@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,7 +29,7 @@ namespace FrontTecnologiasProyect
             Cb_programaEducativo.DisplayMemberPath = "nombre";
             Cb_programaEducativo.ItemsSource = programaEducativoViewModel.programasEducativosBD;
         }
-        private async void Button_Click_1(object sender, RoutedEventArgs e)
+        private async void Btn_Registrar(object sender, RoutedEventArgs e)
         {
             EstudianteViewModel estudianteViewModel = new EstudianteViewModel(true);
             Estudiante estudiante = new Estudiante();
@@ -38,23 +39,46 @@ namespace FrontTecnologiasProyect
             estudiante.apellidoMaterno = tb_apellidoM.Text;
             estudiante.correoPersonal = tb_correoP.Text;
             estudiante.correoInstitucional = tb_maticula.Text + "@estudiantes.uv.mx";
-            estudiante.IdProgramaEducativo = 3;
+            try
+            {
+                var programaEducativo = (ProgramaEducativo)Cb_programaEducativo.SelectedItem;
+                estudiante.IdProgramaEducativo = programaEducativo.IdProgramaEducativo;
+            }
+            catch(Exception)
+            {
+                estudiante.IdProgramaEducativo = -1;
+            }
             estudiante.ProgramaEducativo = new ProgramaEducativo()
             {
                 IdProgramaEducativo = estudiante.IdProgramaEducativo
             };
-
-            bool resultado = await estudianteViewModel.GuardarEstudiante(estudiante);
-            if (resultado)
+            if (String.IsNullOrWhiteSpace(estudiante.matricula) || String.IsNullOrWhiteSpace(estudiante.nombre) 
+                || String.IsNullOrWhiteSpace(estudiante.apellidoPaterno) || string.IsNullOrWhiteSpace(estudiante.apellidoPaterno) 
+                || String.IsNullOrWhiteSpace(estudiante.correoPersonal))
             {
-                MessageBox.Show("Se guardo correctamente");
-                this.Close();
+                if (ValidarCorreo(estudiante.correoPersonal))
+                {
+                    bool resultado = await estudianteViewModel.GuardarEstudiante(estudiante);
+                    if (resultado)
+                    {
+                        MessageBox.Show("Se guardo correctamente");
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("No se guardo correctamente");
+                }
+                else
+                    MessageBox.Show("Correo no valido, favor de ingresar un correo valido");       
             }
             else
-            {
-                MessageBox.Show("No se guardo correctamente");
-            }
+                MessageBox.Show("Una o mas celdas vaacias, favor de llenar todas");
+        }
 
+        public static bool ValidarCorreo(string correo)
+        {
+            string patron = @"^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$";
+            Regex regex = new Regex(patron);
+            return regex.IsMatch(correo);
         }
 
 

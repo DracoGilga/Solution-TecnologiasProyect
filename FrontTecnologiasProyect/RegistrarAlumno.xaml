@@ -23,7 +23,7 @@
         <TextBox x:Name="tb_correoP" HorizontalAlignment="Left" Height="19" Margin="16,397,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209"/>
         <Label Content="Programa Educativo:" HorizontalAlignment="Left" Height="27" Margin="16,426,0,0" VerticalAlignment="Top" Width="126"/>
         <ComboBox x:Name="Cb_programaEducativo" HorizontalAlignment="Left" Height="21" Margin="17,455,0,0" VerticalAlignment="Top" Width="209"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="31" Margin="84,506,0,0" VerticalAlignment="Top" Width="87" Click="Button_Click_1"/>
+        <Button Content="Registrar" HorizontalAlignment="Left" Height="31" Margin="84,506,0,0" VerticalAlignment="Top" Width="87" Click="Btn_Registrar"/>
         <Image HorizontalAlignment="Left" Height="26" Margin="216,8,0,0" VerticalAlignment="Top" Width="28" Source="/Cerrar.png" MouseUp="Cerrar" ToolTip="Cerrar"/>
 
     </Grid>
