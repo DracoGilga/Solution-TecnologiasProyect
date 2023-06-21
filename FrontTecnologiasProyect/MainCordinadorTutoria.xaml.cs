@@ -29,22 +29,22 @@ namespace FrontTecnologiasProyect
         private void btn_LlenarReporteTA(object sender, RoutedEventArgs e)
         {
             LlenarReporteTA llenarReporteTA = new LlenarReporteTA(academicoLlave,0);
-            llenarReporteTA.Show();
+            llenarReporteTA.ShowDialog();
         }
         private void btn_RegistrarAlumno(object sender, RoutedEventArgs e)
         {
             RegistrarAlumno registrarAlumno = new RegistrarAlumno();
-            registrarAlumno.Show();
+            registrarAlumno.ShowDialog();
         }
         private void btn_RegistrarTutorAcademico(object sender, RoutedEventArgs e)
         {
             RegistrarTutorAcademico registrarTutorAcademico = new RegistrarTutorAcademico();
-            registrarTutorAcademico.Show();
+            registrarTutorAcademico.ShowDialog();
         }
         private void btn_AsignarTutorAcademico(object sender, RoutedEventArgs e)
         {
             ModificarAlumno modificarAlumno = new ModificarAlumno();
-            modificarAlumno.Show();
+            modificarAlumno.ShowDialog();
         }
 
 

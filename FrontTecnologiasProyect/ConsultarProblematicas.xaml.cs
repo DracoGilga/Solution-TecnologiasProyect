@@ -42,14 +42,14 @@ namespace FrontTecnologiasProyect
                     if (resultado != null)
                     {
                         EditarSolucion editarSolucion = new EditarSolucion(dato, resultado);
-                        editarSolucion.Show();
-                        
+                        editarSolucion.ShowDialog();
+
                     }
                     else
                     {
                         RegistrarSolucionProblematica solucion = new RegistrarSolucionProblematica(dato);
-                        solucion.Show();
-                        
+                        solucion.ShowDialog();
+
                     }
                 }
             }

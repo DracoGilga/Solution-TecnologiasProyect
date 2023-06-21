@@ -39,19 +39,19 @@ namespace FrontTecnologiasProyect
         private void Btn_registrarProblematica(object sender, RoutedEventArgs e)
         {
             RegistrarProblematicaA registrarProblematicaA = new RegistrarProblematicaA(tutoriaLlave,academicoLlave);
-            registrarProblematicaA.Show();
+            registrarProblematicaA.ShowDialog();
         }
 
         private void Btn_comentariosGenerales(object sender, RoutedEventArgs e)
         {
             RegistrarComentariosG registrarComentariosG = new RegistrarComentariosG(tutoriaLlave,academicoLlave);
-            registrarComentariosG.Show();
+            registrarComentariosG.ShowDialog();
         }
 
         private void Btn_modificarProblematica(object sender, RoutedEventArgs e)
         {
             ModificarProblematicaA  modificarProblematicaA = new ModificarProblematicaA(tutoriaLlave, academicoLlave);
-            modificarProblematicaA.Show();
+            modificarProblematicaA.ShowDialog();
         }
 
         private async void Btn_guardar(object sender, RoutedEventArgs e)

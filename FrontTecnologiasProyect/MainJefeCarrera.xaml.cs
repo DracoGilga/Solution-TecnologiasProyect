@@ -30,12 +30,12 @@ namespace FrontTecnologiasProyect
         private void btn_LlenarReporteTA(object sender, RoutedEventArgs e)
         {
             LlenarReporteTA llenarReporteTA = new LlenarReporteTA(academicoLlave, 0);
-            llenarReporteTA.Show();
+            llenarReporteTA.ShowDialog();
         }
         private void btn_RegistraSolucionPA(object sender, RoutedEventArgs e)
         {
             ConsultarProblematicas consultarProblematicas = new ConsultarProblematicas();
-            consultarProblematicas.Show();
+            consultarProblematicas.ShowDialog();
         }
 
         private void Cerrar(object sender, MouseButtonEventArgs e)
