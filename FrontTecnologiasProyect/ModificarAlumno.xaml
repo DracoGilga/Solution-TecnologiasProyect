@@ -9,12 +9,24 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None" ResizeMode="NoResize"
         >
+    <Window.Resources>
+        <DataTemplate x:Key="TutorItemTemplate">
+            <StackPanel Orientation="Horizontal" Margin="0,2">
+                <TextBlock Text="{Binding noPersonal}" Margin="0,0,5,0"/>
+                <TextBlock Text="{Binding nombre}" Margin="0,0,5,0"/>
+                <TextBlock Text="{Binding apellidoPaterno}" Margin="0,0,5,0"/>
+                <TextBlock Text="{Binding apellidoMaterno}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
     <Grid>
         <Label Content="Tutor:" HorizontalAlignment="Left" Height="28" Margin="22,26,0,0" VerticalAlignment="Top" Width="42"/>
-        <Label Content="Alumno:" HorizontalAlignment="Left" Height="28" Margin="108,26,0,0" VerticalAlignment="Top" Width="55"/>
-        <ComboBox x:Name="cb_Tutor" HorizontalAlignment="Left" Height="22" Margin="22,52,0,0" VerticalAlignment="Top" Width="74"/>
-        <ComboBox x:Name="cb_Alumno" HorizontalAlignment="Left" Height="22" Margin="108,52,0,0" VerticalAlignment="Top" Width="99"/>
-        <Button Content="Añadir" HorizontalAlignment="Left" Height="22" Margin="243,52,0,0" VerticalAlignment="Top" Width="57" Click="btn_AgregarTabla"/>
+        <Label Content="Alumno:" HorizontalAlignment="Left" Height="28" Margin="249,26,0,0" VerticalAlignment="Top" Width="55"/>
+        <ComboBox x:Name="cb_Tutor" HorizontalAlignment="Left" Height="29" Margin="22,52,0,0" VerticalAlignment="Top" Width="205"
+                  ItemTemplate="{StaticResource TutorItemTemplate}" />
+        <ComboBox x:Name="cb_Alumno" HorizontalAlignment="Left" Height="29" Margin="249,52,0,0" VerticalAlignment="Top" Width="99"/>
+        <Button Content="Añadir" HorizontalAlignment="Left" Height="22" Margin="367,52,0,0" VerticalAlignment="Top" Width="56" Click="btn_AgregarTabla"/>
         <DataGrid x:Name="tablaAlumno" AutoGenerateColumns="False" CanUserAddRows="False" Margin="22,94,30,0" Height="280" VerticalAlignment="Top">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Matricula" Binding="{Binding Matricula}" Width="*" IsReadOnly="True"/>
@@ -26,6 +38,5 @@
         </DataGrid>
         <Button Content="GUARDAR" HorizontalAlignment="Left" Margin="641,52,0,0" VerticalAlignment="Top" Width="71" Height="22" RenderTransformOrigin="0.718,-0.225" Click="btn_ModificarEstudiante"/>
         <Image HorizontalAlignment="Left" Height="26" Margin="706,10,0,0" VerticalAlignment="Top" Width="28" Source="/Cerrar.png" MouseUp="Cerrar" ToolTip="Cerrar"/>
-
     </Grid>
 </Window>

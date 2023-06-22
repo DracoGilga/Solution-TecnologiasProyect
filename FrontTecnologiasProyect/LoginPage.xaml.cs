@@ -31,12 +31,12 @@ namespace FrontTecnologiasProyect
         }
         private async void btn_Iniciar(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tb_NoPersonal.Text) || string.IsNullOrWhiteSpace(tb_Password.Text))
+            if (string.IsNullOrWhiteSpace(tb_NoPersonal.Text) || string.IsNullOrWhiteSpace(tb_Password.Password))
             {
                 MessageBox.Show("Ingrese el usuario y/o contraseña");
                 return;
             }
-            Academico resultadoAcademico = await academicoViewModel.Login(tb_NoPersonal.Text, tb_Password.Text);
+            Academico resultadoAcademico = await academicoViewModel.Login(tb_NoPersonal.Text, tb_Password.Password);
             if (resultadoAcademico != null)
             {
                 MessageBox.Show("Bienvenido " + resultadoAcademico.nombre);

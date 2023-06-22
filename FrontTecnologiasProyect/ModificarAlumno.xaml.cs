@@ -106,7 +106,7 @@ namespace FrontTecnologiasProyect
             cb_Alumno.ItemsSource = estudianteViewModel.estudiantesBD;
 
             AcademicoViewModel academicoViewModel = new AcademicoViewModel();
-            cb_Tutor.DisplayMemberPath = "noPersonal";
+            cb_Tutor.ItemTemplate = (DataTemplate)Resources["TutorItemTemplate"];
             cb_Tutor.ItemsSource = academicoViewModel.academicoBD;
         }
 
