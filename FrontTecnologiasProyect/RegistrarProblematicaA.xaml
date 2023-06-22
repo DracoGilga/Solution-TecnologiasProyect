@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="RegistrarProblematicaA" Height="387" Width="428"
         WindowStartupLocation="CenterScreen"
-        WindowStyle="None" ResizeMode="NoResize"
+        WindowStyle="None" ResizeMode="NoResize" Icon="/uv.ico"
         >
     <Grid>
         <Label Content="TITULO:" HorizontalAlignment="Left" Height="32" Margin="24,28,0,0" VerticalAlignment="Top" Width="88"/>

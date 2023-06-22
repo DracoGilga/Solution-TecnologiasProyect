@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Registrar Tutor Académico" Height="440" Width="800"
         WindowStartupLocation="CenterScreen"
-        WindowStyle="None" ResizeMode="NoResize"
+        WindowStyle="None" ResizeMode="NoResize" Icon="/uv.ico"
         >
     <Grid Height="NaN" Margin="0,0,0,6">
         <Label Content="Registrar Tutor Académico" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ModificarProblematicaA" Height="287" Width="417"
         WindowStartupLocation="CenterScreen"
-        WindowStyle="None" ResizeMode="NoResize"
+        WindowStyle="None" ResizeMode="NoResize" Icon="/uv.ico"
         >
     <Grid>
         <Label Content="No. DE INCIDENCIAS:" HorizontalAlignment="Left" Height="26" Margin="144,32,0,0" VerticalAlignment="Top" Width="132"/>

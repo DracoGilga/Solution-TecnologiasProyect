@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Registrar Alumno" Height="558" Width="250" 
         WindowStartupLocation="CenterScreen"
-        WindowStyle="None" ResizeMode="NoResize"
+        WindowStyle="None" ResizeMode="NoResize" Icon="/uv.ico"
         >
     <Grid>
         <Image HorizontalAlignment="Center" Height="130" Margin="0,10,0,0" VerticalAlignment="Top" Width="128" Source="/Usuario.webp"/>

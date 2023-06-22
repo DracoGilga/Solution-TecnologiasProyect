@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ModificarAlumno" Height="435" Width="742"
         WindowStartupLocation="CenterScreen"
-        WindowStyle="None" ResizeMode="NoResize"
+        WindowStyle="None" ResizeMode="NoResize" Icon="/uv.ico"
         >
     <Window.Resources>
         <DataTemplate x:Key="TutorItemTemplate">

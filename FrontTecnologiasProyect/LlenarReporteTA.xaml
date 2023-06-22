@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Llenar Reporte de Tutoría Académica." Height="388" Width="693"
         WindowStartupLocation="CenterScreen"
-        WindowStyle="None" ResizeMode="NoResize"
+        WindowStyle="None" ResizeMode="NoResize" Icon="/uv.ico"
         >
     <Grid>
         <DataGrid x:Name="tablaAlumno" AutoGenerateColumns="False" CanUserAddRows="False" Margin="30,59,24,25">

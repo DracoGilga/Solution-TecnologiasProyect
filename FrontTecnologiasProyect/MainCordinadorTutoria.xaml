@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainCordinadorTutoria" Height="375" Width="254"
         WindowStartupLocation="CenterScreen"
-        WindowStyle="None" ResizeMode="NoResize"
+        WindowStyle="None" ResizeMode="NoResize" Icon="/uv.ico"
         >
     <Grid>
         <Button Content="LLENAR REPORTE TUTORIA&#xD;&#xA;ACADEMICA" HorizontalAlignment="Left" Height="47" Margin="34,45,0,0" VerticalAlignment="Top" Width="181" Click="btn_LlenarReporteTA"/>

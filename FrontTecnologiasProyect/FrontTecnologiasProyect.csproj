@@ -11,6 +11,7 @@
     <None Remove="Cerrar.png" />
     <None Remove="LoginImage.jfif" />
     <None Remove="Usuario.webp" />
+    <None Remove="uv.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +30,7 @@
     <Resource Include="Cerrar.png" />
     <Resource Include="LoginImage.jfif" />
     <Resource Include="Usuario.webp" />
+    <Resource Include="uv.ico" />
   </ItemGroup>
 
 </Project>
