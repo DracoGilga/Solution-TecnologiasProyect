@@ -37,10 +37,10 @@ namespace FrontTecnologiasProyect
         }
         private async void Btn_Guardar(object sender, RoutedEventArgs e)
         {
-            nombre = "NP" + tbx_Nombre.Text;
+            nombre = tbx_Nombre.Text;
             apellidoPaterno = tbx_ApellidoPaterno.Text;
             apellidoMaterno = tbx_ApellidoMaterno.Text;
-            noPersonal = tbx_NumeroPersonal.Text;
+            noPersonal = "NP" + tbx_NumeroPersonal.Text;
             correoElectronico = tbx_CorreoElectronico.Text;
             correoInstitucional = tbx_CorreoInstitucional.Text;
             password = pb_Password.Password;
